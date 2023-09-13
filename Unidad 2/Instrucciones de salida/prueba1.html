@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document 1</title>
+  </head>
+  <body>
+    <h1>Instrucciones de salida</h1>
+    <p id="miParrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+    <script>
+      // La isntrucción alert si no se pone el objeto especificado, es window por defecto:
+      window.alert("Hola, esto es un alert del objeto window");
+      window.alert(2*5);
+
+      // SE PUEDE ESCRIBIR DIRECTAMENTE DENTRO DEL HTML CON DOS MÉTODOS:
+      // Este método solo es para testear, se puede incluir texto o etiquetas html
+      document.write("Este es el método write del objeto document");
+      document.write("<h2>Encabezado dos</h2>");
+      document.write(1+1);
+
+      /* Para escribir dentro del html lo mejor es escribir el método getElementById():
+                que básicamente comprueba y hace referencia a un elemento html, cuyo
+                id sea el mismo que se pone como parámetro del método.
+           Y luego el método innerHTML() en donde le asignamos el texto que queremos cambiar
+           con un igual + la cadena de texto. El texto no se añade, sobrescribe el del párrafo
+        */
+      document.getElementById("miParrafo").innerHTML = "Texto nuevo sobrescrito";
+      document.getElementById("miParrafo").innerHTML = 5/7;
+
+      // Esta instrucción solo se ve en la consola del navegador
+      console.log("Texto que se muestra en consola");
+      console.log(5-2);
+    </script>
+  </body>
+</html>
