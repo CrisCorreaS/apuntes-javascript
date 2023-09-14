@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Podemos realizar varias operaciones sobre variables en Javascript:
+          Declarar una variable: es decir, ponerle un nombre.
+          Asignar valor a una variable.
+          Visualizar una variable: ésta puede estar asignada o sin asignar.
+          Declarar varias variables en una misma sentencia.
+          Asignar una operación a una variable. -->
+
+    <p id="parrafo1"></p>
+    <p id="parrafo2"></p>
+    <p id="parrafo3"></p>
+    <script>
+      /*
+        VARIABLES EN JAVASCRIPT
+        -Identificadores únicos
+        -Recomendable usar identificadores descriptivos
+        -Pueden contener cadenas, números o booleans
+        -Son sensibles a las mayúsculas: nombre != NOMBRE != Nombre
+        -No se pueden usar palabras reservadas
+        -No es recomendable empezar el nombre de una variable en mayúscula
+      */
+
+      //Declaramos una variable con valor indefinido
+      var nombre;
+
+      //Mostramos el valor de la variable en el párrafo (undefined)
+      document.getElementById("parrafo1").innerHTML = nombre;
+
+      //Asignamos el valor a la variable
+      nombre = "Cristina";
+
+      //Mostramos el valor de la variable en el párrafo
+      document.getElementById("parrafo2").innerHTML = nombre;
+
+      //Declaración de varias variables en una sentencia
+      var pais1, nacimiento1;
+      var pais2 = "España", nacimiento2=1685;
+
+      //Asignación de operaciones a una variable
+      var nombreApellido = "Cris" + " " + "Correa";
+      var fallecimiento = nacimiento2 + 65;
+
+      //Mostramos el valor de la concatenación de variables en el párrafo
+      document.getElementById("parrafo3").innerHTML = nombreApellido + " nació en " + pais2;
+    </script>
+  </body>
+</html>
