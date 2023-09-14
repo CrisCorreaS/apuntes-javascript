@@ -14,7 +14,6 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Instrucciones de Salida</li>
                 <li>Sintaxis de JavaScript</li>
                 <li>Sentencias en JavaScript</li>
-                <li>Comentarios en JavaScript</li>
                 <li>Variables en JavaScript</li>
             </ol>
         </li>
