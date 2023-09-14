@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- El único operador aritmético de las cadenas es el operador suma -->
+
+    <script>
+      var nombre = "Cristina";
+      var apellido = "Correa";
+
+      var nombreCompleto = nombre + " " + apellido;
+      alert(nombreCompleto);
+
+      //Operador de asignación +=
+
+      var texto = "ABCD";
+      alert(texto);
+      texto += "EFGH"; // texto = texto +"EFGH";
+      alert(texto);
+
+      //Siempre que sumemos algo a una cadena, se interpreta que eso que sumamos se transforma en una cadena
+      var resultado = 4 + 5 + " hola";
+      alert(resultado);
+    </script>
+  </body>
+</html>
