@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+      Es recomendable utilizar el punto y coma al finalizar cada instrucción (¡pero ojo, no necesariamente cada línea!).
+      Podemos agrupar varias instrucciones en la misma línea separándolas por puntos y comas.
+      Los espacios en blanco entre elementos hacen el código más legible.
+      Los bloques de código se limitan con llaves.
+      Hay una serie de palabras reservadas que no pueden ser utilizadas como identificadores.
+     -->
+    <h1>Sentencias en JavaScript</h1>
+    <h2>Punto y coma</h2>
+    <script>
+      var a = 1;
+      var b = 2;
+      var c = a + b;
+      alert(c);
+    </script>
+
+    <h2>Escribir sentencias en la misma línea</h2>
+    <script>
+      var d = 1;
+      var e = 2;
+      var f = d + e;
+      alert(f);
+    </script>
+
+    <h2>Espacios en blanco</h2>
+    <!-- JS no tiene en cuenta los espacios en blanco cuando hay más de uno. Se recomienda poner espacios en blanco entre operadores: =, +, -, * ... -->
+    <script>
+      var nombre1 = "Cristina";
+      var nombre2="Cris";
+      alert(nombre1);
+    </script>
+
+    <h2>Evitar líneas de más de 80 caracteres</h2>
+    <!-- Es recomendable dividir la línea después de un operador -->
+    <script>
+      var apellido = 
+      "Primero";
+      alert(apellido);
+    </script>
+
+    <h2>Se agrupan entre llaves</h2>
+    <!-- Se usan las llaves en funciones, bucles, condiciones, etc. -->
+    <script>
+      function hola(){
+        alert("Hola ");
+        alert("caracola");
+      }
+      hola();
+    </script>
+
+    <h2>Palabras reservadas</h2>
+    <ul>
+      <li>break</li>
+      <li>continue</li>
+      <li>switch</li>
+      <li>for</li>
+      <li>do ... while</li>
+      <li>if ... else</li>
+      <li>debugger</li>
+      <li>try ... catch</li>
+      <li>var</li>
+      <li>function</li>
+      <li>return</li>
+    </ul>
+  </body>
+</html>
