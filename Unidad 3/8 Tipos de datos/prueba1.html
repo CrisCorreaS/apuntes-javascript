@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Estos son los principales tipos de datos que tiene Javascript:
+        -string, o cadena.
+        -number, o numérico. -> No diferencia entre int, float, double, long... como se hace en java
+        -boolean, o booleano.
+        -array, o vectores/matrices.
+        -object, u objetos.
+
+        Además, debemos conocer la diferencia entre tres opciones que, aunque podrían parecer lo mismo… ¡no tienen nada que ver!:
+        -Valor no definido (undefined).
+        -Cadena vacía.
+        -Valor nulo (null).
+     -->
+
+    <script>
+      var x = "Cris" + 5; //Convierte el número en una cadena
+      alert(x);
+
+      var numeroIzquierda = 2 + 5 + "Cris"; //JS trabaja de izquierda a derecha por lo que primero se hará la suma y luego, el resultado se convertirá en string
+      var numeroDerecha = "Cris" + 5 + 2; //Al trabajar de izquierda a derecha, en este caso devuelve cada número convertido en cadena, no la suma entre ellos
+      alert(
+        "Resultado de los números a la Izquierda primero: " + numeroIzquierda +
+          ". Resultado de los números a la derecha: " +  numeroDerecha
+      );
+
+      //CADENAS O STRINGS:
+      var cadena1 = "Cris ";
+      var cadena2 = "Correa";
+      var cadena3 = "Cris 'Correa'";
+      alert(cadena1 + cadena2);
+      alert(cadena3);
+
+      //NÚMEROS
+      var entero = 8;
+      var decimal = 3.14;
+      var negativo = -1;
+      var cientificaMayor = 12e5; //Este número es igual a lo que está delante de la "e" va seguido por el número de ceros que va detrás de la e
+      //12e5 = 1200000
+      var cientificaMenor = 12e-5; //Este número es igual al anterior pero en vez de poner los ceros detrás del número, se ponen como decimales
+      //12e-5 = 0.0012 (No es 0.000012, para los decimales hay que tener en cuenta el 12 como número)
+      alert(entero + decimal);
+      alert(negativo);
+      alert(cientificaMayor);
+      alert(cientificaMenor);
+
+      //BOOLEANS
+      var cierto = true;
+      var falso = false;
+      alert(cierto);
+      alert(falso);
+
+      //ARRAY -> Va del 0 al x como en Java. Puede ser de datos mixtos
+      var lista = [8, 2, 4, 6];
+      alert(lista[0]); //8
+      alert(lista[1]); //2
+      alert(lista[2]); //4
+      alert(lista[3]); //6
+
+      var listaMixta = [1, "Cris", 2.3, "Correa"];
+      alert(listaMixta[0]); //1
+      alert(listaMixta[1]); //"Cris"
+      alert(listaMixta[2]); //2.3
+      alert(listaMixta[3]); //"Correa"
+
+      //OBJETOS
+      var animal = { nombre: "Lola", tipo: "Gato", raza: "Ruso azul", edad: 1 };
+
+      //UNDEFINED -> Controla los tipos de datos que no están definidos
+      var objetoSinDefinir;
+      cadena1 = undefined; //Ahora hago que el string sea undefined
+      alert(objetoSinDefinir); //undefined
+      alert(cadena1);
+      alert("Cadena: " + cadena1 + " .Tipo: " + typeof cadena1); //Nos dice que también es del tipo undefined
+
+      //VACIO -> Una variable tiene un tipo de dato pero no un valor
+      var cadena4 = "";
+      alert(cadena4); //El mensaje aparece vacío
+      alert("Cadena: " + cadena4 + " .Tipo: " + typeof cadena4); //Devuelve que es de tipo String
+
+      //NULL
+      var animal = null;
+      alert(animal); //Devuelve null
+      alert(typeof animal); //Devuelve object
+      alert("Animal: " + animal + " .Tipo: " + typeof animal);
+
+      //NULOS VS UNDEFINED
+      typeof undefined; //Devuelve undefined
+      typeof null; //Devuelve el objeto
+      null === undefined; //false
+      null == undefined; //true -> Almacena lo mismo (nada), por lo que comparten el mismo valor, aunque sean tipos de datos diferentes
+    </script>
+  </body>
+</html>
