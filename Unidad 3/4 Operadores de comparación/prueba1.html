@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var x = 5; //Tipo numérico
+      
+      //Operador de igualdad (==) -> Solo comprobamos que el valor sea el mismo, da igual el tipo de datos
+      alert("x == 8 es " + (x == 8)); //false
+      alert("x == 5 es " + (x == 5)); //true
+      alert("x == '5' es " + (x == "5")); //true -> incluso si comparamos un tipo numérico con un tipo cadena
+
+      //Operador de igualdad estricta (===) -> Aquí si que se comprueba que el valor y el tipo de datos sean los mismos
+      alert("x === 8 es " + (x === 8)); //false
+      alert("x === 5 es " + (x === 5)); //true
+      alert("x === '5' es " + (x === "5")); //false
+
+      //Operador de desigualdad (!=) -> Solo comprobamos que el valor sea diferente, da igual el tipo de dato
+      alert("x != 8 es " + (x != 8)); //true
+      alert("x != 5 es " + (x != 5)); //false
+      alert("x != '5' es " + (x != "5")); //false -> 5 no es diferente de "5" aunque tengan un tipo de dato diferente
+
+      //Operador de desigualdad estricta (!==) -> Comprobamos que el valor y el tipo de datos sean ambos diferentes
+      alert("x !== 8 es " + (x !== 8)); //true
+      alert("x !== 5 es " + (x !== 5)); //false
+      alert("x !== '5' es " + (x !== "5")); //true
+
+      //Operador mayor que (>)
+      alert("x > 8 es " + (x > 8)); //false
+      alert("x > 5 es " + (x > 5)); //false
+      alert("x > '5' es " + (x > "5")); //false
+      alert("x > 4 es " + (x > 4)); //true
+      alert("x > '4' es " + (x > "4")); //true
+
+      //Operador menor que (<)
+      alert("x < 8 es " + (x < 8)); //true
+      alert("x < 5 es " + (x < 5)); //false
+      alert("x < '5' es " + (x < "5")); //false
+      alert("x < 4 es " + (x < 4)); //true
+
+      //Operador mayor o igual que (>=)
+      alert("x >= 8 es " + (x >= 8)); //false
+      alert("x >= 5 es " + (x >= 5)); //true
+      alert("x >= '5' es " + (x >= "5")); //true
+      alert("x >= 4 es " + (x >= 4)); //true
+      alert("x >= '4' es " + (x >= "4")); //true
+
+      //Operador menor o igual que (<=)
+      alert("x <= 8 es " + (x <= 8)); //true
+      alert("x <= 5 es " + (x <= 5)); //true
+      alert("x <= '5' es " + (x <= "5")); //true
+      alert("x <= 4 es " + (x <= 4)); //false
+    </script>
+  </body>
+</html>
