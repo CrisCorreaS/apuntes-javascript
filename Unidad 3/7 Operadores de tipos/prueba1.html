@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Los operadores de tipos son dos instrucciones: typeof e instanceof. Nos permiten comprobar qué tipo de dato son las variables
+        -Typeof devuelve una cadena que indica el tipo de operando que hay después sin evaluarlo.
+        -Instanceof verifica si un objeto se corresponde con el tipo de dato indicado a continuación.
+        
+        En realidad, instanceof comprueba si un objeto en su cadena de prototipos, contiene la propiedad prototype de un constructor
+     -->
+    <script>
+      //TYPEOF:nos devuelve el tipo de dato de una variable o dato
+      var cadena = "Esto es un texto";
+      var numero = 3.14;
+      var boolean = true;
+      var lista = [1, 2, 3, 4];
+      var objeto = { nombre: "Cristina", apellido: "Correa" };
+      var fecha = new Data();
+      var miFuncion = function miFun() {
+        alert("Hola");
+      };
+      var sinDefinir;
+      var vacia = null;
+
+      alert(typeof cadena); //String
+      alert(typeof numero); //number
+      alert(typeof boolean); //boolean
+      alert(typeof lista); //object -> Devuelve un object a pesar de que es un array porque los arrays son unos tipos de objetos para JS
+      alert(typeof objeto); //object
+      alert(typeof fecha); //object
+      alert(typeof miFuncion); //function
+      alert(typeof sinDefinir); //undefined
+      alert(typeof vacia); //object -> Devuelve un object porque al poner null ya se considera un objeto
+      alert(typeof "Hola"); //String
+
+      
+      //INSTANCEOF -> Devuelve true si un objeto es una instancia de otro especificado
+      var animales = ["gato", "perro", "pez"];
+      alert(animales instanceof Array); //true
+      alert(animales instanceof Object); //true
+      alert(animales instanceof String); //false -> Aunque sea un array de Strings, no es una instancia de un String, sino de un Array que es un Objeto
+      alert(animales instanceof Number); //false
+    </script>
+  </body>
+</html>
