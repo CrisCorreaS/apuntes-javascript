@@ -7,6 +7,7 @@
 Recopilación de scripts de JS que he usado para aprender este lenguaje
 
 <h2>Unidades</h2>
+<a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript I de Didacticode</a>
     <ul>
         <li><b>Unidad 1:</b> Integración de Código</li>
         <li><b>Unidad 2:</b>
@@ -28,5 +29,24 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Operadores de tipos</li>
                 <li>Tipos de datos</li>
             </ol>
+        </li>
+        <li><b>Unidad 4: </b>Funciones
+            <ol type="1">
+                <li>Funciones introducción</li>
+                <li>Funciones anónimas</li>
+                <li>Funciones: parámetros y argumentos</li>
+                <li>Ámbito de variables</li>
+            </ol>
+        </li>
+        <li><b>Unidad 5: </b>Estructuras de Control
+            <ol type="1">
+                <li>Condicionales: sentencia if-else</li>
+                <li>Condicionales: sentencia switch</li>
+                <li>Repeticiones: bucle for</li>
+                <li>Repeticiones: bucle for in</li>
+                <li>Repeticiones: bucle while</li>
+                <li>Repeticiones: bucle do-while</li>
+                <li>Saltos: break y continue</li>
+            </ol>        
         </li>
     </ul>
