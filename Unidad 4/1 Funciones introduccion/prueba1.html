@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        -Una función es un grupo de sentencias o instrucciones que realizan una tarea o calculan un valor. 
+        -Para utilizar una función, en primer lugar hay que definirla en algún lugar de nuestro programa y posteriormente, llamarla.
+        -Una función debe seguir unas normas para ser definida, es decir, siempre debemos escribirla utilizando los mismos elementos. 
+        -Lo ideal es que una función ejecute únicamente una tarea, no varias. Así se permite reutilizar el código
+        -Lo normal es que tenga la siguiente estructura:
+        
+        function <nombre de la funcion> (<parametros opcionales separados por comas>) {
+            <instrucciones>
+        }
+
+            -Podemos escribir funciones sin parámetros.
+            -Las funciones pueden devolver un dato o no.
+            -Podemos escribir una función sin paréntesis y guardarla en una variable.
+            -Podemos escribir una función sin nombre (función anónima).
+     -->
+
+    <script>
+      /* SINTAXIS DE UNA FUNCIÓN:
+        function nombre_función (<parámetros_separados_por_comas>) { ... }
+        */
+
+      //FUNCIÓN SIN PARÁMETROS
+      function saludo() {
+        alert("Hola"); //No devuelve nada, solo un mensaje que se ve tras ejecutar la función
+      }
+      saludo(); //Invocamos función pero sigue sin devolver nada
+
+      //Si queremos ver qué devuelve una función, deberíamos de asignarle el resultado de una función a una variable
+      var resultado_saludo = saludo();
+      alert(resultado_saludo); //Ahora se ejecuta la función, nos aparece el mensaje de saludo y nos da como resultado undefined ya que su valor es indefinido (no devuelve nada)
+
+      //Si ponemos la función sin paréntesis no pasa nada:
+      saludo;
+
+      //Sin paréntesis se puede guardar la función en una variable
+      //Si asignamos la función sin paréntesis a una variable, en el alert nos devuelve el código de la función -> function saludo(){alert("Hola");}
+      var resultado_saludo_sin_parentesis = saludo;
+      alert(resultado_saludo_sin_parentesis);
+
+      //FUNCIÓN CON PARÁMETROS
+      function producto(a, b) {
+        return a * b;
+      }
+      producto(3, 5); //Así no devuelve nada por pantalla porque no se lo hemos asignado a una variable y esta no ha sido devuelta por pantalla con un alert()
+
+      var resultado_producto = producto(3, 5); //Se guarda el valor del producto de 3 y 5 en la variable
+      alert(resultado_producto); //Devuelve el valor de la variable = 15
+      
+      alert(producto(3, 1)); //También se puede hacer así directamente -> Devuelve 3
+
+      var resultado_producto_sin_parentesis = producto;
+      alert(esultado_producto_sin_parentesis); // Devuelve el código de la función -> function producto(a, b){return a * b;}
+    </script>
+  </body>
+</html>
