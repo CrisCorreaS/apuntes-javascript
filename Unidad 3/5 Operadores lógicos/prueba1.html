@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Los operadores lógicos devuelven un valor booleano (true o false, verdadero o falso) en función de que se cumpla o no una condición. 
+        Sus operandos, a diferencia del caso de la mayoría de los operadores de comparación, también son lógicos.
+
+        Hay tres operadores lógicos:
+
+        AND: devuelve true (cierto) si los dos operandos son verdaderos.
+        OR: devuelve true (cierto) si al menos un operador es verdadero.
+        NOT: solo se aplica a un operando. Devuelve true (cierto) si su operando es falso, y false (falso) si su operando es cierto.
+    */
+
+      //Operador AND (&&) = y además -> Ambas condiciones se tienen que cumplir
+      var x = 4;
+      var y = 5;
+
+      var resultado1 = x < 5 && y > 2;
+      alert("resultado 1 es " + resultado1); //true porque se cumplen ambas condiciones, "x" es menor que 5 y además "y" es mayor que 2
+
+      var resultado2 = x > 5 && y > 1;
+      alert("resultado 2 es " + resultado2); //false porque no se cumplen ambas condiciones ya que "x" no es mayor que cinco, aunque sí se cumpla que "y" es mayor que 1
+
+      //Operador OR (||) = o -> Al menos una condición se tiene que cumplir
+      var resultado3 = x < 5 || y > 2;
+      alert("resultado 3 es " + resultado3); //true porque se cumple al menos una de las condiciones, en este caso ambas son ciertas: "x" es menor que 5 e "y" es mayor que 2
+
+      var resultado4 = x > 5 || y > 1;
+      alert("resultado 4 es " + resultado4); //true porque se cumple al menos una de las condiciones, aunque "x" no sea mayor que cinco, "y" sí que es mayor que 1
+
+      var resultado5 = x > 8 || y < 3;
+      alert("resultado 5 es " + resultado5); //false porque ninguna de las condiciones se cumple
+
+      //Operador NOT (!) = no -> Da el resultado inverso
+      var resultado6 = !(x == y);
+      alert("resultado 6 es " + resultado6); //true porque (x == y) es false, pero el inverso de false es true
+
+      var resultado7 = !(x < y);
+      alert("resultado 7 es " + resultado7); //false porque (x < y) es true (4 es menor que 5), y la inversa de true es false
+    </script>
+  </body>
+</html>
