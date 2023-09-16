@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Los parámetros son los nombres que aparecen en la definición de una función. 
+        Los argumentos son los valores que le pasamos (y que, por tanto, recibe) una función.
+     -->
+
+    <script>
+      /* PARÁMETROS Y ARGUMENTOS
+            Una función puede tener o no parámetros
+            Los parámetros son los nombres que aparecen en la definición de una función
+            Los argumentos son los valores que pasamos a (y recibe) una función
+
+           REGLAS DE LOS PARÁMETROS EN JAVASCRIPT:
+           -No se especifica el tipo de dato de los parámetos
+           -No se verifica el tipo de dato de los argumentos
+           -No se comprueba el número de los argumentos recibidos
+        */
+
+      //PARÁMETROS POR DEFECTO
+      //Cuando llamamos a una función con menos argumentos de los declarados. Los valores que faltan no están definidos
+      function sumaPrueba(a, b) {
+        return a + b;
+      }
+
+      var resultadoSumaPruebaUnArgumento = sumaPrueba(4); //En este caso se pasa solo un argumento en vez de dos
+      alert(resultadoSumaPruebaUnArgumento); //Devuelve NaN (ignifica "Not a Number") -> No entiende cómo llamamos a la función suma con un solo argumento
+
+      function sumaMejorada(a, b) {
+        if (b === undefined) {
+          //Si b no es de ningún tipo y no está definido
+          b = 0;
+        }
+        return a + b;
+      }
+
+      var resultadoSumaMejoradaUnArgumento = sumaMejorada(4);
+      alert(resultadoSumaMejoradaUnArgumento); //Ahora devuelve 4
+
+      
+      //PARÁMETROS POR EXCESO
+      //Cuando llamamos a una función con más argumentos de los que ha sido declarada.
+      //Los valores que nos llegan pueden captrarse a través de un objeto (incluido en la función) llamado arguments -> Es un array
+      function valores() { //Muestra el número de valores/argumentos que se pasan a la función
+        alert(arguments.length); //Devuelve la longitud del array arguments
+      }
+      valores(1, 2, 3, 4, 5, 6, 7, 8, 9); //Nos da como resultado 9
+
+
+      function valorValores() {
+        alert("El número de argumentos es " + arguments.length);
+        for (var i = 0; i < arguments.length; i++) {
+          alert("El argumento " + i + " tiene un valor = " + arguments[i]);
+        }
+      }
+      valorValores(9, 8, 7, 6, 5, 4, 3, 2, 1);
+    </script>
+  </body>
+</html>
