@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        En Javascript podemos hablar de dos tipos de ámbito de variables:
+        -Ámbito de variables global.
+        -Ámbito de variables local.
+
+        Pero además, se pueden dar otros casos con los ámbitos de las variables que conviene conocer, como:
+        -Variables automáticamente globales (que aunque se definan dentro de un bloque de código, son globales).
+        -Variables globales y locales con el mismo nombre.
+        -Variables globales redefinidas en una función.
+     -->
+
+    <script>
+      //VARIABLES LOCALES -> Se definen dentro de una función
+      //Tienen ámbito local en la función y solo son accesibles dentro de la función -> Solo se pueden utilizar dentro de la función (entre los {})
+      function saludar() {
+        var saludo = "Hola"; //variable local
+        alert(saludo);
+      }
+      saludar(); //Sí que funciona
+      //alert(saludo); ->No funciona fuera de la función porque la variable saludo es local de la función y no está definida fuera de esta función
+
+      //Podemos declarar variables con el mismo nombre en diferentes funciones:
+      function saludarGallego() {
+        var saludo = "Ola";
+        alert(saludo);
+      }
+      saludarGallego();
+
+
+      //VARIABLES GLOBALES
+      //Se definen fuera de las funciones, en el ámbito global
+      var despedida = "Adiós"; //variable global
+      function despedir() {
+        alert(despedida);
+      }
+      despedir();
+      alert(despedida); //Funciona de ambas maneras
+
+
+      //VARIABLES AUTOMÁTICAMENTE GLOBALES
+      //Si asignamos un valor a una variable no declarada se convierte en global
+      function preguntar() {
+        var pregunta1 = "¿Qué tal?"; //Variable local
+        pregunta2 = "¿Cómo estás?"; //Variable global porque no tiene el "var" delante
+      }
+      preguntar();
+      alert(pregunta2); //Se puede hacer sobre la variable global, pero no sobre la variable local -> alert(pregunta1); está mal
+
+
+      //VARIABLES LOCALES Y GLOBALES CON EL MISMO NOMBRE
+      var miVariable = "Fuera";
+      function ambito() {
+        var miVariable = "Dentro";
+        alert(miVariable);
+      }
+      alert(miVariable); //Muestra "Fuera"
+      ambito(); //Muestra "Dentro"
+      alert(miVariable); //Muestra "Fuera"
+
+      //VARIABLE GLOBAL DEFINIDA DENTRO DE UNA FUNCIÓN
+      var miVariable2 = "Fuera";
+      function ambito2() {
+        miVariable2 = "Dentro"; //Ahora como ya no lleva el "var" delante, ya no creamos una variable local, creamos una variable global (referencia línea 49)
+        alert(miVariable2);
+      }
+      alert(miVariable2); //Muestra "Fuera"
+      ambito2(); //Muestra "Dentro"
+      alert(miVariable2); //Muestra "Dentro" -> Hemos redefinido a la variable global, hemos machacado su valor inicial para ponerle un nuevo valor con la función
+    </script>
+  </body>
+</html>
