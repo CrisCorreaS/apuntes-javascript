@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Las funciones anónimas no tienen nombre. Esto quiere decir que no es necesario acompañar la palabra function a un nombre de función
+        
+        function (<parametros opcionales separados por comas>) {
+            <instrucciones>
+        }
+     -->
+
+    <script>
+      /*SINTAXIS DE UNA FUNCIÓN NO ANÓNIMA:
+            function nombre (<parámetros>){<instrucciones>}
+            Ej:
+                function producto(a, b){
+                    return a * b;
+                }
+          SINTAXIS DE UNA FUNCIÓN NO ANÓNIMA:
+            function (<parámetros>){<instrucciones>}
+            Ej:
+                function (a, b){
+                    return a * b;
+                }
+        */
+      //Una función anónima se puede asignar a una variable y esta ahora tendrá todo el código de la función:
+      var producto = function (a, b) {
+        return a * b;
+      };
+
+      //Las variables anónimas se invocan usando el nombre de la variable que las almacena -> En este caso producto
+      //Con las funciones no anónimas se invocan llamando al nombre de la función y con las funciones anónimas, se invocan llamando al nombre de la variable
+      //Se pueden introducir/asignar en el producto el valor de los parámetros:
+      producto(4, 6);
+      alert(producto(4, 5));
+
+      //También se le puede asignar al producto de los parámetros una variable que guarde el resultado
+      var resultado = producto(2, 3);
+      alert(resultado);
+
+      //CONSTRUCTOR FUNCTION() -> Es otra manera de crear una función anónima pero con el constructor Function()
+      var miFuncion = new Function("a", "b", "return a * b"); //Se trata como un objeto
+      var resultado_function = miFuncion(5, 7);
+      alert(resultado_function);
+
+      //FUNCIONES ANÓNIMAS AUTOINVOCADAS
+      /*Para que una función se ejecute automáticamente sin ser llamada, al final de la función hay que incluir "()" después de cerrar la llave
+            function () {alert("Hola");}();
+
+        Para que se ejecute como una expresión debemos meterla entre dos paréntesis
+      */
+      (function () { alert("Hola caracola"); })(); //Se ejecuta automáticamente el "Hola caracola" sin haberla invocado
+      
+      (function () {
+        alert("Adios");
+      })();
+    </script>
+  </body>
+</html>
