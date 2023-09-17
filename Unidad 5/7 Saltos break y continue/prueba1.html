@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Break y continue son dos instrucciones que permiten alterar el flujo del programa. En lugar de que las sentencias se ejecuten una detrás de otra, permiten saltar a otro punto de nuestro código.
+        -break -> termina el bucle actual o sentecia switch o etiqueta y transfiere el control del programa a la siguiente instrucción que se encuentra después de la instrucción de terminación de éstos elementos.
+        -continue -> termina la ejecución de las sentencias de la iteración actual del bucle actual o la etiqueta y continua la ejecución del bucle en la siguiente iteración.
+        
+        La sintaxis de este tipo de estructuras es la siguiente:
+        
+            break [etiqueta];
+            continue [etiqueta];
+        
+        Las etiquetas son unos identificadores opcionales que pueden añadirse al break o al continue que permiten al programa salir de una sentencia que está etiquetada y que no tiene por qué ser una sentencia de bucle.
+    -->
+    <script>
+      /*
+            BREAK: salir o saltar fuera de un bucle, finalizándolo
+            CONTINUE: saltar hasta la siguiente iteración del bucle, permite saltar una o más interaciones
+        */
+
+      //Ejemplo de bucle con break
+      var i;
+      for (i = 0; i <= 10; i++) {
+        if (i == 3) {//Ahora para en el 3 y sale del bucle for, recorriendo solo del 0 al 2 -> El tres no lo pone porque se va justo al tocar el break y no sigue el bucle con el alert
+          break;
+        }
+        alert("El valor de i = " + i);
+      }
+
+      //Ejemplo de bucle con continue
+      var j;
+      for (j = 0; j <= 10; j++) {
+        if (j == 3) {//Ahora se salta la iteración 3, y muestra los números del 0 al 3 y del 4 al 10
+          continue; //El continue hace que se vuelva directamente al for evitando el alert que vendría a continuación
+        }
+        alert("El valor de j = " + j);
+      }
+
+      var k;
+      for (k = 0; k <= 6; k++) {
+        if (k == 3 || k == 5) {//Ahora se salta el 3 y el 5, por lo que muestra 0, 1, 2, 4 y 6
+          continue;
+        }
+        alert("El valor de k = " + k);
+      }
+
+      //ETIQUETAS: preceder una sentencia con el nombre de la etiqueta seguido de dos puntos
+
+      //Ejemplo de break con etiquetas
+      /*
+        -El break sin etiquetas se puede utilizar en bucles o switch
+        -El break con etiquetas se puede utilizar en un bloque de sentencias de etiquetado
+      */
+      var animales = ["perro", "gato", "hamster"];
+
+      ver_animales: { //Este es un bloque de sentencias de etiquetado llamado ver_animales que muestra los tres animales que están guardados en el array
+        alert(animales[0]);
+        alert(animales[1]);
+        alert(animales[2]);
+      }
+
+      ver_algunos_animales: { //Este bloque de sentencias de etiquetado solo muestra los dos primeros animales
+        alert(animales[0]);
+        alert(animales[1]);
+        break ver_algunos_animales; // Poner un break sin el nombre de la etiqueta detrás da un error
+        alert(animales[2]);
+      }
+
+      //Ejemplo de continue con etiquetas
+      /*
+        -Continue: la etiqueta es opcional y siempre debe de estar dentro de un bucle
+        */
+      var z;
+      
+      bucle: for (z = 0; z <= 6; z++) { //Este es un bloque de sentencias de etiquetado llamado bucle
+        if (z == 3 || z == 5) {
+          continue bucle; //Poner la etiqueta es opcional
+        }
+        alert("El valor de z = " + z);
+      }
+    </script>
+  </body>
+</html>
