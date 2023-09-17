@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- La sintaxis de este tipo de estructura es la siguiente:
+
+        for (variable in objeto) { ...  
+    -->
+
+    <script>
+      //Definimos un objeto animal
+      var animal = {
+        nombre: "Toby",
+        tipo: "Perro",
+        raza: "Weimaraner",
+        edad: 1,
+      };
+      var propiedad; //Vamos a recorrer el objeto animal dentro del bucle for in con esta variable
+      
+      for(propiedad in animal){//Recorre cada uno de los atributos que tiene el objeto animal y las asigna a propiedad
+        alert(animal[propiedad]); //Funciona como un array -> animal[propiedad]
+      }
+    </script>
+  </body>
+</html>
