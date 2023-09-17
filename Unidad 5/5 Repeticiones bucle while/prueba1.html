@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        El bucle while ejecuta una o varias instrucciones mientras una condición se evalúe como true. Esta condición se evalúa ANTES de ejecutar la sentencia.
+        No es como el bucle for donde tú le dices cómo recorrer el bucle y hasta donde hacerlo 
+        Sin embargo, hay un caso en que for y while pueden ser equivalentes.
+
+        La sintaxis de este tipo de estructura es la siguiente:
+        
+        while (condicion){
+            sentencia;
+            sentencia;
+            ...
+        }
+     -->
+
+    <script>
+      /*SINTAXIS WHILE:
+            while(<condición>){
+                Código a ejecutar
+            }
+        */
+
+      var i = 0;
+      while (i <= 10) {//Muestra el valor de i del 0 al 10
+        alert("La variable i es = " + i);
+        i++; //Si no añadimos la condición de salida para que vaya aumentando de valor la i, se crea un bucle infinito
+      }
+
+      //Podemos hacer lo mismo con un bucle for:
+      for (i = 0; i <= 10; ) {
+        alert("La variable i es = " + i);
+        i++;
+      }
+    </script>
+  </body>
+</html>
