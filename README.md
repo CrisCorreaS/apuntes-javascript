@@ -7,7 +7,8 @@
 Recopilación de scripts de JS que he usado para aprender este lenguaje
 
 <h2>Unidades</h2>
-<a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript I de Didacticode</a>
+    <a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript I de
+        Didacticode</a>
     <ul>
         <li><b>Unidad 1:</b> Integración de Código</li>
         <li><b>Unidad 2:</b>
@@ -47,6 +48,42 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Repeticiones: bucle while</li>
                 <li>Repeticiones: bucle do-while</li>
                 <li>Saltos: break y continue</li>
+            </ol>
+        </li>
+    </ul>
+    <a href="https://didacticode.com/curso/curso-javascript-2/">Link al curso de referencia: Curso de Javascript II de
+    Didacticode</a>
+    <ul>
+        <li><b>Unidad 6: </b>Introducción a los objetos
+            <ol type="1">
+                <li>Introducción a los objetos en Javascript</li>
+                <li>Objetos: Constructores integrados</li>
+            </ol>
+        </li>
+        <li><b>Unidad 7: </b>Objetos nativos
+            <ol type="1">
+                <li>Objetos nativos: String I</li>
+                <li>Objetos nativos: String II</li>
+                <li>Objetos nativos: String III</li>
+                <li>Objetos nativos: Number I</li>
+                <li>Objetos nativos: Number II</li>
+                <li>Objetos nativos: Math I</li>
+                <li>Objetos nativos: Math II</li>
+                <li>Objetos nativos: Date I</li>
+                <li>Objetos nativos: Date II</li>
+                <li>Objetos nativos: Boolean</li>
+            </ol>
+        </li>
+        <li><b>Unidad 8: </b>Objetos del navegador
+            <ol type="1">
+                <li>Objetos del navegador (BOM): Window I</li>
+                <li>Objetos del navegador (BOM): Window II</li>
+                <li>Objetos del navegador (BOM): Window III Cuadros de diálogo</li>
+                <li>Objetos del navegador (BOM): Window IV Instrucciones de tiempo</li>
+                <li>Objetos del navegador (BOM): Navigator</li>
+                <li>Objetos del navegador (BOM): Screen</li>
+                <li>Objetos del navegador (BOM): History</li>
+                <li>Objetos del navegador (BOM): Location</li>
             </ol>        
         </li>
     </ul>
