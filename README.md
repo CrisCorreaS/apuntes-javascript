@@ -7,11 +7,11 @@
 Recopilación de scripts de JS que he usado para aprender este lenguaje
 
 <h2>Unidades</h2>
-    <a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript I de
+   :point_right: <a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript I de
         Didacticode</a>
     <ul>
-        <li><b>Unidad 1:</b> Integración de Código</li>
-        <li><b>Unidad 2:</b>
+        <li><b>Unidad 1: Integración de Código</b></li>
+        <li><b>Unidad 2: Introducción y sintaxis básica</b>
             <ol type="1">
                 <li>Instrucciones de Salida</li>
                 <li>Sintaxis de JavaScript</li>
@@ -19,7 +19,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Variables en JavaScript</li>
             </ol>
         </li>
-        <li><b>Unidad 3:</b> Operadores
+        <li><b>Unidad 3: Operadores</b>
             <ol type="1">
                 <li>Operadores aritméticos</li>
                 <li>Operadores de asignación</li>
@@ -31,7 +31,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Tipos de datos</li>
             </ol>
         </li>
-        <li><b>Unidad 4: </b>Funciones
+        <li><b>Unidad 4: Funciones</b>
             <ol type="1">
                 <li>Funciones introducción</li>
                 <li>Funciones anónimas</li>
@@ -39,7 +39,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Ámbito de variables</li>
             </ol>
         </li>
-        <li><b>Unidad 5: </b>Estructuras de Control
+        <li><b>Unidad 5: Estructuras de Control</b>
             <ol type="1">
                 <li>Condicionales: sentencia if-else</li>
                 <li>Condicionales: sentencia switch</li>
@@ -51,16 +51,16 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
-    <a href="https://didacticode.com/curso/curso-javascript-2/">Link al curso de referencia: Curso de Javascript II de
+    :point_right: <a href="https://didacticode.com/curso/curso-javascript-2/">Link al curso de referencia: Curso de Javascript II de
     Didacticode</a>
     <ul>
-        <li><b>Unidad 6: </b>Introducción a los objetos
+        <li><b>Unidad 6: Introducción a los objetos</b>
             <ol type="1">
                 <li>Introducción a los objetos en Javascript</li>
                 <li>Objetos: Constructores integrados</li>
             </ol>
         </li>
-        <li><b>Unidad 7: </b>Objetos nativos
+        <li><b>Unidad 7: Objetos nativos</b>
             <ol type="1">
                 <li>Objetos nativos: String I</li>
                 <li>Objetos nativos: String II</li>
@@ -74,7 +74,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Objetos nativos: Boolean</li>
             </ol>
         </li>
-        <li><b>Unidad 8: </b>Objetos del navegador
+        <li><b>Unidad 8: Objetos del navegador</b>
             <ol type="1">
                 <li>Objetos del navegador (BOM): Window I</li>
                 <li>Objetos del navegador (BOM): Window II</li>
