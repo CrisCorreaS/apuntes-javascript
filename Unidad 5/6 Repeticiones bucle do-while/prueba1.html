@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        El bucle while ejecuta una o varias instrucciones mientras una condición se evalúe como verdadera. El bucle do-while funciona exactamente igual, con la diferencia que, en este caso, la condición se evalúa DESPUÉS de ejecutar la sentencia.
+        El bucle do-while hace que al menos una vez se ejecute el bucle.
+        La sintaxis de este tipo de estructura es la siguiente:
+
+            do {
+                sentencia;
+                sentencia;
+                ...
+            } while (condicion);
+    -->
+    <script>
+      /* SINTAXIS BUCLE DO-WHILE:
+
+            do {
+                Código a ejecutar
+            } while (<condición>);
+        */
+
+      var i = 0;
+      do {
+        alert("La variable i = " + i); //Muestra el valor de i de 0 a 10
+        i++; //Sin esta instrucción hace que no se cree un bucle infinito
+      } while (i <= 10);
+    </script>
+  </body>
+</html>
