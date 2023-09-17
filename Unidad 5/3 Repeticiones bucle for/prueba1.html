@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        El bucle for consiste en tres expresiones opcionales entre paréntesis y separadas por punto y coma que representan el número de repeticiones de la instrucción o bloque de instrucciones que le sigue. 
+        -La primera: indica desde qué número se empieza
+        -La segunda: la condición que debe cumplir dicho número
+        -La tercera: el incremento o decremento en cada iteración del bucle.
+        
+        La sintaxis de esta estructura es la siguiente:
+        for ([expresion-inicial]; [condicion]; [expresion-final]) {sentencia-o-bloque-de-sentencias}
+        
+        Javascript, además, tiene diferentes opciones que permiten eliminar alguna de las expresiones entre paréntesis. Claro está, si lo hacemos así, debemos compensar este borrado de alguna forma. Así, podemos:
+        -Omitir la expresión inicial: declarando antes la variable.
+        -Omitir la condición: añadiendo dentro del bloque de sentencias la condición y una ruptura con break.
+        -Omitir la expresión final: incrementando o decrementando la variable dentro del bloque de sentencias.
+
+        *Un bucle for puede incluir más de una variable. Es decir, podemos incrementar o decrementar más de una variable simultáneamente en cada iteración
+     -->
+    <script>
+      /* SINTAXIS:
+            for (<sentencia 1>; <sentencia 2>; <sentencia 3>){
+                Código que se repite
+            }
+
+            -SENTENCIA 1: se ejecuta antes de que empiece el bloque de código a repetir
+            -SENTENCIA 2: define la condición por la que el bloque de código se va a ejecutar
+            -SENTENCIA 3: se ejecuta después de que acabe el bloque de código a repetir
+        */
+
+      var i;
+      for (i = 0; i <= 5; i++) {
+        alert("La variable i es igual a " + i); //Muestra todos los numeros del 0 al 5
+      }
+
+      //VARIACIONES
+      //1.-Si omitimos la primera sentencia -> Debemos habler inicializado la variable con anterioridad
+      var j = 5;
+      for (; j >= 0; j--) { //Al inicializar la j, podemos omitirla con un espacio en blanco y poniendo el ; para separar la primera sentencia en blanco de las otras dos
+        alert("La variable j es igual a " + j); //Muestra todos los números del 5 al 0
+      }
+
+      //2.-Si omitimos la segunda sentencia -> Tenemos que incluír una instrucción break dentro del código a repetir para que no sea un bucle infinito
+      var k;
+      for (k = 0; ; k++) {
+        alert("La variable k es igual a " + k); //Muestra todos los números del 0 al 5
+        if (k == 5) {
+          break;
+        }
+      }
+
+      //3.-Si omitimos la tercera sentencia -> Debemos incrementar o decrementar el valor de la variable dentro del bucle
+      var z;
+      for (z = 5; z >= 0; ) {
+        alert("La variable z es igual a " + z); //Muestra todos los números del 5 al 0
+        z--;
+      }
+
+      //4.- Podemos trabajar con dos o más valores dentro del bucle for
+      var m, n;
+      for (m = 0, n = 10; m <= 10, n >= 0; m++, n--) { //Cuidado con las "," y los ";"
+        alert("La variables son: m = " + m + " y n = " + n); //Muesta m del 0 al 10 y n del 10 al 0
+      }
+    </script>
+  </body>
+</html>
