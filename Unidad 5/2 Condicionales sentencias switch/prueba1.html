@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        La sentencia switch equivaldría a hacer varios if – else if anidados.
+        La sintaxis de este tipo de estructuras es la siguiente:
+        
+        switch (expresión) {
+            case valor1:
+                //Instrucciones ejecutadas cuando el resultado de expresión coincide con el valor1
+                [break;]
+            case valor2:
+                //Instrucciones ejecutadas cuando el resultado de expresión coincide con el valor2
+                [break;]
+            ...
+            case valorN:
+                //Instrucciones ejecutadas cuando el resultado de expresión coincide con valorN
+                [break;]
+            default:
+                //Instrucciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+                [break;]
+        }
+
+        Hay dos instrucciones nuevas: break y default. La primera permite salir de la estructura sin seguir comprobando casos y la segunda para indicar cualquier valor que no está recogido anteriormente.
+     -->
+    <script>
+      /*SWITCH:
+            -Se utiliza para hacer diferentes acciones basadas en diferentes condiciones
+            -La condición se evalúa una única vez
+            -Break -> sale del bloque switch
+            -Si hay alguna coincidencia con algún valor se ejecuta el bloque de código correspondiente
+        */
+
+      var nota1 = 3;
+      var mensaje = "";
+
+      switch (nota1) {
+        case 0:
+          mensaje = "Has suspendido con un 0";
+          break;
+        case 1:
+          mensaje = "Has suspendido con un 1";
+          break;
+        case 2:
+          mensaje = "Has suspendido con un 2";
+          break;
+        case 3:
+          mensaje = "Has suspendido con un 3";
+          break;
+        case 4:
+          mensaje = "Has suspendido con un 4";
+          break;
+        case 5:
+          mensaje = "Has sacado un suficiente con un 5";
+          break;
+        case 6:
+          mensaje = "Has sacado un bien con un 6";
+          break;
+        case 7:
+          mensaje = "Has sacado un notable con un 7";
+          break;
+        case 8:
+          mensaje = "Has sacado un notable con un 8";
+          break;
+        case 9:
+          mensaje = "Has sacado un sobresaliente con un 9";
+          break;
+        case 10:
+          mensaje = "Has sacado un sobresaliente con un 10";
+          break;
+        default:
+          mensaje = "Tu nota es válida, no está comprendida entre 0 y 10";
+      }
+      alert(mensaje);
+
+      //Una forma más simplificada:
+      var nota2 = 6;
+      switch (nota2) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+          mensaje = "Has suspendido";
+          break;
+        case 5:
+          mensaje = "Has sacado un suficiente";
+          break;
+        case 6:
+          mensaje = "Has sacado un bien";
+          break;
+        case 7:
+        case 8:
+          mensaje = "Has sacado un notable";
+          break;
+        case 9:
+        case 10:
+          mensaje = "Has sacado un sobresaliente";
+          break;
+        default:
+          mensaje = "Tu nota es válida, no está comprendida entre 0 y 10";
+      }
+      alert(mensaje);
+    </script>
+  </body>
+</html>
