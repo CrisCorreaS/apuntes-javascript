@@ -1,4 +1,5 @@
 let edad = prompt("Por favor, introduce tu edad");
+edad = parseInt(edad); //El valor que nos pasan es un String, así que lo convertimos en un número
 
 switch (edad) {
   case 0:
