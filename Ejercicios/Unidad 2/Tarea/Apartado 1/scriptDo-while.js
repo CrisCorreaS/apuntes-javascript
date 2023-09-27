@@ -4,31 +4,37 @@ const dividir = 9;
 
 let final1 = false;
 let final2 = false;
+let final3 = false;
 let cont = 0;
 let contador = 0;
+let i = 9;
 
 document.write("<h2>Tabla de multiplicar del 7:</h2>");
 do {
-  let resultado = contador * multiplicar;
-  document.write("<p>7 x " + contador + " = " + resultado + "</p>");
-  if (contador == 10) {
+  let resultado = cont * multiplicar;
+  document.write("<p>7 x " + cont + " = " + resultado + "</p>");
+  if (cont == 10) {
     final1 = true;
   }
-  contador++;
+  cont++;
 } while (!final1);
 
 document.write("<h2>Tabla de sumar del 8:</h2>");
-while (!final2) {
-  let resultado = cont + sumar;
-  document.write("<p>8 + " + cont + " = " + resultado + "</p>");
-  if (cont == 10) {
+do {
+  let resultado = contador + sumar;
+  document.write("<p>8 + " + contador + " = " + resultado + "</p>");
+  if (contador == 10) {
     final2 = true;
   }
-  cont++;
-}
+  contador++;
+} while (!final2);
 
 document.write("<h2>Tabla de dividir del 9:</h2>");
-for (let i = 9; i <= 90; i += 9) {
+do {
   let resultado = i / dividir;
   document.write("<p>" + i + " : 9 = " + resultado + "</p>");
-}
+  if (i == 90) {
+    final3 = true;
+  }
+  i += 9;
+} while (!final3);
