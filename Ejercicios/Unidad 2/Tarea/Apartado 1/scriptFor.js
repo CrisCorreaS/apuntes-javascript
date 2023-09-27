@@ -2,9 +2,6 @@ const multiplicar = 7;
 const sumar = 8;
 const dividir = 9;
 
-let final1 = false;
-let final2 = false;
-
 document.write("<h2>Tabla de multiplicar del 7:</h2>");
 for (let cont = 0; cont <= 10; cont++) {
   let resultado = cont * multiplicar;
