@@ -9,12 +9,8 @@ function listarHoras() {
           } else {
             document.write("<li>" + hora + ":" + minutos + "</li>");
           }
-        } else if (minutos <=30){
-          if (minutos == 0 || minutos == 5) {
-            document.write("<li>" + hora + ":" + 0 + minutos + "</li>");
-          } else {
-            document.write("<li>" + hora + ":" + minutos + "</li>");
-          }
+        } else if (minutos <= 0) {
+          document.write("<li>" + hora + ":" + 0 + minutos + "</li>");
         }
       }
     }
