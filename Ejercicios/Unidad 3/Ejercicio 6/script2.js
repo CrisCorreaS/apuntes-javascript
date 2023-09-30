@@ -36,12 +36,13 @@ document.write(
 
 //Apartado 4: Una propuesta de nombre de usuario, compuesto por la inicial del nombre, el primer apellido y la inicial del segundo apellido.  Ej. Para Marcos Prado Fernández sería mpradof
 document.write(
-    "<p>Nombre de Usuario: " + nombre.toLowerCase().slice(0,1) + apellido1.toLowerCase() + apellido2.toLowerCase().slice(0,1) + "</p>"
+    "<p>Nombre de Usuario 1: " + nombre.toLowerCase().slice(0,1) + apellido1.toLowerCase() + apellido2.toLowerCase().slice(0,1) + "</p>"
 );
 
 //Apartado 5: Una propuesta de nombre de usuario compuesto por las tres primeras letras del nombre y de los dos apellidos: ej. MarPraFer
 document.write(
-    "<p>Nombre de Usuario: " + nombre.toUpperCase().slice(0,1) + nombre.toLowerCase().slice(1,3) 
-    + apellido1.toUpperCase().slice(0,1) + apellido1.toLowerCase().slice(1,3) 
-    + apellido2.toUpperCase().slice(0,1) + apellido2.toLowerCase().slice(1,3) + "</p>"
+  "<p>Nombre de Usuario 2: "
+    + (nombre.toUpperCase().slice(0, 1) + nombre.toLowerCase().slice(1, 3)) 
+    + (apellido1.toUpperCase().slice(0,1) + apellido1.toLowerCase().slice(1,3)) 
+    + (apellido2.toUpperCase().slice(0,1) + apellido2.toLowerCase().slice(1,3)) + "</p>"
 );
