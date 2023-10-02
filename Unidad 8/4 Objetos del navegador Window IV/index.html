@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="segundos"></p>
+    <script src="script.js"></script>
+    <button onclick="setTimeout(saludar, 3000)">Saludar</button><!-- Tarda tres segundos en mostrar el mensaje -->
+    <button onclick="saludo = setTimeout(saludar, 3000)">Saludo (con variable)</button>
+    <button onclick="clearTimeout(saludo)">Deja de hacer un Saludo</button>
+    <button onclick="clearTimeout(intervalo)">Parar el reloj</button><!-- En el clearTimeout() se pone la referencia de la variable con el setInterval() -->
+  </body>
+</html>
