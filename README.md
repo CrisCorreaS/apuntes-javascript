@@ -87,3 +87,21 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>        
         </li>
     </ul>
+:point_right: <a href="https:https://didacticode.com/curso/curso-javascript-3/">Link al curso de referencia: Curso de Javascript III de
+    Didacticode</a>
+    <ul>
+        <li><b>Unidad 9: Objetos definidos por el usuario</b>
+            <ol type="1">
+                <li>Definición de objetos</li>
+                <li>Objetos: Propiedades</li>
+                <li>Objetos: Métodos</li>
+                <li>Objetos: Prototipos</li>
+            </ol>
+        </li>
+        <li><b>Unidad 10: Arrays</b>
+            <ol type="1">
+                <li>Arrays I</li>
+                <li>Arrays II</li>
+            </ol>
+        </li>
+    </ul>
