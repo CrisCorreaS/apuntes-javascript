@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 9</title>
+  </head>
+  <body>
+    <p>
+        Estamos implementando una funcionalidad en nuestra aplicación de creación de NIFs y NIE y necesitamos una calculadora de la letra de control..
+        -Los NIFs están formados por 8 dígitos y una letra de control.
+        -Los NIEs están formados por una letra (X, Y o Z), 7 dígitos y una letra de control.
+
+        Necesitamos un formulario con dos campos: en el primero se introducen los dígitos del NIF o NIE y en el segundo debería aparecer la letra correspondiente.
+    </p>
+    <p>Escribe tu DNI:</p>
+    <input type="text" id="dniRespuesta"><br/><br/>
+    <button onclick="devolverDatosDni()">ENVIAR DNI</button>
+    <p>Escribe tu NIE</p>
+    <input type="text" id="nieRespuesta"><br/><br/>
+    <button onclick="devolverDatosNie()">ENVIAR NIE</button>
+    <script src="script.js"></script>
+  </body>
+</html>

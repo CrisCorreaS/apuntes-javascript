@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 14</title>
+  </head>
+  <body>
+    <p>Realiza una web en la que el usuario pueda introducir el nombre de un ordenador con el siguiente formato:
+        DOCXXXT
+        025PXXXT
+        XXX sera un numero entre el 000 y el 252
+        T puede ser A, B  o C
+        Se le mostrará al usuario la siguiente dirección IP dependiendo de el nombre y de la letra T
+        T= A  → 10.42.68.XXX
+        T= B   → 10.42.69.XXX
+        T= C   → 10.52.178.XXX
+    </p>
+    <p>Escribe el nombre de tu ordenador:</p>
+    <input type="text" id="nombreOrdenador"><br/><br/>
+    <button onclick="devolverNombreOrdenador()">ENVIAR NOMBRE</button>
+    <script src="script.js"></script>
+  </body>
+</html>
