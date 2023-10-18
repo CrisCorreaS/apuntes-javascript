@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+        Vamos a gestionar una lista de países haciendo uso de Arrays. 
+            - Cuando el usuario cargue la página, se cargarán las opciones:
+            - Mostrar el número de países.
+            - Mostrar listado de países (y le preguntará si quiere mostrarlos en el orden que se encuentran en el array, del revés u ordenados alfabéticamente).
+            - Añadir un país (y le preguntará si quiere añadir al principio o al final).
+            - Borrar un país (y le preguntará si quiere borrar al principio o al final).
+            - Consultar un país (y le preguntará si quiere consultar por posición o por nombre).
+
+        Para ello necesitarás crear un archivo arrays.js que incluya las siguientes funciones, recibirán un array por parametro:
+            - Mostrar el número de elementos del array.
+            - Mostrar todos los elementos del array.
+            - Muestra los elementos del array en sentido inverso.
+            - Muestra los elementos del array ordenados alfabéticamente.
+            - Añadir un elemento solicitado al usuario al principio del array.
+            - Añadir un elemento solicitado al usuario al final del array.
+            - Borrar un elemento al principio del array  (y decir cuál se ha borrado).
+            - Borrar un elemento al final del array (y decir cuál se ha borrado).
+            - Muestra el elemento que se encuentra en una posición que el usuario indica.
+            - Muestra la posición en la que se encuentra un elemento que le indica el usuario.
+    </p>
+    <h3>Número de países</h3>
+    <p id="numeroPaises"></p>
+    <br/>
+
+    <h3>Listado de países</h3>
+    <p id="elementosArray"></p>
+    <p><b>Países ordenados de forma inversa</b></p>
+    <p id="elementosArrayInversos"></p>
+    <p><b>Países ordenados alfabéticamente</b></p>
+    <p id="elementosArrayOrdenados"></p>
+    <br/>
+
+    <h3>Añadir un país</h3>
+    <p>Añadir un país al principio</p>
+    <form id="formAñadirPaisPrincipio">
+        <input type="text" id="myInputAñadirPaisPrincipio" placeholder="Escribe un país que quieras poner al principio">
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="elementoAñadirPrincipio"></p>
+    <p>Añadir un país al final</p>
+    <form id="formAñadirPaisFinal">
+        <input type="text" id="myInputAñadirPaisFinal" placeholder="Escribe un país que quieras poner al final">
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="elementoAñadirFinal"></p>
+    <br/>
+
+    <h3>Borrar un país</h3>
+    <p><b>Eliminar el país del principio</b></p>
+    <p id="elementoBorrarPrincipio"></p>
+    <p><b>Eliminar el país del final</b></p>
+    <p id="elementoBorrarFinal"></p>
+    <br/>
+
+    <h3>Buscar un país</h3>
+    <p><b>Buscar elemento según posición</b></p>
+    <form id="formBuscarElementoSegunPosicion">
+      <input type="text" id="myInputBuscarElementoSegunPosicion" placeholder="Escribe el elemento que quieras buscar">
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="elementoBuscarSegunPosicion"></p>
+    <p><b>Buscar posición según elemento</b></p>
+    <form id="formBuscarPosicionSegunElemento">
+      <input type="text" id="myInputBuscarPosicionSegunElemento" placeholder="Escribe la posición que quieras buscar">
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="posicionBuscarSegunElemento"></p>
+    <script src="arrays1.js"></script>
+  </body>
+</html>
