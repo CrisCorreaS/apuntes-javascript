@@ -47,7 +47,7 @@ document.getElementById("formBuscarElementoSegunPosicion").addEventListener("sub
   const inputValue = document.getElementById("myInputBuscarElementoSegunPosicion").value; // Obtiene el valor del campo de entrada
   let posicion = parseInt(inputValue);  
   if(posicion<=paises.length){
-    document.getElementById("elementoBuscarSegunPosicion").innerHTML = ("El elemento en la posición " + inputValue + " está en la posición: " + paises[posicion]);
+    document.getElementById("elementoBuscarSegunPosicion").innerHTML = ("El elemento en la posición " + inputValue + " es: " + paises[posicion]);
   } else{
     document.getElementById("elementoBuscarSegunPosicion").innerHTML = ("No existe un elemento en la posición " + inputValue);
   }
