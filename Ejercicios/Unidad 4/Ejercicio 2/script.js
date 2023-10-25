@@ -53,5 +53,5 @@ function ejecuta() {
     }
   }
 
-  salida.innerHTML = "Numero de dnis: " + dnis.toString();
+  salida.innerHTML = "Los dnis con la letra " + letra + " : " + dnis.toString();
 }
