@@ -30,7 +30,7 @@ document.getElementById('mostrarTabla').addEventListener('click', function(){
             discosOrdenados = discos;
             break;
         case "2":
-            discosOrdenados = discos.slice().reverse();// Pongo slice() para que cree una copia del array de discos y así no se cambie el array discos al ordenarlo inversamente.
+            discosOrdenados = discos.slice().reverse();// Pongo slice() para que cree una copia del array de discos y así no se cambie el array discos al ordenarlo inversamente. También se puede hacer con toReversed()
             break;
         case "3":
             discosOrdenados = discos.sort((a, b) => a.nombre.localeCompare(b.nombre)); //Poniendo el sort con parámetros que comparan los nombres, podemos hacer que se ordenen alfabéticamente según el nombre de cada disco del array discos
