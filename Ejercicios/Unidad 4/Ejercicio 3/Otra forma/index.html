@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Ejercicio3.js" type="module"></script>
+  </head>
+  <body>
+    <h3>Clientes</h3>
+
+    <ul>
+      <li><a id="todos"> Todos los clientes</a></li>
+      <li><a id="mostrarLoc">Clientes por provincia</a></li>
+      <div id="loc" style="display: none">
+        <label> Localidad: </label><input type="text" id="localidad" />
+        <button id="provincia">Buscar</button>
+      </div>
+
+      <li><a id="mostrarCuo">Clientes superiores a una cuota</a></li>
+      <div id="cuo" style="display: none">
+        <label> Cuota: </label> <input type="text" id="" />
+        <button id="cuota">Buscar</button>
+      </div>
+    </ul>
+
+    <p id="salida"></p>
+  </body>
+</html>
