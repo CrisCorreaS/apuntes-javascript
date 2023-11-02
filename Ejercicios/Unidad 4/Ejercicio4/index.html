@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+    <script src="script.js" type="module"></script>
+  </head>
+  <body>
+    <p>
+      Necesitamos almacenar en un programa todos los discos de música que tenemos en casa. 
+        Crea una clase “Disco” que almacene la siguiente información:
+            Nombre del disco.
+            Grupo de música o cantante.
+            Año de publicación.
+            Tipo de música (podrá ser “rock”, “pop”, “punk” o “indie”);
+            Localización: almacenará un número de estantería.
+            Prestado: almacenará un valor booleano. Por defecto será false.
+            Carátula: nombre del archivo de imagen de la carátula (p.ej: imagen.png)
+        Además tendrá los siguientes métodos:
+            Un constructor (la localización será 0 por defecto y prestado estará a false, carátula por defecto imagen.png).
+            Un método que permitirá cambiar el número de estantería en la localización.
+            Un método que permitirá cambiar la propiedad Prestado.
+            Un método que muestre toda la información de un disco.
+        Guarda todo el código en un archivo llamado disco.js y reutiliza en tu página el archivo de arrays que hicimos en la práctica 1.
+        Crea un array vacío para almacenar los discos.
+        Cuando el usuario cargue la página, se mostrarán las opciones:
+            Mostrar número de discos.
+            Mostrar tabla de discos con todos los datos de cada disco(y le preguntará si quiere mostrarlos en el orden que se encuentran en el array, del revés u ordenados alfabéticamente).
+            Mostrar un intervalo de discos por año de publicación(y le pedirá que introduzca el intervalo en formato inicio-fin)
+            Añadir un disco (y le preguntará si quiere añadir al principio o al final).
+            Borrar un disco (y le preguntará si quiere borrar al principio o al final).
+            Consultar un disco (y le preguntará si quiere consultar por posición o por nombre).
+    </p>
+
+    <h1>Administrador de Discos</h1>
+
+    <form id="formDisco">
+      <input type="text" id="name" placeholder="Nombre del disco" /><br/>
+      <input type="text" id="group" placeholder="Grupo o cantante" /><br/>
+      <input type="number" id="ano" placeholder="Año de publicación" /><br/>
+      <select id="type">
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="punk">Punk</option>
+        <option value="indie">Indie</option>
+      </select><br/>
+      <input type="number" id="localization" placeholder="Localización" /><br/>
+      <input type="text" id="cover" placeholder="Carátula" /><br/>
+      <button type="submit">Añadir Disco</button>
+    </form><br/><br/>
+
+    <div id="discos"></div>
+
+    <button id="mostrarNumero">Mostrar número de discos</button><br/>
+    <button id="mostrarTabla">Mostrar tabla de discos</button><br/>
+    <button id="mostrarIntervalo">
+      Mostrar intervalo de discos por año de publicación
+    </button><br/>
+    <button id="borrarDisco">Borrar un disco</button><br/>
+    <button id="consultarDisco">Consultar un disco</button><br/>
+  </body>
+</html>
