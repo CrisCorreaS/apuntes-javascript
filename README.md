@@ -149,6 +149,10 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
           <li>Objeto Map</li>
           <li>Objeto Set</li>
           <li>Bucle for…of</li>
+          <li>Nuevos métodos del objeto Number</li>
+          <li>Nuevos métodos del objeto String</li>
+          <li>Nuevos métodos del objeto Math</li>
+          <li>Nuevos métodos del objeto Array</li>
         </ol>
       </li>
     </ul>
