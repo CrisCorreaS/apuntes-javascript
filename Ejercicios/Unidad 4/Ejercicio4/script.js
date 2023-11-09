@@ -31,9 +31,9 @@ document.getElementById('mostrarTabla').addEventListener('click', function(){
             discosOrdenados = discos;
             break;
         case "2":
-            let discosClon = discos.slice();
+            {let discosClon = discos.slice();
             discosOrdenados  = arraysEjercicio1.mostrarInversos(discosClon);
-            break;
+            break;}
         case "3":
             discosOrdenados = discos.sort((a, b) => a.nombre.localeCompare(b.nombre)); //Poniendo el sort con parámetros que comparan los nombres, podemos hacer que se ordenen alfabéticamente según el nombre de cada disco del array discos
             break;
