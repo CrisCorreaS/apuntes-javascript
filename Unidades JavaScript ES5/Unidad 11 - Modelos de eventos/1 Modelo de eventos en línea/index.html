@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+  </head>
+  <!-- Uso del evento onload: (cuidado con las comillas) -->
+  <body onload="alert('La página se ha cargado correctamente');">
+    <!-- MANEJADORES COMO ATRIBUTO DE UNA ETIQUETA HTML -->
+    <h3 id="cab1" onclick="this.innerHTML='Javascript en HTML';">Al hacer click va a cambiar el texto</h3> 
+    <!-- 
+        La etiqueta h3 tiene un identificador "cab1" y a su vez tiene un evento:
+        - Tiene un onclick (evento de hacer click sobre la etiqueta h3) y queremos que 
+        modifique la propia etiqueta. Para eso ponemos "this", lo cual hace referencia a 
+        la propia etiqueta en donde está anidado, un punto (.) y la acción que queremos
+        que realice y (;). En este caso ponemos un innerHTML='Javascript en HTML' para que
+        el texto de la etiqueta ahora sea ese mismo y se sobreescriba al hacer click 
+        (cuidado con las comillas)
+
+        En vez de usar "this" para referirnos al h3 con id="cab1", podríamos hacer: document.getElementById("cab1")
+        Está bien tanto hacer:
+        this.innerHTML='Javascript en HTML' -> Esta es una forma más concisa
+        como:
+        document.getElementById("cab1").innerHTML='Javascript en HTML'
+    -->
+
+    <h3 id="cab2" onmouseover="this.style.background='red';">Al pasar el ratón por encima va a cambiar de color a rojo</h3>
+    <!-- 
+        La etiqueta h3 tiene un identificador "cab2" y a su vez tiene un evento:
+        - Tiene un onmouseover (evento de pasar el ratón sobre el elementos) y queremos que 
+        modifique la propia etiqueta. Para eso ponemos "this", lo cual hace referencia a 
+        la propia etiqueta en donde está anidado, un punto (.) y la acción que queremos
+        que realice. En este caso queremos cambiar el estilo, por lo que tenemos que poner
+        "style" otro punto (.) y la acción que queremos que realice background='red'
+        Como hacemos referencia a CSS y no a HTML, necesitamos indicarlo entre puntos
+    -->
+
+    <button onmouseover="this.style.background='red';" onmouseout="this.style.background='green';">Botón cambia de color</button>
+    <!-- 
+        La etiqueta button tiene dos eventos:
+        - Tiene el onmouseover anterior
+        - Tiene un onmouseout (evento de no tener el ratón encima) y queremos que 
+        modifique la propia etiqueta haciendo que cuando no tengamos el ratón encima,
+        el fondo cambie a azul. Lo cual sería: this.style.background='green'
+    -->
+
+    <h3 id="cab3" onclick="this.innerHTML='Javascript en HTML';" onmouseover="this.style.background='red';">Auna las dos primeras acciones</h3>
+    <!-- 
+        La etiqueta h3 tiene un identificador "cab3" y a su vez tiene una serie de eventos:
+        - Tiene el onclick de cab1
+        - Tiene el onmouseover de cab2
+    -->
+
+
+    <!-- MANEJADORES COMO FUNCIONES EXTERNAS: JS -->
+    <h3 onclick="cambiar(this)">Al hacer click cambia el texto con JS</h3>
+
+
+    <!-- ACCIONES QUE DESENCADENAN VARIOS EVENTOS -->
+    <a href="http://www.google.com" onclick="alertar();" return false>Esto es un enlace a Google que nos avisa y nos lleva a Google</a>
+    <!-- 
+        Cuando haga click en el enlace, nos va a ejecutar una función que es alertar()
+        y como no queremos que ejecute la acción por defecto que haría la etiqueta <a> 
+        (redirigirnos a la página web de Google), ponemos el "return false". Con esto
+        nos va a alertar de que vamos a Google (por el alert() de la función alertar()),
+        pero no nos va a redirigir a Google directamente
+     -->
+    <br/>
+    <a href="http://www.google.com" onclick="return preguntar()">Esto es otro enlace a Google que te permite ir a Google si quieres</a>
+    <!-- 
+        Ahora cuando haga click en el enlace, nos va a preguntar si queremos ir o no a
+        Google, ya que ahora la función preguntar() nos devuelve un confirm().
+        Ponemos "return + función" porque queremos controlar el comportamiento predeterminado
+        de la etiqueta <a> (redirigirnos a la página web de Google). Si añadimos "return" 
+        al "onclick" con la función, se puede anular este comportamiento predeterminado y
+        realizar una acción personalizada antes de que el navegador nos redirija a Google.
+        En este caso nos pregunta si deseamos ir y si decimos que sí vamos y si no, no
+     -->
+  </body>
+</html>
