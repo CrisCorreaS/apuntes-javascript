@@ -7,7 +7,8 @@
 Recopilación de scripts de JS que he usado para aprender este lenguaje
 
 <h2>Unidades JavaScript ES5</h2>
-   :point_right: <a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript I de
+    :point_right: <a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript
+        I de
         Didacticode</a>
     <ul>
         <li><b>Unidad 1: Integración de Código</b></li>
@@ -51,8 +52,9 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
-    :point_right: <a href="https://didacticode.com/curso/curso-javascript-2/">Link al curso de referencia: Curso de Javascript II de
-    Didacticode</a>
+    :point_right: <a href="https://didacticode.com/curso/curso-javascript-2/">Link al curso de referencia: Curso de
+        Javascript II de
+        Didacticode</a>
     <ul>
         <li><b>Unidad 6: Introducción a los objetos</b>
             <ol type="1">
@@ -84,11 +86,12 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
                 <li>Objetos del navegador (BOM): Screen</li>
                 <li>Objetos del navegador (BOM): History</li>
                 <li>Objetos del navegador (BOM): Location</li>
-            </ol>        
+            </ol>
         </li>
     </ul>
-:point_right: <a href="https:https://didacticode.com/curso/curso-javascript-3/">Link al curso de referencia: Curso de Javascript III de
-    Didacticode</a>
+    :point_right: <a href="https:https://didacticode.com/curso/curso-javascript-3/">Link al curso de referencia: Curso de
+        Javascript III de
+        Didacticode</a>
     <ul>
         <li><b>Unidad 9: Objetos definidos por el usuario</b>
             <ol type="1">
@@ -105,54 +108,88 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
+    :point_right: <a href="https:https://didacticode.com/curso/curso-javascript-4/">Link al curso de referencia: Curso de
+        Javascript IV de
+        Didacticode</a>
+    <ul>
+        <li><b>Unidad 11: Modelos de eventos</b>
+            <ol type="1">
+                <li>Modelo de eventos en línea</li>
+                <li>Modelo de eventos tradicional</li>
+                <li>Modelo de eventos del W3C</li>
+                <li>Modelo de eventos de Microsoft</li>
+                <li>Obtención de información de un evento</li>
+            </ol>
+        </li>
+        <li><b>Unidad 12: Validación de formularios</b>
+            <ol type="1">
+                <li>Validación básica de formularios con Javascript</li>
+                <li>Validación básica de formularios con HTML5</li>
+                <li>Validación avanzada de formularios con HTML5 y Javascript</li>
+            </ol>
+        </li>
+        <li>
+            <b>Unidad 13: Cookies</b>
+            <ol type="1">
+                <li>Cookies. Introducción</li>
+                <li>Cookies. Ejemplo sencillo</li>
+                <li>Cookies. Ejemplo avanzado</li>
+            </ol>
+        </li>
+        <li><b>Unidad 14: Web Storage</b>
+            <ol type="1">
+                <li>Web Storage. Introducción</li>
+                <li>Web Storage. Ejemplo completo</li>
+            </ol>
+        </li>
+    </ul>
     <h2>Unidades JavaScript ES6</h2>
     :point_right:
-    <a href="https://didacticode.com/curso/curso-javascript-es6/"
-      >Link al curso de referencia: Curso de Javascript Moderno</a
-    >
+    <a href="https://didacticode.com/curso/curso-javascript-es6/">Link al curso de referencia: Curso de Javascript
+        Moderno</a>
     <ul>
-      <li>
-        <b>Unidad 1: Introducción</b>
-        <ol type="1">
-          <li>Introducción a Javascript y ES6</li>
-          <li>Crear variables con let</li>
-          <li>Modo estricto con use strict</li>
-          <li>Ámbito de variables (bloque y función)</li>
-          <li>Crear constantes con const</li>
-          <li>Crear y modificar arrays constantes</li>
-          <li>Arrow functions o funciones flecha</li>
-          <li>Parámetros por defecto</li>
-          <li>Parámetros REST</li>
-          <li>Spread operator u operador de propagación</li>
-        </ol>
-      </li>
-      <li>
-        <b>Unidad 2: Javascript Orientado a Objetos</b>
-        <ol type="1">
-          <li>Clases</li>
-          <li>Clases. Herencia</li>
-          <li>Clases. Métodos get y set</li>
-          <li>Clases. Métodos estáticos (static)</li>
-        </ol>
-      </li>
-      <li>
-        <b>Unidad 3: Otro</b>
-        <ol type="1">
-          <li>Template strings. Plantillas de cadena de texto</li>
-          <li>Módulos. Import y export</li>
-          <li>Destructuring o desestructuración</li>
-        </ol>
-      </li>
-      <li>
-        <b>Unidad 4: Nuevos objetos y métodos</b>
-        <ol type="1">
-          <li>Objeto Map</li>
-          <li>Objeto Set</li>
-          <li>Bucle for…of</li>
-          <li>Nuevos métodos del objeto Number</li>
-          <li>Nuevos métodos del objeto String</li>
-          <li>Nuevos métodos del objeto Math</li>
-          <li>Nuevos métodos del objeto Array</li>
-        </ol>
-      </li>
+        <li>
+            <b>Unidad 1: Introducción</b>
+            <ol type="1">
+                <li>Introducción a Javascript y ES6</li>
+                <li>Crear variables con let</li>
+                <li>Modo estricto con use strict</li>
+                <li>Ámbito de variables (bloque y función)</li>
+                <li>Crear constantes con const</li>
+                <li>Crear y modificar arrays constantes</li>
+                <li>Arrow functions o funciones flecha</li>
+                <li>Parámetros por defecto</li>
+                <li>Parámetros REST</li>
+                <li>Spread operator u operador de propagación</li>
+            </ol>
+        </li>
+        <li>
+            <b>Unidad 2: Javascript Orientado a Objetos</b>
+            <ol type="1">
+                <li>Clases</li>
+                <li>Clases. Herencia</li>
+                <li>Clases. Métodos get y set</li>
+                <li>Clases. Métodos estáticos (static)</li>
+            </ol>
+        </li>
+        <li>
+            <b>Unidad 3: Otro</b>
+            <ol type="1">
+                <li>Template strings. Plantillas de cadena de texto</li>
+                <li>Módulos. Import y export</li>
+                <li>Destructuring o desestructuración</li>
+            </ol>
+        </li>
+        <li>
+            <b>Unidad 4: Nuevos objetos y métodos</b>
+            <ol type="1">
+                <li>Objeto Map</li>
+                <li>Objeto Set</li>
+                <li>Bucle for…of</li>
+                <li>Nuevos métodos del objeto Number</li>
+                <li>Nuevos métodos del objeto String</li>
+                <li>Nuevos métodos del objeto Math</li>
+                <li>Nuevos métodos del objeto Array</li>
+            </ol>
+        </li>
     </ul>
