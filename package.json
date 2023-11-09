@@ -1,0 +1,14 @@
+{
+  "name": "practica-js",
+  "version": "1.0.0",
+  "description": "<h1>Práctica JavaScript</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Cristina Correa",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "eslint": "^8.53.0"
+  }
+}
