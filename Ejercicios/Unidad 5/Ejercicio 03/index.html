@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p>
+      Necesitamos un formulario con dos campos: en el primero se introduce los
+      dígitos del NIF y en el segundo debería aparecer automáticamente, sin
+      necesidad de hacer click en ningún botón, la letra correspondiente.
+    </p>
+    <form action="pagina.php" method="post" id="miFormulario">
+      <label for="dni">DNI:</label>
+      <input type="number" id="dni" minlength="8" maxlength="8" required /> <br /><br />
+      <label for="letra-dni">Letra del DNI:</label>
+      <input type="text" id="letra" /><br /><br />
+      <p id="mensajeError"></p>
+    </form>
+  </body>
+</html>
