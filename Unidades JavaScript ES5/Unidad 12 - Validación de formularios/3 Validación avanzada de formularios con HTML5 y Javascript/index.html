@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Formulario</h1>
+    <form action="procesar.php" method="post" id="miFormulario">
+      <table>
+        <tr>
+          <td>Nombre:</td>
+          <td>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              minlength="2"
+              maxlength="15"
+              pattern="[A-Za-z]{2,15}"
+              title="Introduce un nombre entre 2 y 15 letras"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Edad:</td>
+          <td>
+            <input
+              type="number"
+              name="telefono"
+              id="telefono"
+              min="18"
+              max="100"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Teléfono:</td>
+          <td>
+            <input
+              type="text"
+              name="telefono"
+              id="telefono"
+              pattern="[0-9]{9}"
+              title="Escribe un número de 9 cifras"
+              required
+            />
+          </td>
+        </tr>
+      </table>
+      <p id="mensajeError"></p>
+      <p>
+        <input type="submit" value="Enviar" id="enviar" />
+        <input type="reset" value="Borrar" id="borrar" />
+      </p>
+    </form>
+  </body>
+</html>
