@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Paso 1: Crear el form en HTML -->
+    <h1>Formulario</h1>
+    <form action="procesar.php" method="post" id="miFormulario">
+      <table>
+        <tr>
+          <td>Nombre:</td>
+          <td>
+            <input type="text" name="nombre" id="nombre" />
+          </td>
+        </tr>
+        <tr>
+          <td>Teléfono:</td>
+          <td>
+            <input type="text" name="telefono" id="telefono" />
+          </td>
+        </tr>
+        <tr>
+          <td>Fecha de nacimiento:</td>
+          <td>
+            <input type="text" name="dia" id="dia" size="2" />
+            <input type="text" name="mes" id="mes" size="2" />
+            <input type="text" name="ano" id="ano" size="4" />
+          </td>
+        </tr>
+        <tr>
+          <td>Sexo:</td>
+          <td>
+            <input type="radio" name="sexo" value="H" checked /> Hombre
+            <input type="radio" name="sexo" value="M" /> Mujer
+          </td>
+        </tr>
+        <tr>
+          <td>Mayor de 18:</td>
+          <td>
+            <input type="checkbox" name="mayor" id="mayor" checked />
+          </td>
+        </tr>
+      </table>
+      <p>
+        <input type="submit" value="Enviar" id="enviar" />
+        <input type="reset" value="Borrar" id="borrar" />
+      </p>
+    </form>
+  </body>
+</html>

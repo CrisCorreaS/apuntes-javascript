@@ -1,0 +1,8 @@
+/* 
+Paso 10:
+CREAR LA CLASE CSS ERROR
+*/
+
+.error {
+  border: solid 2px red;
+}
