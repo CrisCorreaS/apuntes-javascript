@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p>Prepara un formulario diseñado para introducir los datos de los discos con los que trabajamos la U4. Recuerda qué
+        elementos se almacenaban, y elije el componente de formulario más adecuado:
+        - Nombre del disco.
+        - Grupo de música o cantante.
+        - Año de publicación.
+        - Tipo de música (podrá ser “rock”, “pop”, “punk” o “indie”);
+        - Localización: almacenará un número de estantería.
+        - Prestado: almacenará un valor booleano. Por defecto será false.
+        Realiza las funciones necesarias para validarlo con Javascript teniendo en cuenta:
+        - Nombre del disco: máximo 20 caracteres, obligatorio.
+        - Grupo de música o cantante: máximo 20 caracteres, obligatorio.
+        - Año de publicación: 4 caracteres numéricos.
+        - Tipo de música (podrá ser “rock”, “pop”, “punk” o “indie”): sin comprobación.
+        - Localización: almacenará un número de estantería: vacío o numérico.
+        - Prestado: sin comprobación.
+        Tendrás que tener en cuenta, además:
+        - Que los campos nombre del disco y grupo de música se validarán en la misma función.
+        - En caso de que se produzca un error en la validación, el campo implicado tenga el reborde rojo, y la etiqueta que lo acompaña también aparezca de color rojo.
+        - Para ello deberás crear las clases css necesarias (puedes incluirlas en el propio html si lo deseas) para que se visualice correctamente.
+        - Ten en cuenta que si el usuario mete correctamente el nombre, deberá volver a su color habitual.
+    </p>
+    <h1>Formulario de Discos</h1>
+    <form id="formDisco">
+        <div id="nombre">
+            <label for="name">Nombre del disco</label>
+            <input type="text" id="name" placeholder="Nombre del disco" maxlength="20" pattern="^[\s\S]{1,20}$" required /><br />
+        </div>
+        <div id="grupo">
+            <label for="group">Grupo o cantante</label>
+            <input type="text" id="group" placeholder="Grupo o cantante" maxlength="20" pattern="^[\s\S]{1,20}$" required /><br />
+        </div>
+        <div id="year">
+            <label for="ano">Año de publicación</label>
+            <input type="number" id="ano" placeholder="Año de publicación" maxlength="4" min="0" max="2023" /><br />
+        </div>
+        <div id="tipo">
+            <label for="type">Tipo de música</label>
+            <select id="type" placeholder="Tipo de música">
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="punk">Punk</option>
+                <option value="indie">Indie</option>
+            </select><br />
+        </div>
+        <div id="localizacion">
+            <label for="localization">Localización</label>
+            <input type="number" id="localization" placeholder="Localización" pattern="^(|[\d]+)$" /><br />
+        </div>
+        <div id="prestado">
+            <label for="lent">Prestado</label>
+            <input type="checkbox" id="lent" placeholder="Prestado" /><br /><br />
+        </div>
+        <button type="submit" id="enviar">Añadir Disco</button>
+    </form><br /><br />
+    
+    <div id="discos"></div>
+    
+    <button id="mostrarNumero">Mostrar número de discos</button><br />
+    <button id="mostrarTabla">Mostrar tabla de discos</button><br />
+    <button id="mostrarIntervalo">
+        Mostrar intervalo de discos por año de publicación
+    </button><br />
+    <button id="borrarDisco">Borrar un disco</button><br />
+    <button id="consultarDisco">Consultar un disco</button><br />
+    <script src="script.js"></script>
+  </body>
+</html>
