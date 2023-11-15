@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>
+      Vas a crear un juego que consiste en encontrar parejas en 12 cartas con 6 parejas de imágenes. El juego consistirá en lo siguiente:
+          - La aplicación deberá tener una tabla con 3 filas y cuatro columnas de un color (puede ser también una imagen con un color) . Además se mostrará un cuadro de texto de aciertos con el valor inicial 0.
+          - Cuando el usuario haga clic sobre una celda, se mostrará una imagen.
+          - Cuando el usuario haga clic sobre otra celda, se mostrará otra imagen.
+          - Si las dos imágenes son iguales, se quedarán a la vista y se añadirá 1 al cuadro de texto de aciertos.
+          - Si las dos imágenes son diferentes, se ocultarán mostrando nuevamente el color inicial.
+
+        Además al entrar en la página al usuario se le pedirá un nombre la primera vez que entre, ese nombre será almacenado en una cookie además de un contador de visitas a la página. 
+        Si vuelve a entrar en la página se le mostrará un mensaje en la misma página diciendo Hola “nombre” y el número de veces que visitó la página.
+        Puede ser de utilidad el atributo src del elemento img. Podremos acceder desde event.target.src o this.src
+    </p>
+    <h1>Juego de las cartas</h1>
+    <section class="memory-game">
+      <div class="memory-card" data-framework="beagle">
+        <img class="front-face" src="img/beagle.png" alt="Beagle" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" data-framework="beagle">
+        <img class="front-face" src="img/beagle.png" alt="Beagle" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" data-framework="caniche">
+        <img class="front-face" src="img/caniche.png" alt="Caniche" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" data-framework="caniche">
+        <img class="front-face" src="img/caniche.png" alt="Caniche" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" data-framework="corgi">
+        <img class="front-face" src="img/corgi.png" alt="Corgi" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" data-framework="corgi">
+        <img class="front-face" src="img/corgi.png" alt="Corgi" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" data-framework="dalmata">
+        <img class="front-face" src="img/dalmata.png" alt="Dalmata" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" data-framework="dalmata">
+        <img class="front-face" src="img/dalmata.png" alt="Dalmata" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" data-framework="pitbull">
+        <img class="front-face" src="img/pitbull.png" alt="Pitbull" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" data-framework="pitbull">
+        <img class="front-face" src="img/pitbull.png" alt="Pitbull" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" data-framework="shiba-inu">
+        <img class="front-face" src="img/shiba-inu.png" alt="Shiba Inu" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" data-framework="shiba-inu">
+        <img class="front-face" src="img/shiba-inu.png" alt="Shiba Inu" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+    </section>
+    <p id="aciertos">Número de aciertos: 0</p>
+  </body>
+</html>
