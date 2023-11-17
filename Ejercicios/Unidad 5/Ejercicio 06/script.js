@@ -65,3 +65,41 @@ function resetBoard() {
 })();
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+
+// COOKIES:
+let nombre = getCookie("nombre");
+let visitas = getCookie("visitas");
+
+if (!nombre) {
+  nombre = prompt("Por favor, introduce tu nombre:");
+  document.cookie = "nombre=" + nombre + ";";
+}
+
+if (!visitas) {
+  visitas = 0;
+} else {
+  visitas++;
+}
+
+document.cookie = "visitas=" + visitas + ";";
+
+alert("Hola " + nombre + ", has visitado esta página " + visitas + " veces.");
+
+function getCookie(nombre) {
+  let nom = nombre + "="; 
+  let array = document.cookie.split(/;/g); 
+
+  for (var i = 0; i < array.length; i++) {
+    var c = array[i]; 
+
+    while (c.charAt(0) == " ") {
+      c = c.substring(1); 
+    }
+
+    if (c.indexOf(nombre) == 0) {
+      return c.substring(nom.length, c.length); 
+    }
+  }
+  return "";
+}
