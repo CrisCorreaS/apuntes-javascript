@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Ejercicio 8</title>
+  </head>
+  <body>
+    <p>Crea un formulario con un pequeño test sobre una temática que tu cedidas. El test tendrá 4 preguntas con 3 respuestas
+        cada una a elegir con radio buttons.
+        El programa deberá hacer lo siguiente:
+        - Cuando el usuario conteste las 4 preguntas y envíe los datos obtendrá el resultado final (“Has acertado x
+        preguntas”)
+        - Además, el usuario podrá ver qué preguntas ha fallado, ya que al enviar el formulario le aparecerá un pequeño
+        icono con un tick verde en las preguntas correctas y una cruz roja en las preguntas incorrectas.
+        - En caso de que el usuario deje alguna pregunta sin contestar, no mostrará el resultado e indicará con un mensaje
+        "No has respondido a todas las preguntas". Y se marcará en color rojo la pregunta que no haya sido respondida.
+    </p>
+
+    <h1>Test sobre Tés</h1>
+
+    <form id="myForm">
+      <ul>
+        <li id="p1">
+          <span class="pregunta-icono" id="span1"></span>
+          <p>
+            ¿Cuál de los siguientes tés es conocido por sus propiedades
+            relajantes?
+          </p>
+          <label>
+            <input type="radio" name="pregunta1" value="a" />
+            a) Té verde. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta1" value="b" />
+            b) Té negro. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta1" value="c" />
+            c) Té de manzanilla.
+          </label>
+        </li>
+        <br/>
+        <li id="p2">
+          <span class="pregunta-icono" id="span2"></span>
+          <p>
+            ¿Cuál de los siguientes tés es conocido por sus propiedades
+            antioxidantes?
+          </p>
+          <label>
+            <input type="radio" name="pregunta2" value="a" />
+            a) Té blanco. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta2" value="b" />
+            b) Té oolong. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta2" value="c" />
+            c) Té rojo (Pu-erh).
+          </label>
+        </li>
+        <br/>
+        <li id="p3">
+          <span class="pregunta-icono" id="span3"></span>
+          <p>
+            ¿Cuál de los siguientes tés es conocido por su sabor floral y
+            delicado?
+          </p>
+          <label>
+            <input type="radio" name="pregunta3" value="a" />
+            a) Té negro. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta3" value="b" />
+            b) Té verde. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta3" value="c" />
+            c) Té de jazmín.
+          </label>
+        </li>
+        <br/>
+        <li id="p4">
+          <span class="pregunta-icono" id="span4"></span>
+          <p>¿Qué tipo de té se obtiene de las hojas fermentadas?</p>
+          <label>
+            <input type="radio" name="pregunta4" value="a" />
+            a) Té blanco. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta4" value="b" />
+            b) Té oolong. </label
+          ><br />
+          <label>
+            <input type="radio" name="pregunta4" value="c" />
+            c) Té negro.
+          </label>
+        </li>
+      </ul>
+      <button type="submit" id="enviar">Enviar respuestas</button>
+    </form>
+    <p id="respuesta"></p>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+li.pregunta-correcta {
+  color: green;
+}
+
+li.pregunta-incorrecta {
+  color: red;
+}
+
+.pregunta-correcta .pregunta-icono::before {
+  content: "✔";
+  color: green;
+}
+
+.pregunta-incorrecta .pregunta-icono::before {
+  content: "✘";
+  color: red;
+}
+
+ul {
+  list-style-type: none;
+}
+
+b {
+  color: green;
+}
+
+em {
+  color: red;
+}
