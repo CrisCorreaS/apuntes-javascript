@@ -1,7 +1,8 @@
 document.getElementById("enviar").addEventListener("click", validar, false);
 
 function validarFecha() {
-  let elemento = document.getElementById("name");
+  let elemento = document.getElementById("date");
+  let temp = elemento.value.split("/");
 
   if (!elemento.checkValidity()) {
     if (elemento.validity.valueMissing) {
@@ -11,6 +12,52 @@ function validarFecha() {
     if (elemento.validity.patternMismatch) {
       error(elemento, "La fecha tiene que tener un formato dd/mm/aaaa");
     }
+    return false;
+  }
+
+  let ahora = new Date();
+  let añoActual = ahora.getFullYear();
+  let mesActual = ahora.getMonth() + 1;
+  let diaActual = ahora.getDate();
+
+  if (temp[2] > añoActual) {
+    error(elemento, "La fecha no puede ser futura");
+    return false;
+  } else if (temp[2] == añoActual && temp[1] > mesActual) {
+    error(elemento, "La fecha no puede ser futura");
+    return false;
+  } else if (
+    temp[2] == añoActual &&
+    temp[1] == mesActual &&
+    temp[0] > diaActual
+  ) {
+    error(elemento, "La fecha no puede ser futura");
+    return false;
+  }
+
+  if (temp[0] < 1 || temp[1] < 1 || temp[2] < 1) {
+    error(elemento, "El día, mes o año no pueden ser menores a 1");
+    return false;
+  }
+
+  let fecha = new Date(temp[2], temp[1] - 1, temp[0]); // temp[2] son los años, temp[1] los meses (a los que le restamos 1 porque el valor que ponemos en el form va de 1 a 12, pero el de js va de 0 a 11) y temp[0] son los días
+  let mes = fecha.getMonth() + 1; // Sumamos uno porque nos va a devolver los meses del 0 al 11, no del 1 al 12
+  let dia = fecha.getDate();
+
+  if (temp[1] > 12) {
+    error(elemento, "El mes no puede ser mayor a 12");
+    return false;
+  } else if (temp[1] == 2 && temp[0] > 29) {
+    error(elemento, "Febrero no puede tener más de 29 días");
+    return false;
+  } else if (
+    (temp[1] == 4 || temp[1] == 6 || temp[1] == 9 || temp[1] == 11) &&
+    temp[0] > 30
+  ) {
+    error(
+      elemento,
+      "Los meses de abril, junio, septiembre y noviembre no pueden tener más de 30 días"
+    );
     return false;
   }
 
@@ -103,11 +150,11 @@ function validar(e) {
   borrarError();
 
   if (
-    validarFecha &&
+    validarFecha() &&
     validarNombreEmpleado() &&
     validarNombreDestinatario() &&
     validarPesoGramos() &&
-    validarNumeroCuenta &&
+    validarNumeroCuenta() &&
     confirm("Pulsa aceptar si deseas enviar el formulario")
   ) {
     return true;
@@ -127,6 +174,7 @@ function borrarError() {
 
 function error(elemento, mensaje) {
   document.getElementById("mensajeError").innerHTML = mensaje;
+  document.getElementById("mensajeError").className = "errorMensaje";
   elemento.className = "error";
   elemento.focus();
 }

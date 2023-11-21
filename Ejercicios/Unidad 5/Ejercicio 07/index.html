@@ -17,7 +17,7 @@
     </p>
     <form id="formDisco">
         <label for="date" id="fecha">Fecha de Creación con Formato dd/mm/aaaa</label>
-        <input type="text" id="date" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/((19|20)\d\d)$" required />
+        <input type="text" id="date" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" pattern="^(0[1-9]|[0][0-9]|3[1-9]|30|31)/(0[1-9]|1[0-2])/[0-9]{4}$" required />
         <br />
         <label for="name" id="nombre">Nombre en Clave del Empleado</label>
         <input type="text" id="name" placeholder="WW$1234" maxlength="7" minlength="7" pattern="^[A-Z]{2}\W\d{4}$" required />
@@ -28,7 +28,7 @@
         <label for="weight" id="peso">Peso en Gramos</label>
         <input type="number" id="weight" placeholder="Peso en gramos de 100 a 5000" min="100" max="5000" required></input>
         <br />
-        <label for="accountNumber" id="numeroCuenta">Número de cuenta(IBAN + 20 dígitos)</label>
+        <label for="accountNumber" id="numeroCuenta">Número de cuenta (IBAN + 20 dígitos)</label>
         <input type="text" id="accountNumber" placeholder="Número de cuenta de 24 caracteres" maxlength="24" minlength="24" pattern="^([A-Z]{2}\d{2})(\d{4}){5}$" required />
         <br />
         <button type="submit" id="enviar">Enviar</button>
