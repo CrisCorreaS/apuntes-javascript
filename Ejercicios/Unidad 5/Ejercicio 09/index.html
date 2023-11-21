@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 9</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>
+      Simula la pantalla de creación de nuevo usuario de Amazon, utilizando las
+      características de HTML5 y Javascript.: Amazón crear usuario 
+      * Utiliza LocalStorage para almacenar el nombre del usuario la primera vez que se
+      registre, cuando vuelva a entrar deben de aparecer los datos ya colocados.
+    </p>
+    <br />
+    <img src="./img/logo-amazon.png" alt="Logo de amazon" />
+    <div id="caja">
+      <h1>Crear cuenta</h1>
+      <form id="myForm">
+        <div id="divNombre">
+          <label for="name" id="nombre">Nombre</label>
+          <br/>
+          <input
+            type="text"
+            id="name"
+            maxlength="20"
+            pattern="^[\s\S]{1,20}$"
+            required
+          />
+          <p id="mensajeNombre"></p>
+        </div>
+        <br />
+        <div id="divContacto">
+          <label for="contact" id="contacto">
+            Número de móvil o dirección de correo electrónico
+          </label>
+          <br/>
+          <input
+            type="text"
+            id="contact"
+            maxlength="20"
+            minlength="9"
+            required
+          />
+          <p id="mensajeMovilCorreo"></p>
+        </div>
+        <br />
+        <div id="divContrasena">
+          <label for="password" id="contrasinal">Contraseña</label>
+          <br/>
+          <input type="text" id="password" maxlength="20" minlength="6" />
+          <p id="mensajeContrasena"></p>
+        </div>
+        <br />
+        <div id="divContrasena2">
+          <label for="password2" id="contrasinal2">Confirma tu contraseña</label>
+          <br/>
+          <input type="text" id="password2" maxlength="20" minlength="6" />
+          <p id="mensajeContrasena2"></p>
+        </div>
+        <button type="submit" id="enviar">Continuar</button>
+      </form>
+    </div>
+  </body>
+</html>

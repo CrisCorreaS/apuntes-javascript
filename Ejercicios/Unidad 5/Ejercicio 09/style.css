@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: white;
+  font-family: sans-serif;
+}
+
+img {
+  width: 15%;
+  height: auto;
+}
+
+#caja {
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+label{
+    font-weight: bold;
+    font-size: small;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    background-color: #f1d173;
+    text-align: center;
+}
