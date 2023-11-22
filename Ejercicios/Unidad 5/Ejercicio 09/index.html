@@ -10,8 +10,8 @@
   <body>
     <p>
       Simula la pantalla de creación de nuevo usuario de Amazon, utilizando las
-      características de HTML5 y Javascript.: Amazón crear usuario 
-      * Utiliza LocalStorage para almacenar el nombre del usuario la primera vez que se
+      características de HTML5 y Javascript.: Amazón crear usuario * Utiliza
+      LocalStorage para almacenar el nombre del usuario la primera vez que se
       registre, cuando vuelva a entrar deben de aparecer los datos ya colocados.
     </p>
     <br />
@@ -21,12 +21,13 @@
       <form id="myForm">
         <div id="divNombre">
           <label for="name" id="nombre">Nombre</label>
-          <br/>
+          <br />
           <input
             type="text"
             id="name"
-            maxlength="20"
-            pattern="^[\s\S]{1,20}$"
+            maxlength="40"
+            placeholder="Nombre y apellido"
+            pattern="^[a-zA-Z\s]{1,40}$"
             required
           />
           <p id="mensajeNombre"></p>
@@ -36,7 +37,7 @@
           <label for="contact" id="contacto">
             Número de móvil o dirección de correo electrónico
           </label>
-          <br/>
+          <br />
           <input
             type="text"
             id="contact"
@@ -49,15 +50,31 @@
         <br />
         <div id="divContrasena">
           <label for="password" id="contrasinal">Contraseña</label>
-          <br/>
-          <input type="text" id="password" maxlength="20" minlength="6" />
+          <br />
+          <input
+            type="text"
+            id="password"
+            maxlength="20"
+            minlength="6"
+            pattern="^[\s\S]{6,20}$"
+            placeholder="Al menos 6 caracteres"
+            required
+          />
           <p id="mensajeContrasena"></p>
         </div>
         <br />
         <div id="divContrasena2">
-          <label for="password2" id="contrasinal2">Confirma tu contraseña</label>
-          <br/>
-          <input type="text" id="password2" maxlength="20" minlength="6" />
+          <label for="password2" id="contrasinal2"
+            >Confirma tu contraseña</label
+          >
+          <br />
+          <input
+            type="text"
+            id="password2"
+            maxlength="20"
+            minlength="6"
+            required
+          />
           <p id="mensajeContrasena2"></p>
         </div>
         <button type="submit" id="enviar">Continuar</button>
