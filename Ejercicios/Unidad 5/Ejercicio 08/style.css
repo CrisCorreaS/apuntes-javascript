@@ -20,10 +20,28 @@ ul {
   list-style-type: none;
 }
 
-b {
+#correctas {
   color: green;
 }
 
-em {
+#incorrectas {
   color: red;
+}
+
+.normal {
+  color: black;
+  background-color: white;
+  font-size: normal;
+  font-weight: normal;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.no-select {
+  background-color: red;
+  color: white;
 }

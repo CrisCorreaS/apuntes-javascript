@@ -39,11 +39,11 @@ function correccion() {
   let incorrectas = 4 - correctas;
 
   document.getElementById("respuesta").innerHTML =
-    "Has acertado <b>" +
+    "Has acertado <span id='correctas'>" +
     correctas +
-    "</b> preguntas y has fallado <em>" +
+    "</span> preguntas y has fallado <span id='incorrectas'>" +
     incorrectas +
-    "</em> preguntas";
+    "</span> preguntas";
 }
 
 function limpiar() {
@@ -51,21 +51,17 @@ function limpiar() {
   let preguntas = ["p1", "p2", "p3", "p4"];
 
   // Ponemos la respuesta como siempre
-  document.getElementById("respuesta").style.color = "black";
-  document.getElementById("respuesta").style.fontStyle = "normal";
-  document.getElementById("respuesta").style.fontWeight = "normal";
+  document.getElementById("respuesta").className = "normal";
   document.getElementById("respuesta").innerHTML = "";
 
   // Limpiamos los atributos "class"
   for (let i = 0; i < formulario.elements.length; i++) {
     formulario.elements[i].className = "";
-    formulario.elements[i].removeAttribute("class");
   }
 
   // Le quitamos cualquier fondo rojo que tengan los elementos <li> que engloban las preguntas sin respuesta
-  for (let j = 0; j < 3; j++){
-    document.getElementById(preguntas[j]).style.backgroundColor = "white";
-    document.getElementById(preguntas[j]).style.color = "black";
+  for (let j = 0; j < 3; j++) {
+    document.getElementById(preguntas[j]).className = "normal";
     document.getElementById("span" + (1 + j)).className = "pregunta-icono";
   }
 }
@@ -86,12 +82,9 @@ function validarPreguntas() {
     }
 
     if (!seleccionado) {
-      document.getElementById(preguntas[i]).style.backgroundColor = "red";
-      document.getElementById(preguntas[i]).style.color = "white";
+      document.getElementById(preguntas[i]).className = "no-select";
       document.getElementById("respuesta").innerHTML = "No has respondido a todas las preguntas";
-      document.getElementById("respuesta").style.color = "red";
-      document.getElementById("respuesta").style.fontStyle = "italic";
-      document.getElementById("respuesta").style.fontWeight = "bold";
+      document.getElementById("respuesta").className = "error";
       todasRespondidas = false;
     }
   }
