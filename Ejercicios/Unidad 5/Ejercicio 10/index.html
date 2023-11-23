@@ -27,32 +27,33 @@
         <p for="document" id="documento">Elige tu documento</p>
         <div id="opciones">
             <label>
-              <input type="radio" name="document" value="dni" />
+              <input type="radio" name="option" value="dni" />
               DNI o Tarjeta de Residencia
             </label>
             <br>
             <label>
-              <input type="radio" name="document" value="pasaporte" />
+              <input type="radio" name="option" value="pasaporte" />
               Pasaporte
             </label>
         </div>
-        <br /><br />
+        <br />
         <label for="number" id="numero">Número de documento</label>
         <br />
         <input type="text" id="number" maxlength="9" minlength="9" required />
-        <br /><br />
+        <p id="mensajeDocumento"></p>
         <div id="data">
             <label for="date" id="fecha">Fecha de nacimiento</label>
             <br />
             <input type="number" id="day" name="dia" min="1" max="31" placeholder="DD" required >
             <input type="number" id="month" name="mes" min="1" max="12" placeholder="MM" required >
             <input type="number" id="year" name="ano" min="0" max="2023" placeholder="AAAA" required>
-            <br /><br />
         </div>
+        <p id="mensajeFecha"></p>
         <div id="remember">
-            <input type="radio" name="recordar" >
+            <input type="radio" id="recordar" >
             <label for="recordar">Recordar</label>
         </div>
+        <button type="submit" id="enviar">Entrar</button>
       </form>
     </div>
   </body>
