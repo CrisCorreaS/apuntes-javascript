@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 10</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>
+        Simula la página de bienvenida de un banco (ING en este caso):
+        Los datos de DNI-Tarjeta de residencia-Pasaporte, fecha de nacimiento y clave están almacenados en un array de objetos
+        de tipo Cliente.
+        El checkBox permite almacenar los datos de un cliente por medio de WebStorage, para que la próxima vez que acceda a la
+        página le aparezca el DNI y la fecha de nacimiento ya colocados.
+        Cliente ha de ser una clase que almacene la información del cliente necesaria para que al pulsar en entrar acceda a la
+        siguiente ventana:
+        En esta ventana se mostrarán en una tabla los números del 0 al 9 en posiciones aleatorias.
+        El usuario completará los números de su clave de seguridad que faltan por rellenar pulsando sobre ellos y validando la
+        clave al pulsar en el último. (los huecos a rellenar también serán aleatorios).
+        En caso de introducir la clave correcta saldrá un mensaje de bienvenida
+    </p>
+    <div id="caja">
+      <h1>Accede a tu Área Clientes</h1>
+      <form action="clave.html" id="myForm">
+        <p for="document" id="documento">Elige tu documento</p>
+        <div id="opciones">
+            <label>
+              <input type="radio" name="document" value="dni" />
+              DNI o Tarjeta de Residencia
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="document" value="pasaporte" />
+              Pasaporte
+            </label>
+        </div>
+        <br /><br />
+        <label for="number" id="numero">Número de documento</label>
+        <br />
+        <input type="text" id="number" maxlength="9" minlength="9" required />
+        <br /><br />
+        <div id="data">
+            <label for="date" id="fecha">Fecha de nacimiento</label>
+            <br />
+            <input type="number" id="day" name="dia" min="1" max="31" placeholder="DD" required >
+            <input type="number" id="month" name="mes" min="1" max="12" placeholder="MM" required >
+            <input type="number" id="year" name="ano" min="0" max="2023" placeholder="AAAA" required>
+            <br /><br />
+        </div>
+        <div id="remember">
+            <input type="radio" name="recordar" >
+            <label for="recordar">Recordar</label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
