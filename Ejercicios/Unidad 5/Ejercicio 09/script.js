@@ -32,7 +32,7 @@ function validarNombre() {
 
 function validarContacto() {
   let regexTelefono = /^\d{9}$/;
-  let regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/;
+  let regexMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
   let contacto = document.getElementById("contact");
 
@@ -40,7 +40,10 @@ function validarContacto() {
   if (regexMail.test(contacto.value) || regexTelefono.test(contacto.value)) {
     return true;
   } else {
-    error(contacto, "<b>!</b> La dirección de correo electrónico o el número de teléfono móvil faltan o son inválidos. Corríjalo e inténtelo de nuevo.");
+    error(
+      contacto,
+      "<b>!</b> La dirección de correo electrónico o el número de teléfono móvil faltan o son inválidos. Corríjalo e inténtelo de nuevo."
+    );
     return false;
   }
 }
@@ -54,7 +57,10 @@ function validarContrasinal() {
     }
 
     if (elemento.validity.patternMismatch) {
-      error(elemento, "<b>!</b> La contraseña debe tener al menos 6 caracteres");
+      error(
+        elemento,
+        "<b>!</b> La contraseña debe tener al menos 6 caracteres"
+      );
     }
 
     return false;
@@ -91,7 +97,10 @@ function validar(e) {
     contrasenaValida &&
     contraseniasValidas
   ) {
-    localStorage.setItem("nombreUsuario", document.getElementById("name").value); // Así creamos el localStorage que almacena el nombre
+    localStorage.setItem(
+      "nombreUsuario",
+      document.getElementById("name").value
+    ); // Así creamos el localStorage que almacena el nombre
     alert("El formulario se ha enviado");
     return true;
   } else {
@@ -127,15 +136,19 @@ function error(elemento, mensaje) {
 
 function borrarError() {
   let formulario = document.forms[0];
-  let mensajes = [NOMBRE_MENSAJE, CONTACTO_MENSAJE, CONTRASENA_MENSAJE, CONTRASENA2_MENSAJE];
+  let mensajes = [
+    NOMBRE_MENSAJE,
+    CONTACTO_MENSAJE,
+    CONTRASENA_MENSAJE,
+    CONTRASENA2_MENSAJE,
+  ];
 
   for (let i = 0; i < formulario.elements.length; i++) {
     formulario.elements[i].className = "";
   }
-  
-  for (let j = 0; j < mensajes.length; j++){
+
+  for (let j = 0; j < mensajes.length; j++) {
     mensajes[j].className = "normal";
     mensajes[j].innerHTML = "";
   }
-
 }
