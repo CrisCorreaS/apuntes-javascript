@@ -8,9 +8,7 @@ const FECHA = document.getElementById("fecha");
 const TELEFONO = document.getElementById("telefono");
 const HORA_VISITA = document.getElementById("hora");
 
-const LIMPIAR = document.getElementById("button");
 const ENVIAR = document.getElementById("enviar");
-
 const ERRORES = document.getElementById("errores");
 const INTENTOS = document.getElementById("intentos");
 
@@ -133,7 +131,7 @@ function validarEdad() {
   if (regexEdad.test(edad)) {
     return true;
   } else {
-    if (edad < 0 || edad > 150) {
+    if (edad < 0 || edad > 105) {
       error(EDAD, "La edad tiene que ser un número comprendido entre 0 y 105");
     } else {
       error(EDAD, "La edad tiene que ser un número");
@@ -167,48 +165,55 @@ function validarEmail() {
   }
 }
 
-// Apartado 8 -> Pendiente
-function validarProvincias() {}
+// Apartado 8
+function validarProvincias() {  
+  switch (PROVINCIA.value) {
+    case "C":
+    case "LU":
+    case "OU":
+    case "PO":
+      return true;
+      break;
+    case "0":
+      error(PROVINCIA, "No has seleccionado la provincia");
+      return false;
+      break;
+    default:
+      error(PROVINCIA, "No has seleccionado la provincia bien");
+      return false;
+      break;
+  }
+}
 
-// Apartado 9 -> No está bien
+// Apartado 9 
 function validarFecha() {
-  let regexFechaGuion = /\d{1,2}\/\d{1,2}\/\d{4}/;
-  let regexFechaBarra = /\d{1,2}-\d{1,2}-\d{4}/;
+  let regexFechaGuion = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+  let regexFechaBarra = /^\d{1,2}-\d{1,2}-\d{4}$/;
 
-  if (FECHA.value.includes(/-/) || FECHA.value.includes("/")) {
-    if (regexFechaGuion.test(FECHA.value)) {
-      let fechas = FECHA.value.split(/-/);
+  if (regexFechaGuion.test(FECHA.value) || regexFechaBarra.test(FECHA.value)) {
+    let separador = regexFechaGuion.test(FECHA.value) ? "/" : "-"; // Usamos el operador elvis para decretar si la fecha es con "/" o con "-" (es una estructura if-else que evalúa un boolean, resumidamente)
+    let fechas = FECHA.value.split(separador);
 
-      if (fechas[2] != 2023 - EDAD.value) {
-        error(
-          FECHA,
-          "No puedes tener" + EDAD.value + " años naciendo en " + fechas[2]
-        );
-      }
-    } else {
+    if (parseInt(fechas[2]) !== new Date().getFullYear() - parseInt(EDAD.value)) {
       error(
         FECHA,
-        "La fecha no es correcta, el formato dd-mm-aaaa no está bien"
+        "No puedes tener " + EDAD.value + " años naciendo en " + fechas[2]
       );
       return false;
     }
 
-    if (regexFechaBarra.test(FECHA.value)) {
-      let fechas = FECHA.value.split("/");
-
-      if (fechas[2] != 2023 - EDAD.value) {
-        error(
-          FECHA,
-          "No puedes tener" + EDAD.value + " años naciendo en " + fechas[2]
-        );
-      }
-    } else {
-      error(
-        FECHA,
-        "La fecha no es correcta, el formato dd/mm/aaaa no está bien"
-      );
+    if (
+      parseInt(fechas[0]) < 1 ||
+      parseInt(fechas[0]) > 31 ||
+      parseInt(fechas[1]) < 1 ||
+      parseInt(fechas[1]) > 12 ||
+      parseInt(fechas[2]) < new Date().getFullYear() - 105 ||
+      parseInt(fechas[2]) > new Date().getFullYear()
+    ) {
+      error(FECHA, "El formato de fecha está mal, has escrito el día, mes o año mal");
       return false;
     }
+    return true;
   } else {
     error(
       FECHA,
@@ -222,7 +227,7 @@ function validarFecha() {
 function validarTelefono() {
   let regexTelefono = /[0-9]{9}/;
 
-  if (regexTelefono.test(parseInt(TELEFONO.value))) {
+  if (regexTelefono.test(TELEFONO.value)) {
     return true;
   } else {
     error(TELEFONO, "El teléfono tiene que tener 9 números");
@@ -231,7 +236,17 @@ function validarTelefono() {
 }
 
 // Apartado 11
-function validarHoraVisita() {}
+function validarHoraVisita() {
+  let regexHora = /^([01][0-9]|2[0-3]):[0-5][0-9]$/; // "^" indica el inicio. "([01][0-9]|2[0-3])" indica que el primer número puede ser cualquiera que empiece por 0 o 1 ([01][0-9] -> 00-19) o (|) un número que empiece por 2 y sea seguido de cualquier número del 0 al 3 (2[0-3] -> 20-23). Los ":" indican literalmente los dos puntos (:). Y por último "[0-5][0-9]" indica cualquier número que empiece con un número comprendido entre 0 y 5 ([0-5][0-9] -> 00-59) y "$" indica el final
+  let resultado = regexHora.test(HORA_VISITA.value) ? true : false;
+
+  if (resultado) {
+    return true;
+  } else {
+    error(HORA_VISITA, "La hora no está en un formato de hh:mm");
+    return false;
+  }
+}
 
 // Control de Errores
 function error(elemento, mensaje) {
