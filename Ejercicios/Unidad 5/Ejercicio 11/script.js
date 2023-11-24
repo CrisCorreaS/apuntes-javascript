@@ -1,8 +1,6 @@
 const BOTON = document.getElementById("miBoton");
 
 BOTON.addEventListener("mouseover", function () {
-  let coords = BOTON.getBoundingClientRect();
-
   // Genera una nueva posición aleatoria para el botón
   let nuevaPosicionTop = Math.floor(Math.random() * window.innerHeight);
   let nuevaPosicionLeft = Math.floor(Math.random() * window.innerWidth);
