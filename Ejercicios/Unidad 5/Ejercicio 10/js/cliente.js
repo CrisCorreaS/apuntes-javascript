@@ -35,7 +35,14 @@ export default class Cliente {
 
 
 function crearClave() {
-  let clave = Math.ceil(Math.random() * (9 - 0 + 1) + 0);
+  let numero;
+  let clave = "";
+  
+  for(let i = 0; i < 6; i++){
+    numero = Math.floor(Math.random() * 10);
+    clave += numero;
+  }
+  
   return clave;
 }
 
