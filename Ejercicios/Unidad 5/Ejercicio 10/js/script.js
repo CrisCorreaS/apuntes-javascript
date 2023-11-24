@@ -1,3 +1,5 @@
+import Cliente from "./cliente.js";
+
 document.getElementById("enviar").addEventListener("click", validar, false);
 
 const OPCIONES = document.getElementsByName("option");
@@ -10,6 +12,9 @@ const RECORDAR = document.getElementById("recordar");
 const MENSAJE_DOCUMENTO = document.getElementById("mensajeDocumento");
 const MENSAJE_FECHA = document.getElementById("mensajeFecha");
 
+let clientes = [];
+
+// Validaciones
 function validarDocumentos() {
   let check = false;
   let validez = false;
@@ -114,7 +119,9 @@ function validarFecha() {
     error(DIA, "Febrero no puede tener más de 29 días");
     return false;
   } else if (
-    (MES.value == 4 || MES.value == 6 || MES.value == 9 || MES.value == 11) && DIA.value > 30) {
+    (MES.value == 4 || MES.value == 6 || MES.value == 9 || MES.value == 11) &&
+    DIA.value > 30
+  ) {
     error(
       DIA,
       "Los meses de abril, junio, septiembre y noviembre no pueden tener más de 30 días"
@@ -122,7 +129,7 @@ function validarFecha() {
     return false;
   }
 
-  let fecha = new Date(ANO.value + "/" + (MES.value - 1) + "/" + DIA.value);
+  let fecha = new Date(ANO.value + "/" + MES.value + "/" + DIA.value);
 
   // devuelve true si el argumento no es un número. Como Date en JavaScript se convierte internamente a un número (el número de milisegundos desde el 1 de enero de 1970), si la fecha es inválida, se convertirá a NaN y isNaN() devolverá true
   if (isNaN(fecha.getTime())) {
@@ -133,9 +140,40 @@ function validarFecha() {
   return true;
 }
 
-function error(elemento, mensaje) {}
+function error(elemento, mensaje) {
+  let idElemento = elemento.id;
 
-function borrarError() {}
+  elemento.className = "error";
+  elemento.focus();
+
+  switch (idElemento) {
+    case "number":
+    case "option":
+      MENSAJE_DOCUMENTO.innerHTML = mensaje;
+      MENSAJE_DOCUMENTO.className = "mensajeError";
+      break;
+    case "day":
+    case "month":
+    case "year":
+      MENSAJE_FECHA.innerHTML = mensaje;
+      MENSAJE_FECHA.className = "mensajeError";
+      break;
+  }
+}
+
+function borrarError() {
+  let formulario = document.forms[0];
+  let mensajes = [MENSAJE_DOCUMENTO, MENSAJE_FECHA];
+
+  for (let i = 0; i < formulario.elements.length; i++) {
+    formulario.elements[i].className = "";
+  }
+
+  for (let j = 0; j < mensajes.length; j++) {
+    mensajes[j].className = "normal";
+    mensajes[j].innerHTML = "";
+  }
+}
 
 function validar(e) {
   borrarError();
@@ -146,8 +184,64 @@ function validar(e) {
   let fechaValida = validarFecha();
 
   if (documento && fechaValida) {
+    // Para crear el LocalStorage
+    if (RECORDAR.checked) {
+      // Para almacenar los datos en LocalStorage
+      localStorage.setItem("dni", NUMERO_DOCUMENTO.value);
+      localStorage.setItem("fechaNacimiento", DIA.value + "/" + MES.value + "/" + ANO.value);
+    }
+    window.location.href = "./clave.html"; // Así redirigimos a una nueva página web
     return true;
   } else {
     return false;
   }
 }
+
+// Para recuperar los datos con el LocalStorage
+window.addEventListener("DOMContentLoaded", (e) => {
+  // Guardamos los valores de dni y fechaNacimiento en las variables
+  let dni = localStorage.getItem("dni");
+  let fechaNacimiento = localStorage.getItem("fechaNacimiento");
+
+  if (dni && fechaNacimiento) { // Si uno de los valores del LocalStorage está vacío devolverá "null", lo cual lo interpretará como un false
+    NUMERO_DOCUMENTO.value = dni;
+
+    let opcionDNI = document.querySelector('input[name="option"][value="dni"]'); // Seleccionamos el botón de "dni" para poder checkearlo
+    opcionDNI.checked = true;
+
+    let fechaPartes = fechaNacimiento.split("/");
+    DIA.value = fechaPartes[0];
+    MES.value = fechaPartes[1];
+    ANO.value = fechaPartes[2];
+  }
+});
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Clientes
+let numero = -1;
+let numerosBotones = [];
+
+let cliente = Cliente(
+  NUMERO_DOCUMENTO.value,
+  DIA.value + "/" + MES.value + "/" + ANO.value
+);
+
+clientes.push(cliente);
+
+
+function shuffleBotones() {
+  while (numerosBotones.length < 9) {
+    let numero = Math.floor(Math.random() * 10);
+
+    if (!numerosBotones.includes(numero)) {
+      numerosBotones.push(numero);
+    }
+  }
+
+  for (let i = 0; i < 10; i++){
+    document.getElementById(i).innerHTML = numerosBotones[i];
+    document.getElementById(i).value = numerosBotones[i];
+  }
+}
+
+shuffleBotones()
