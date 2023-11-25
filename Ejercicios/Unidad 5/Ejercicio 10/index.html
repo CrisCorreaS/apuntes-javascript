@@ -4,57 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 10</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/script.js" type="module" defer></script>
   </head>
   <body>
     <p>
-        Simula la página de bienvenida de un banco (ING en este caso):
-        Los datos de DNI-Tarjeta de residencia-Pasaporte, fecha de nacimiento y clave están almacenados en un array de objetos
-        de tipo Cliente.
-        El checkBox permite almacenar los datos de un cliente por medio de WebStorage, para que la próxima vez que acceda a la
-        página le aparezca el DNI y la fecha de nacimiento ya colocados.
-        Cliente ha de ser una clase que almacene la información del cliente necesaria para que al pulsar en entrar acceda a la
-        siguiente ventana:
-        En esta ventana se mostrarán en una tabla los números del 0 al 9 en posiciones aleatorias.
-        El usuario completará los números de su clave de seguridad que faltan por rellenar pulsando sobre ellos y validando la
-        clave al pulsar en el último. (los huecos a rellenar también serán aleatorios).
-        En caso de introducir la clave correcta saldrá un mensaje de bienvenida
+      Simula la página de bienvenida de un banco (ING en este caso): Los datos
+      de DNI-Tarjeta de residencia-Pasaporte, fecha de nacimiento y clave están
+      almacenados en un array de objetos de tipo Cliente. El checkBox permite
+      almacenar los datos de un cliente por medio de WebStorage, para que la
+      próxima vez que acceda a la página le aparezca el DNI y la fecha de
+      nacimiento ya colocados. Cliente ha de ser una clase que almacene la
+      información del cliente necesaria para que al pulsar en entrar acceda a la
+      siguiente ventana: En esta ventana se mostrarán en una tabla los números
+      del 0 al 9 en posiciones aleatorias. El usuario completará los números de
+      su clave de seguridad que faltan por rellenar pulsando sobre ellos y
+      validando la clave al pulsar en el último. (los huecos a rellenar también
+      serán aleatorios). En caso de introducir la clave correcta saldrá un
+      mensaje de bienvenida
     </p>
-    <div id="caja">
-      <h1>Accede a tu Área Clientes</h1>
-      <form id="myForm">
-        <p for="document" id="documento">Elige tu documento</p>
-        <div id="opciones">
+    <div id="parte1">
+      <div id="caja">
+        <h1 id="h1p1">Accede a tu Área Clientes</h1>
+        <form id="myForm">
+          <p for="document" id="documento">Elige tu documento</p>
+          <div id="opciones">
             <label>
               <input type="radio" name="option" value="dni" />
               DNI o Tarjeta de Residencia
             </label>
-            <br>
+            <br />
             <label>
               <input type="radio" name="option" value="pasaporte" />
               Pasaporte
             </label>
-        </div>
-        <br />
-        <label for="number" id="numero">Número de documento</label>
-        <br />
-        <input type="text" id="number" maxlength="9" minlength="9" required />
-        <p id="mensajeDocumento"></p>
-        <div id="data">
+          </div>
+          <br />
+          <label for="number" id="numero">Número de documento</label>
+          <br />
+          <input type="text" id="number" maxlength="9" minlength="9" required />
+          <p id="mensajeDocumento"></p>
+          <div id="data">
             <label for="date" id="fecha">Fecha de nacimiento</label>
             <br />
-            <input type="number" id="day" name="dia" min="1" max="31" placeholder="DD" required >
-            <input type="number" id="month" name="mes" min="1" max="12" placeholder="MM" required >
-            <input type="number" id="year" name="ano" min="0" max="2023" placeholder="AAAA" required>
-        </div>
-        <p id="mensajeFecha"></p>
-        <div id="remember">
-            <input type="radio" id="recordar" >
+            <input
+              type="number"
+              id="day"
+              name="dia"
+              min="1"
+              max="31"
+              placeholder="DD"
+              required
+            />
+            <input
+              type="number"
+              id="month"
+              name="mes"
+              min="1"
+              max="12"
+              placeholder="MM"
+              required
+            />
+            <input
+              type="number"
+              id="year"
+              name="ano"
+              min="0"
+              max="2023"
+              placeholder="AAAA"
+              required
+            />
+          </div>
+          <p id="mensajeFecha"></p>
+          <div id="remember">
+            <input type="radio" id="recordar" />
             <label for="recordar">Recordar</label>
-        </div>
-        <button type="submit" id="enviar">Entrar</button>
-      </form>
+          </div>
+          <button type="submit" id="enviar">Entrar</button>
+        </form>
+      </div>
+    </div>
+    <div id="parte2" class="ocultar">
+      <div id="caja">
+        <h1 id="h1p2">Clave de Seguridad</h1>
+        <form id="myForm">
+          <p for="password" id="clave">
+            Completa las posiciones que faltan de tu clave de seguridad:
+          </p>
+          <div id="password">
+            <input type="number" id="option1" min="0" max="9" />
+            <input type="number" id="option2" min="0" max="9" />
+            <input type="number" id="option3" min="0" max="9" />
+            <input type="number" id="option4" min="0" max="9" />
+            <input type="number" id="option5" min="0" max="9" />
+            <input type="number" id="option6" min="0" max="9" />
+          </div>
+          <br />
+          <div id="botones">
+            <button type="button" id="0"></button>
+            <button type="button" id="1"></button>
+            <button type="button" id="2"></button>
+            <button type="button" id="3"></button>
+            <button type="button" id="4"></button>
+            <button type="button" id="5"></button>
+            <button type="button" id="6"></button>
+            <button type="button" id="7"></button>
+            <button type="button" id="8"></button>
+            <button type="button" id="9"></button>
+          </div>
+          <p id="claveMensaje"></p>
+        </form>
+      </div>
     </div>
   </body>
 </html>

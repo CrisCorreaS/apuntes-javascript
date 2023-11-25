@@ -8,7 +8,7 @@ export default class Cliente {
 
   // Getters:
   get documentacion() {
-    return this.documentacion;
+    return this._documentacion;
   }
 
   get fecha_nacimiento() {
@@ -38,9 +38,12 @@ function crearClave() {
   let numero;
   let clave = "";
   
-  for(let i = 0; i < 6; i++){
+  while(clave.length != 6){
     numero = Math.floor(Math.random() * 10);
-    clave += numero;
+
+    if (!clave.includes(numero)) {
+      clave += numero;
+    }
   }
   
   return clave;
