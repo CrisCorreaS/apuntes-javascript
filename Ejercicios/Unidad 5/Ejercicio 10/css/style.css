@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
 }
 
-#caja {
+#caja1, #caja2 {
   border: 1px solid black;
   padding: 20px;
   margin-top: 20px;
@@ -132,7 +132,7 @@ label {
 
 input:disabled {
   background-color: #f2f2f2;
-  color: #666;
+  color: #f2f2f2;
   cursor: not-allowed;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="16px" height="16px"><rect width="12" height="12" x="6" y="6" fill="gray" /></svg>');
   background-repeat: no-repeat;
