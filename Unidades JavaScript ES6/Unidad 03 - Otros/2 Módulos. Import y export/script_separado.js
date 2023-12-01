@@ -1,4 +1,25 @@
 /*
+Una buena práctica en programación es la modularización, que consiste en dividir programas en pequeños módulos independientes que pueden ser importados cuando se les necesita. Hasta hace unos años, en Javascript únicamente se podía implementar esta funcionalidad dividiendo los programas en pequeños scripts; sin embargo, dado que Javascript ahora se utiliza en muchos contextos y se integra con diferentes frameworks y librerías, el uso de módulos ofrece mejoras significativas.
+En primer lugar, hay que entender la diferencia entre usar scripts y módulos:
+  - Un archivo con módulos debe ser cargado en un servidor; de lo contrario obtendrás un error de CORS como consecuencia de los requisitos de seguridad del módulo de Javascript.
+  - Los módulos utilizan automáticamente modo estricto o strict mode.
+  - Los módulos se ejecutan una única vez aunque se haga referencia a ellos en varias etiquetas <script>.
+  - Las características de un módulo no están disponibles a nivel global: solamente se puede acceder a las funciones importadas en el script en el que se importan.
+
+En cuanto a la sintaxis, hay que tener en cuenta tres sentencias clave.
+
+En el HTML debemos indicar que el archivo Javascript va a importar módulos de la siguiente manera (de lo contrario obtendremos un error):
+
+  <script src="archivo.js" type="module"></script>
+
+Por otro lado, en los archivos Javascript debemos indicar, en función del archivo que sea:
+  - "import" en el archivo que va a importar los elementos y hace referencia a los elementos que van a importarse
+        import {elementos_separados_por_comas} from "ruta"; 
+
+  - "export" en el archivo (módulo) del que se van a exportar los elementos, y hace referencia a los elementos que pueden exportarse. Precede a function, var, let, const, y clases.
+        export definicion_de_funcion_variable_constante_o_clase;
+        export {elementos_separados_por_comas}; 
+
 Los módulos son trozos de código que podemos escribir en ficheros independientes.
 Pueden tener clases, funciones, objetos, datos primitivos...
 Desde ES6 se incorporó esta característica explícitamente, aunque se podía hacer previamente con transpiladores como Babel.

@@ -1,4 +1,14 @@
 /*
+Si has hecho la segunda parte del curso de Javascript en el que trabajamos con objetos, ya conocerás el funcionamiento de Number y cuáles son las propiedades y métodos más importantes.
+Pues bien, en la versión de Javascript ES6 se han incorporado una serie de métodos al objeto global Number que implica una serie de diferencias bastante importantes con respecto a las funciones globales que ya conocíamos.
+
+Veremos cómo funcionan:
+  - Number.isNaN() -> comprueba si un valor contiene, específicamente, el valor NaN (¡Ojo! ¡No comprueba si contiene cualquier valor que no sea un número!). Verás que no es lo mismo utilizar isNaN que Number.isNaN. ¿A que es un poco jaleo?
+  - Number.isSafeInteger() -> devuelve true si el número se encuentra en el rango de valores seguros (53 bits sin pérdida de precisión) y, además, conoceremos las constantes Number.MAX_SAFE_INTEGER y Number.MIN_SAFE_INTEGER.
+  - Number.isFinite() -> comprueba si un número es finito y funciona igual que la función global isFinite.
+  - Number.parseInt() -> parsea un valor a un número entero y funciona igual que la función parseInt.
+  - Number.parseFloat() -> parsea un número a float y funciona igual que parseFloat.
+
 NUEVOS MÉTODOS GLOBALES DEL OBJETO NUMBER
 Son métodos que se han incorporado a los objetos globales Number o Math
 Antes formaban parte d elos objetos definidos por el usuario

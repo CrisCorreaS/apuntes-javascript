@@ -1,4 +1,26 @@
-// NUEVOS MÉTODOS DEL OBJETO ARRAY
+/* 
+Pasamos a ver otro de los objetos más importantes del lenguaje Javascript: el objeto Array. En el curso de Javascript trabajamos con objetos y, concretamente, vimos cómo funcionaba el objeto Array.
+Nuevamente Javascript ES6 incorpora una serie de métodos al objeto global Array que debemos conocer:
+
+Veremos cómo funcionan:
+  - .findIndex() -> devuelve el índice del array del primer elemento que cumple con una condición. Es similar a indexOf pero debemos pasar como argumento una función flecha y detecta el tipo de dato NaN.
+  - .find() -> similar al anterior pero en lugar de devolver la posición, devuelve el valor del elemento. También se le pasa una función flecha.
+  - .fill() -> crea un array de un tamaño determinado e inicializa su contenido.
+  - .copyWithin() -> copia los elementos que están entre los índices de inicio y fin a partir de una posición.
+
+Además, conoceremos los iteradores con los que podemos trabajar junto con los Arrays:
+  - Object.keys -> devuelve un iterador con los elementos del array en orden. En la especificación de ES5, si el argumento no es un objeto primitivo da error; en ES6 se transforma a objeto.
+  - Object.values -> devuelve un iterador con los valores del array en orden.
+  - Object.entries -> devuelve un iterador con los pares del array en orden.
+
+Además, trabajaremos con métodos estáticos, como son:
+  - Array.from() -> permite convertir a arrays los elementos iterables y los pseudoarrays. Podemos crear arrays a partir de Maps, Sets, Strings, iterables obtenidos a partir de array.keys().
+  - Array.of() -> crea un array con aquellos elementos que recibe como argumento.
+
+Por último, veremos que son los agujeros en los arrays, elementos que no existen pero ocupan posiciones, y en la representación clásica de un array se indican con comas que separan dichos elementos inexistentes.
+
+NUEVOS MÉTODOS DEL OBJETO ARRAY 
+*/
 
 // findIndex() -> devuelve el índice del array (la posición) del primer elemento que cumple con una condición (función flecha)
 // Es similar a indexOf(), pero hay que pasar como argumento una función flecha; permite detectar NaN

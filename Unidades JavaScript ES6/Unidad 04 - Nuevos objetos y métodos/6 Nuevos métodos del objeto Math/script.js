@@ -1,4 +1,16 @@
-// NUEVOS MÉTODOS DEL OBJETO MATH
+/* 
+Seguimos trabajando con cambios en métodos que afectan a objetos. En este caso, recordamos que en el curso de Javascript trabajamos con objetos, y que nos centramos en ver el funcionamiento de Math, sus propiedades y métodos más importantes.
+Javascript ES6 también incorpora métodos al objeto global Math.
+
+Veremos cómo funcionan:
+  - .trunc() -> trunca un número decimal, es decir, devuelve su parte entera, independientemente del valor de su parte decimal.
+  - .sign() -> devuelve el signo de un número, pudiendo ser negativo, positivo, cero negativo, cero positivo o NaN.
+  - .cbrt() -> devuelve la raíz cúbica de un número.
+
+En el siguiente vídeo veremos uno a uno cuáles son estos métodos:
+
+NUEVOS MÉTODOS DEL OBJETO MATH 
+*/
 
 // Math.trunc() -> devuelve la parte entera de un número, eliminando el punto y los dígitos a su derecha
 // Equivale a Math.floot() si el argumento es positivo; si el argumento no es positivo, equivale a Math.ceil()

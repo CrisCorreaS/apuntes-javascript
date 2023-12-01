@@ -1,4 +1,15 @@
-// MÉTODOS NUEVOS DEL OBJETO STRING
+/* 
+En el curso de Javascript en el que trabajamos con objetos, vimos a fondo el funcionamiento de String y cuáles son las propiedades y métodos más importantes.
+Nuevamente, Javascript ES6 incorpora métodos al objeto global String.
+
+Veremos cómo funcionan:
+  - .startsWith() -> comprueba si una cadena comienza por otra; se puede indicar la posición de comienzo.
+  - .endsWith() -> comprueba si una cadena finaliza por otra; se puede indicar la posición de comienzo.
+  - .includes() -> devuelve true o false si la cadena contiene el texto pasado como argumento.
+  - .repeat() -> devuelve una cadena repetida tantas veces como se indique en el número pasado como argumento.
+
+MÉTODOS NUEVOS DEL OBJETO STRING 
+*/
 
 const cadena = "¡Hola, caracola!";
 

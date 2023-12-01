@@ -1,4 +1,12 @@
 /*
+Terminamos esta parte de clases viendo los métodos estáticos, para lo cual utilizamos la palabra reservada static.
+Al igual que ocurre en otros lenguajes de programación, un método estático se llama directamente sin instanciar la clase (es decir, sin necesidad de crear un objeto). De hecho, si tratáramos de llamar a un método estático a partir de un objeto obtendríamos un error.
+Este tipo de métodos se utilizan sobre todo para crear funciones de utilidad en una aplicación.
+
+Para crear un método estático no hay más que utilizar la siguiente sintaxis:
+
+    static nombreMetodo (parametros) { //código }
+
 Utilizamos "static" para definir un método estático en una clase
 Al igual que en otros lenguajes de programación, un método estático se llama diréctamente sin instanciar la clase (de hecho, no puede hacerse mediante una instancia de clase)
 Se suelen utilizar para crear funciones útiles en una aplicación

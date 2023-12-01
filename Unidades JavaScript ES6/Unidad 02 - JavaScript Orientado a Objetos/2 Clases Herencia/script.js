@@ -1,4 +1,10 @@
 /*
+Seguimos trabajando con clases en Javascript y en esta lección vamos a ver cómo trabajar con la herencia. Al igual que en otros lenguajes de programación, definimos la relación entre una clase padre y una clase hijo utilizando la palabra reservada extends, que definiría la relación de esta segunda clase con la primera. Además, para hacer referencia a los atributos de la clase padre utilizamos la palabra super.
+
+Brevemente, la sintaxis para definir una cabecera de una clase hijo sería la siguiente:
+
+  class ClaseHijo extends ClasePadre
+
 Para crear herencia de clases hay que utilizar la palabra "extends"
 Una clase hija creada con herencia, hereda todos los métodos de la clase padre
 */

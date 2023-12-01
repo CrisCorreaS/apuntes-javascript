@@ -1,4 +1,19 @@
 /*
+Las clases en Javascript se introdujeron en esta versión (ECMAScript2015 o ES6) y supusieron una mejora significativa en la herencia basada en prototipos de Javascript a la que estábamos acostumbrados. Estas clases nos dan una sintaxis más clara y simple para crear objetos y trabajar con herencia.
+
+A diferencia de la versión anterior de Javascript en la que utilizábamos la palabra reservada function para definir una “clase” (entre comillas), en esta versión se utiliza class; además, las propiedades se deben indicar dentro de un método constructor. La sintaxis sería la siguiente:
+
+    class NombreClase {
+    constructor(parametro1 [,parametro 2...]) {
+        this.propiedad1 = parametro1;
+        [this.propiedad2 = parametro2;]
+    }
+    }
+
+Y cómo no, para definir un objeto de la clase, utilizamos la palabra reservada new.
+    
+    let|const nombreObjeto = new NombreClase (argumentos);
+
 Las clases son una mejora sintáctica sobre la herencia basada en prototipos de JavaScript
     - Ofrecen una sintaxis más simple para crear objetos
     - No utiliza la palabra function, no la palabra "class"

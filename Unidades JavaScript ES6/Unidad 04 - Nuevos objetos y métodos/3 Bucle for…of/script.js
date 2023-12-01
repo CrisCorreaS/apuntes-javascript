@@ -1,4 +1,14 @@
 /*
+En vídeos anteriores conocimos los objetos Map y Set, que nos permitían almacenar valores de una manera especial. Además, conocimos sus propiedades y métodos. Pero dejamos en el tintero la manera de recorrer este tipo de estructuras de datos. En esta lección veremos cómo hacerlo utilizando el bucle for…of.
+For…of es una sentencia que ejecuta un bloque de código para cada uno de los elementos que forman parte de un objeto iterable, como puede ser un String, un Array, un Map, un Set u otros iteradores definidos por el usuario.
+A diferencia de lo que ya vimos en el curso de Javascript I en que for…in iteraba sobre las propiedades de un objeto, for…of es una estructura de control específica para las colecciones, y no para todos los objetos.
+
+Su sintaxis es la siguiente:
+
+    for (variable of iterable){
+    //sentencias
+    }
+
 for...of es una sentencia que ejecuta un bloque de código para cada uno de los elementos de un objeto iterable como podría ser un String, Array, Map, Set y otros iterables definidos por el usuario
 for...in itera sobre las propiedades de un objeto; pero for...of es específica para las colecciones y no para todos los objetos
 

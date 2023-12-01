@@ -1,4 +1,25 @@
 /*
+El objeto Set es, junto con Map, otra de las nuevas incorporaciones a la versión de Javascript ES6.
+A diferencia de Map, almacena valores únicos de cualquier tipo, incluidos valores primitivos y referencias a objetos.
+
+Como sintaxis también utiliza la de otros objetos de Javascript: con palabra reservada new y a continuación, entre paréntesis, un iterable:
+
+  new Set([iterable])
+
+En esta lección conoceremos, en primer lugar, la propiedad más importante:
+  - size: permite conocer el tamaño del Set.
+
+Y además, veremos el funcionamiento de una serie de métodos:
+  - has(elemento) -> devuelve true o false si existe un elemento en el Set.
+  - delete(elemento) -> elimina el elemento indicado por parámetro.
+  - add(elemento) -> añade un elemento nuevo al objeto Set.
+  - clear() -> elimina todos los elementos del objeto Set.
+  
+Y por si fuera poco, conoceremos WeakSet, una variante de Set con algunas pequeñas diferencias.
+
+En vídeos posteriores veremos cómo recorrer un Set utilizando la nueva estructura de control de ES6 for…of.
+
+
 SET:
 Es un objeto que permite almacenar valores ÚNICOS de cualquier tipo, incluidos valores primitivos, referencias a objetos, etc
 Para considerar dos objetos iguales, debe cumplirse la igualdad estricta (===) con la excepción el 0 positivo y el 0 negativo los cuales se consideran iguales y el NaN positivo y el NaN negativo que también son considerados iguales
