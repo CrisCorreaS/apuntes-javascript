@@ -143,6 +143,18 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
+    :point_right: <a href="https:https://didacticode.com/curso/curso-javascript-5/">Link al curso de referencia: Curso de
+        Javascript V de
+        Didacticode</a>
+    <ul>
+        <li><b>Unidad 15: Modelo de objetos del documento (DOM)</b>
+            <ol type="1">
+                <li>DOM. Acceso y modificación de elementos. Texto y atributos</li>
+                <li>DOM. Creación, sustitución y borrado de elementos</li>
+                <li>DOM. Acceso y navegación por elementos</li>
+            </ol>
+        </li>
+    </ul>
     <h2>Unidades JavaScript ES6</h2>
     :point_right:
     <a href="https://didacticode.com/curso/curso-javascript-es6/">Link al curso de referencia: Curso de Javascript
