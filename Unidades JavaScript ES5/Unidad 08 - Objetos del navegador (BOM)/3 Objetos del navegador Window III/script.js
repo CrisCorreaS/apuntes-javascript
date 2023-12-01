@@ -1,3 +1,9 @@
+/*
+En esta lección vamos a ver los cuadros de diálogo, que son tres métodos más del objeto window que utilizaremos muchísimo para interactuar con el usuario. Son tres:
+  - alert() -> muestra un mensaje a un usuario, pero no recoge ningún valor.
+  - prompt() -> muestra un mensaje a un usuario y, además, permite que el usuario introduzca un valor en su interior. Este valor quedará recogido en la variable a la que asignemos el prompt.
+  - confirm() -> muestra un mensaje al usuario y dos botones. Si el usuario pulsa “Aceptar”, devuelve true y si pulsa “Cancelar” o cierra la ventana, devuelve false. Tanto true como false se almacenarán en la variable a la que asignemos el confirm.
+*/
 //MÉTODOS QUE CREAN CUADROS DE DIÁLOGO:
 //alert(<mensaje>) -> Muestra un mensaje al usuario y no devuelve ningún valor
 alert("Hola caracola");

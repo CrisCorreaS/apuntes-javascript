@@ -1,3 +1,7 @@
+/*
+En la lección anterior, Javascript – #2.08. Objetos nativos. Math I, os comenté que objeto nativo Math tenía propiedades y métodos para constantes y funciones matemáticas. Además, vimos las propiedades y algunos de sus métodos más utilizados. En esta lección veremos el resto.
+*/
+
 // MÉTODOS QUE PERMITEN REDONDEAR
 //round(<número>) -> redondeo al alza o a la baja según el número
 var a = 4.3; //round() = 4; ceil = 5; floor = 4;

@@ -1,14 +1,14 @@
 /*
-    En esta lección vamos a profundizar en algunos métodos que nos van a servir muchísimo para trabajar con este tipo de datos: los métodos de búsqueda en cadenas:
-        -charAt()
-        -charCodeAt()
-        -fromCharCode()
-        -indexOf()
-        -lastIndexOf()
-        -search()
-        -match()
+En esta lección vamos a profundizar en algunos métodos que nos van a servir muchísimo para trabajar con este tipo de datos: los métodos de búsqueda en cadenas:
+  - charAt()
+  - charCodeAt()
+  - fromCharCode()
+  - indexOf()
+  - lastIndexOf()
+  - search()
+  - match()
 
-    Y además, el método de comparación localeCompare().
+Y además, el método de comparación localeCompare().
 */
 
 //MÉTODOS

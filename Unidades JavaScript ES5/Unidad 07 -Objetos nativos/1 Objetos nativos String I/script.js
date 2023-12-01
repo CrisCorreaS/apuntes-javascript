@@ -1,9 +1,10 @@
 /*
-    Un objeto de tipo String representa una serie de caracteres dentro de una cadena. O lo que es lo mismo, en una variable de tipo cadena vamos a poder almacenar palabras, frases… cualquier cosa formada por caracteres alfanuméricos y simbólicos.
-    En esta lección vamos a ver tres operaciones (llamémoslo así) esenciales en una cadena: la instanciación, la concatenación y la propiedad length.
-        - Instanciación: o creación de un “ejemplar” de un objeto. Como ya vimos en la lección anterior, podemos hacerlo de dos maneras: o utilizando la palabra new o creando datos primitivos.
-        - Concatenación: una operación propia de las cadenas que permite unir dos cadenas de texto en una.
-        - Propiedades: en el caso de String podemos hablar de lenght, que nos permite conocer el número de caracteres de la cadena.
+Un objeto de tipo String representa una serie de caracteres dentro de una cadena. O lo que es lo mismo, en una variable de tipo cadena vamos a poder almacenar palabras, frases… cualquier cosa formada por caracteres alfanuméricos y simbólicos.
+
+En esta lección vamos a ver tres operaciones (llamémoslo así) esenciales en una cadena: la instanciación, la concatenación y la propiedad length.
+  - Instanciación: o creación de un “ejemplar” de un objeto. Como ya vimos en la lección anterior, podemos hacerlo de dos maneras: o utilizando la palabra new o creando datos primitivos.
+  - Concatenación: una operación propia de las cadenas que permite unir dos cadenas de texto en una.
+  - Propiedades: en el caso de String podemos hablar de lenght, que nos permite conocer el número de caracteres de la cadena.
 */
 
 //INSTANCIACIÓN:
