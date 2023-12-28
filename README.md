@@ -1,12 +1,14 @@
 <h1>Práctica JavaScript</h1>
 
-
-
 ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
+<img align="right" alt="License MIT" src="https://img.shields.io/badge/LICENSE-MIT-green" /> <br/>
+<img alt="html5" src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
+<img alt="css3" src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />
+<img alt="javascript" src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
 
 Recopilación de scripts de JS que he usado para aprender este lenguaje
 
-<h2>Unidades JavaScript ES5</h2>
+<h2>📚 Unidades JavaScript ES5</h2>
     :point_right: <a href="https://didacticode.com/curso/curso-javascript/">Link al curso de referencia: Curso de Javascript
         I de
         Didacticode</a>
@@ -155,7 +157,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
-    <h2>Unidades JavaScript ES6</h2>
+    <h2>📚 Unidades JavaScript ES6</h2>
     :point_right:
     <a href="https://didacticode.com/curso/curso-javascript-es6/">Link al curso de referencia: Curso de Javascript
         Moderno</a>
