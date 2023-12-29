@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Formulario</h1>
+    <form action="procesar.php" method="post" id="miFormulario">
+      <table>
+        <tr>
+          <td>Nombre:</td>
+          <td>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              minlength="2"
+              maxlength="15"
+              pattern="[A-Za-z]{2,15}"
+              title="Introduce un nombre entre 2 y 15 letras"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Edad:</td>
+          <td>
+            <input
+              type="number"
+              name="telefono"
+              id="telefono"
+              min="18"
+              max="100"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Teléfono:</td>
+          <td>
+            <input
+              type="text"
+              name="telefono"
+              id="telefono"
+              pattern="[0-9]{9}"
+              title="Escribe un número de 9 cifras"
+              required
+            />
+          </td>
+        </tr>
+      </table>
+      <p>
+        <input type="submit" value="Enviar" id="enviar" />
+        <input type="reset" value="Borrar" id="borrar" />
+      </p>
+    </form>
+  </body>
+</html>
+
+<!-- 
+  En la lección anterior vimos cómo realizar una validación básica de formularios utilizando únicamente Javascript.
+
+  En esta ocasión veremos cómo validar un formulario únicamente utilizando los atributos propios de las etiquetas de formulario de HTML5. Con estos atributos seremos capaces de limitar la información de los campos de formulario en tipo de datos, longitud, rango de valores, etc.
+
+  En esta lección, por tanto, no trabajaremos con Javascript como tal, pero nos será de utilidad para afrontar la siguiente lección, en la que integraremos la validación básica de un formulario con HTML5 y la validación utilizando la API de Javascript.
+ -->
