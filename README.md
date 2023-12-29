@@ -91,7 +91,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
-    :point_right: <a href="https:https://didacticode.com/curso/curso-javascript-3/">Link al curso de referencia: Curso de
+    :point_right: <a href="https://didacticode.com/curso/curso-javascript-3/">Link al curso de referencia: Curso de
         Javascript III de
         Didacticode</a>
     <ul>
@@ -110,7 +110,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
-    :point_right: <a href="https:https://didacticode.com/curso/curso-javascript-4/">Link al curso de referencia: Curso de
+    :point_right: <a href="https://didacticode.com/curso/curso-javascript-4/">Link al curso de referencia: Curso de
         Javascript IV de
         Didacticode</a>
     <ul>
@@ -145,7 +145,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
             </ol>
         </li>
     </ul>
-    :point_right: <a href="https:https://didacticode.com/curso/curso-javascript-5/">Link al curso de referencia: Curso de
+    :point_right: <a href="https://didacticode.com/curso/curso-javascript-5/">Link al curso de referencia: Curso de
         Javascript V de
         Didacticode</a>
     <ul>
