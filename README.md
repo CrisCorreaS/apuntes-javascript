@@ -177,9 +177,7 @@ Recopilación de scripts de JS que he usado para aprender este lenguaje
 </ul>
 
 ## 📚 Unidades JavaScript ES6 :point_right:
-<a href="https://didacticode.com/curso/curso-javascript-es6/"
-  >Link al curso de referencia: Curso de Javascript Moderno</a
->
+<a href="https://didacticode.com/curso/curso-javascript-es6/">Link al curso de referencia: Curso de Javascript Moderno</a>
 <ul>
   <li>
     <b><a href="https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES6/Unidad%2001%20-%20Introducci%C3%B3n">Unidad 1:</a> Introducción </b>
