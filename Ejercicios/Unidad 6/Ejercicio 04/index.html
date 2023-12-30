@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4 Unidad 6</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>Crea una aplicación que te permitirá generar tus propios formularios de manera dinámica, después de crear cada
+      elemento, se ha de visualizar una confirmación (confirm) indicando el tipo de elemento creado y su nombre o atributo
+      correspondiente. Para ello dibuja una tabla de una sola fila y varias columnas. En cada columna habrá un botón que
+      realice lo siguiente:
+      - Crear un input de tipo texto. Le preguntará al usuario mediante un prompt qué nombre (atributo name) tiene el input.
+      - Crear un input de tipo password. Le preguntará al usuario mediante un prompt qué nombre (atributo name) tiene el
+      input.
+      - Crear un textarea. Le preguntará al usuario el nombre y generará automáticamente un textarea de 40 columnas y 5
+      filas.
+      - Crear un label. Preguntará al usuario a qué input va referido (atributo for).
+      - Crear una imagen. Preguntará al usuario qué ruta tiene la imagen (atributo src).
+      - Crear un checkbox. Preguntará al usuario el nombre y el valor (atributos name y value).
+      - Crear un radio. Preguntará al usuario el nombre y el valor (atributos name y value).
+      - Crear un botón (submit). Preguntará al usuario el nombre y el valor (atributos name y value).
+    </p>
+    <table>
+      <tr>
+        <td><button id="boton1">Crear un input de tipo texto</button></td>
+        <td><button id="boton2">Crear un input de tipo password</button></td>
+        <td><button id="boton3">Crear un textarea</button></td>
+        <td><button id="boton4">Crear un label</button></td>
+        <td><button id="boton5">Crear una imagen</button></td>
+        <td><button id="boton6">Crear un input de tipo checkbox</button></td>
+        <td><button id="boton7">Crear un input de tipo radio</button></td>
+        <td><button id="boton8">Crear un input de tipo submit</button></td>
+      </tr>
+    </table>
+    <hr/>
+    <div id="divForm"></div>
+  </body>
+</html>
