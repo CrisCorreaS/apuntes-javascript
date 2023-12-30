@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="script.js" defer></script>
+    <title>Ejercicio 1 - Validación de formularios</title>
+
+    <style type="text/css">
+      body {
+        font-family: arial, helvetica;
+      }
+      form {
+        width: 600px;
+        margin: 20px auto 0 auto;
+      }
+      label {
+        float: left;
+        width: 200px;
+        font-weight: bold;
+      }
+      label[for="registro_condiciones"] {
+        float: none;
+      }
+      input[type="text"],
+      input[type="password"],
+      textarea {
+        width: 360px;
+      }
+      input[type="checkbox"] {
+        margin-left: 200px;
+      }
+      input[type="submit"] {
+        margin: 20px 0 0 200px;
+        display: block;
+      }
+      .error {
+        border: solid 2px red;
+      }
+
+      .mensajeError {
+        color: red;
+        font-size: smaller;
+      }
+
+      .normal {
+        color: black;
+        background-color: white;
+        font-size: normal;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      A partir del siguiente formulario el cual puedes modificar: 
+      Utilizando las características de validación de HTML5 y Javascript, realiza
+      la validación del formulario en el botón “Enviar”, si un campo da error no
+      se valida el siguiente y se mostrarán encima del botón enviar. 
+        - El nombre tiene que  permitir letras mayúsculas y minúsculas, no ser 
+        vacío y estar entre 5 y 20 caracteres. Debes de personalizar los mensajes
+        de error “El Nombre no puede ser vacío” y “El nombre ha de contener entre
+        5 y 20 caracteres”. 
+        - El apellido se validará igual que el nombre salvo que su límites serán 
+        entre 2 y 50 caracteres. Debes de personalizar los mensajes de error “El 
+        apellido no puede ser vacío” y “El apellido ha de contener entre 2 y 50 
+        caracteres”. 
+        - El correo ha de tener el formato habitual. (Pej: correo@servidor.com) 
+        Debes de personalizar los mensajes de error “El correo no puede ser vacío”
+        y “El correo no tiene el formato correcto”. Pattern para html5 correo: 
+        ^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$ 
+      Cuando se pulse el botón enviar se comprobará si el checkbox está marcado, 
+      si no mostraremos como error que se debe de marcar el checkbox y solo en ese
+      caso se validará y se mostrará el error correspondiente(en color rojo)
+      encima del botón Enviar, el borde de la caja de texto se pondrá en rojo y
+      el foco se colocará en la caja correspondiente al error. Si la validación
+      es correcta se mostrará un alert indicando el mensaje (“Datos de {nombre y
+      apellidos} registrados correctamente”)
+    </p>
+    <form id="registro">
+      <fieldset>
+        <legend>Registro</legend>
+        <label for="registro_nombre">Nombre:</label
+        ><input
+          type="text"
+          name="nombre"
+          id="registro_nombre"
+          maxlength="20"
+          minlength="5"
+          pattern="[a-zA-Z]{5,20}"
+          required
+        />
+        <label for="registro_apellidos">Apellido:</label
+        ><input
+          type="text"
+          name="apellido"
+          id="registro_apellido"
+          maxlength="50"
+          minlength="2"
+          pattern="[a-zA-Z]{2,50}"
+          required
+        />
+        <label for="registro_email">Email:</label
+        ><input
+          type="text"
+          name="email"
+          id="registro_email"
+          minlength="7"
+          pattern="^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$"
+          required
+        />
+        <label for="registro_password">Password:</label
+        ><input type="password" name="password" id="registro_password" />
+        <input
+          type="checkbox"
+          name="condiciones"
+          id="registro_condiciones"
+          value="1"
+        /><label for="registro_condiciones"
+          >Acepto las condiciones del servicio.</label
+        >
+        <p id="mensajeError"></p>
+        <input type="submit" value="Enviar" id="enviar" />
+      </fieldset>
+    </form>
+  </body>
+</html>
