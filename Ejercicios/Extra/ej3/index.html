@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="module" src="script.js" defer></script>
+    <title>Ejercicio 1 - Validación de formularios</title>
+
+    <style type="text/css">
+      body {
+        font-family: arial, helvetica;
+      }
+      form {
+        width: 600px;
+        margin: 20px auto 0 auto;
+      }
+      label {
+        float: left;
+        width: 200px;
+        font-weight: bold;
+      }
+      label[for="registro_condiciones"] {
+        float: none;
+      }
+      input[type="text"],
+      input[type="password"],
+      textarea {
+        width: 360px;
+      }
+      input[type="checkbox"] {
+        margin-left: 200px;
+      }
+      input[type="submit"] {
+        margin: 20px 0 0 200px;
+        display: block;
+      }
+      .error {
+        border: solid 2px red;
+      }
+
+      .mensajeError {
+        color: red;
+        font-size: smaller;
+      }
+
+      .normal {
+        color: black;
+        background-color: white;
+        font-size: normal;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Añade un botón al formulario llamado “Buscar”, que pedirá al usuario un
+      Email (por medio de un prompt (ventana emergente)). Su funcionamiento será
+      el de recorrer el array de personas y mostrar en la página todos los datos
+      de la persona correspondiente a ese correo
+    </p>
+    <form id="registro">
+      <fieldset>
+        <legend>Registro</legend>
+        <label for="registro_nombre">Nombre:</label
+        ><input
+          type="text"
+          name="nombre"
+          id="registro_nombre"
+          maxlength="20"
+          minlength="5"
+          pattern="[a-zA-Z]{5,20}"
+          required
+        />
+        <label for="registro_apellidos">Apellido:</label
+        ><input
+          type="text"
+          name="apellido"
+          id="registro_apellido"
+          maxlength="50"
+          minlength="2"
+          pattern="[a-zA-Z]{2,50}"
+          required
+        />
+        <label for="registro_email">Email:</label
+        ><input
+          type="text"
+          name="email"
+          id="registro_email"
+          minlength="7"
+          pattern="^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$"
+          required
+        />
+        <label for="registro_password">Password:</label
+        ><input type="password" name="password" id="registro_password" />
+        <input
+          type="checkbox"
+          name="condiciones"
+          id="registro_condiciones"
+          value="1"
+        /><label for="registro_condiciones"
+          >Acepto las condiciones del servicio.</label
+        >
+        <p id="mensajeError"></p>
+        <input type="submit" value="Enviar" id="enviar" />
+        <input type="button" value="Buscar" id="boton" />
+        <table border="1" id="tablaClientes"></table>
+      </fieldset>
+    </form>
+  </body>
+</html>
