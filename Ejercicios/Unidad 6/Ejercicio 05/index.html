@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5 Unidad 6</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>
+      Crea una página web que tenga un TextArea, una lista desplegable con
+      colores y un botón "Crear párrafo". Cuando el usuario haga clic sobre el
+      botón se creará un nuevo párrafo que contendrá el texto del TextArea y el
+      color del fondo será el seleccionado en la lista desplegable. En caso de
+      que el TextArea esté vacío, mostrará un mensaje de error y no creará
+      ningún párrafo.
+    </p>
+    <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+    <select name="colores" id="colores">
+      <option value="#ff9aa2">#ff9aa2 (Rojo pastel)</option>
+      <option value="#feb7b1">#feb7b1 (Rosa pastel)</option>
+      <option value="#ffdac0">#ffdac0 (Naranja pastel)</option>
+      <option value="#e2f0cc">#e2f0cc (Verde pastel)</option>
+      <option value="#b5ead6">#b5ead6 (Azul pastel)</option>
+      <option value="#c7ceea">#c7ceea (Gris pastel)</option>
+    </select>
+    <button type="submit" id="enviar">Crear Párrafo</button>
+    <p id="mensajeError" class="error"></p>
+    <div id="parrafos"></div>
+  </body>
+</html>
