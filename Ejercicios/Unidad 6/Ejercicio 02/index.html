@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2 Unidad 6</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script1.js" defer></script>
+  </head>
+  <body>
+    <p>
+      Crea un aplicación en javascript que coloque el foco en el último input de
+      tipo texto del último formulario de la página.
+    </p>
+    <form id="form1">
+      <label for="name1" id="nombre1">Nombre del disco</label>
+      <input
+        type="text"
+        id="name1"
+        placeholder="Nombre del disco"
+        maxlength="20"
+        pattern="^[\s\S]{1,20}$"
+        required
+      />
+      <br />
+      <label for="ano1" id="year1">Año de publicación</label>
+      <input
+        type="number"
+        id="ano1"
+        placeholder="Año de publicación"
+        maxlength="4"
+        min="0"
+        max="2023"
+      />
+      <br />
+      <label for="localization1" id="localizacion1">Localización</label>
+      <input
+        type="number"
+        id="localization1"
+        placeholder="Localización"
+        pattern="^(|[\d]+)$"
+      />
+      <br />
+      <label for="lent1">Prestado</label>
+      <input type="checkbox" id="lent1" placeholder="Prestado" /><br />
+      <button type="submit" id="enviar1">Añadir Disco</button>
+    </form>
+    <hr />
+    <form id="form2">
+      <label for="group2" id="grupo2">Grupo o cantante</label>
+      <input
+        type="text"
+        id="group2"
+        placeholder="Grupo o cantante"
+        maxlength="20"
+        pattern="^[\s\S]{1,20}$"
+        required
+      />
+      <br />
+      <label for="type2">Tipo de música</label>
+      <select id="type2" placeholder="Tipo de música">
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="punk">Punk</option>
+        <option value="indie">Indie</option>
+      </select>
+      <br />
+      <button type="submit" id="enviar2">Añadir Grupo</button>
+    </form>
+    <hr />
+    <form id="form3">
+      <div id="divNombre">
+        <label for="name3" id="nombre3">Nombre</label>
+        <br />
+        <input
+          type="text"
+          id="name3"
+          maxlength="40"
+          placeholder="Nombre y apellido"
+          pattern="^[a-zA-Z\s]{1,50}$"
+          required
+        />
+        <p id="mensajeNombre"></p>
+      </div>
+      <div id="divContacto3">
+        <label for="contact3" id="contacto3">
+          Número de móvil o dirección de correo electrónico
+        </label>
+        <br />
+        <input
+          type="text"
+          id="contact3"
+          maxlength="40"
+          minlength="9"
+          required
+        />
+        <p id="mensajeMovilCorreo"></p>
+      </div>
+      <div id="divContrasena">
+        <label for="password3" id="contrasinal3">Contraseña</label>
+        <br />
+        <input
+          type="password"
+          id="password3"
+          maxlength="20"
+          minlength="6"
+          pattern="^[\s\S]{6,20}$"
+          placeholder="Al menos 6 caracteres"
+          required
+        />
+        <p id="mensajeContrasena"></p>
+      </div>
+      <div id="divContrasena2">
+        <label for="password23" id="contrasinal23"
+          >Confirma tu contraseña</label
+        >
+        <br />
+        <input
+          type="password"
+          id="password23"
+          maxlength="20"
+          minlength="6"
+          required
+        />
+        <p id="mensajeContrasena2"></p>
+      </div>
+      <button type="submit" id="enviar">Continuar</button>
+    </form>
+    <hr />
+    <form id="form4">
+      <label for="text4">
+        Texto:
+        <input type="text" name="text4" id="text4" />
+      </label>
+      <br><br>
+      <label for="number">
+        Número:
+        <input type="number" name="number4" id="number4" />
+      </label>
+      <br><br>
+      <input type="submit" value="Enviar" id="enviar4" />
+    </form>
+  </body>
+</html>
