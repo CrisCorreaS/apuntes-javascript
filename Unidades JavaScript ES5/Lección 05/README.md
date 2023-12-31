@@ -15,6 +15,8 @@
 >   - [¿Qué es un atributo HTML?](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#qu%C3%A9-es-un-atributo-html)
 >   - [Acceder a atributos HTML](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#acceder-a-atributos-html)
 >   - [Obtener atributos HTML](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#obtener-atributos-html)
+>   - [Modificar o eliminar atributos HTML](https://github.com/CrisCorreaS/practica-js/blob/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005/README.md#modificar-o-eliminar-atributos-html)
+>   - [Caso especial: Atributos booleanos](https://github.com/CrisCorreaS/practica-js/blob/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005/README.md#caso-especial-atributos-booleanos)
 > - []()
 >   - []()
 
@@ -192,7 +194,7 @@ Existe una serie de métodos para crear de forma eficiente diferentes elementos 
 
 Para empezar, nos centraremos principalmente en la primera, que es la que utilizamos para crear elementos HTML en el DOM.
 
-### Creando elementos con createElement()
+#### Creando elementos con createElement()
 Mediante el método ``.createElement()`` podemos crear un Elemento HTML en memoria (¡no estará insertado aún en nuestro documento HTML!). Con dicho elemento almacenado en una variable o constante, podremos modificar sus características o contenido, para posteriormente insertarlo en una posición determinada del DOM o documento HTML.
 
 Vamos a centrarnos en el proceso de creación del elemento, y más adelante veremos diferentes formas de insertarlo en el DOM. El funcionamiento de ``.createElement()`` es muy sencillo: se trata de pasarle el nombre de la etiqueta tag a utilizar:
@@ -215,7 +217,7 @@ El método ``createElement()`` tiene un parámetro opcional denominado "options"
 > [!NOTE]
 > Ten presente que en los ejemplos que hemos visto estamos creando los elementos en una constante, pero de momento no los hemos añadido al documento HTML, por lo que no aparecerían visualmente. Más adelante veremos como añadirlos.
 
-### El método .cloneNode()
+#### El método .cloneNode()
 Hay que tener mucho cuidado al crear e intentar duplicar elementos HTML. Un error muy común es asignar un elemento que tenemos en otra variable, pensando que estamos creando una copia (cuando no es así). Esto es un clásico error común cuando se está aprendiendo a programar:
 
 ```
@@ -248,14 +250,14 @@ El método ``cloneNode(deep)`` acepta un parámetro Boolean opcional (deep), a f
 - Si es **true**, clonará también elementos hijos. Se conoce como clonación profunda (Deep Clone).
 - Si es **false**, no clonará elementos hijos. Se conoce como clonación superficial (Shallow Clone).
 
-### La propiedad .isConnected
+#### La propiedad .isConnected
 La propiedad ``isConnected`` nos indica si el elemento en cuestión está conectado al DOM, es decir, si está insertado en el documento HTML:
 - Si devuelve **true**, significa que el elemento está conectado al DOM.
 - Si devuelve **false**, significa que el elemento no está conectado al DOM.
 - 
 Hasta ahora, hemos creado elementos que no lo están (permanecen sólo en memoria). En el capítulo Insertar elementos en el DOM veremos como insertarlos en el documento HTML para que aparezca visualmente en la página.
 
-## Usando fragmentos
+### Usando fragmentos
 En algunas ocasiones, nos puede resultar muy interesante utilizar fragmentos. Los fragmentos son una especie de documento paralelo, aislado de la página con la que estamos trabajando, que tiene varias características:
 - No tiene elemento padre. Está aislado de la página o documento.
 - Es mucho más simple y ligero (mejor rendimiento).
