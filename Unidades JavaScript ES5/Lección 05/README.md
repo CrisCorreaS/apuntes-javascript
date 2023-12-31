@@ -93,8 +93,8 @@ Es el caso de los métodos ``.querySelector()`` y ``.querySelectorAll()``:
 
 |Método de búsqueda |	Descripción | Devuelve |	Si no lo encuentra...|
 |-----------------------|------------------|------------------|------------------|
-| [.querySelector(sel)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) |	Busca el primer elemento que coincide con el selector CSS "sel" |	El primer elemento|	Devuelve null|
-| [.querySelectorAll(sel)](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) |	Busca todos los elementos que coinciden con el selector CSS "sel" |	NodeList |	Devuelve []|
+| [.querySelector("sel")](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) |	Busca el primer elemento que coincide con el selector CSS "sel" |	El primer elemento|	Devuelve null|
+| [.querySelectorAll("sel")](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) |	Busca todos los elementos que coinciden con el selector CSS "sel" |	NodeList |	Devuelve []|
  
 Con estos dos métodos podemos realizar todo lo que hacíamos con los métodos tradicionales mencionados anteriormente e incluso muchas más cosas (en menos código), ya que son muy flexibles y potentes gracias a los selectores CSS.
 
@@ -165,10 +165,10 @@ Existe una serie de métodos para crear de forma eficiente diferentes elementos 
 
 |Métodos|	Descripción| Devuelve |
 |-----------------------|------------------|------------------|
-| [.createElement(tag, options)](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) |	Crea y devuelve el elemento HTML definido por el String tag.| Elemento |
-| [.createComment(text)](https://developer.mozilla.org/en-US/docs/Web/API/Document/createComment)	|Crea y devuelve un nodo de comentarios HTML <!-- text -->| Nodo de tipo Comentario |
-| [.createTextNode(text)](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode)	|Crea y devuelve un nodo HTML con el texto text| Nodo de tipo Texto|
-| [.cloneNode(deep)](https://developer.mozilla.org/es/docs/Web/API/Node/cloneNode)	|Clona el nodo HTML y devuelve una copia. deep es false por defecto|Duplicado del nodo que lo llamó|
+| [.createElement("tag", "options")](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) |	Crea y devuelve el elemento HTML definido por el String tag.| Elemento |
+| [.createComment("text")](https://developer.mozilla.org/en-US/docs/Web/API/Document/createComment)	|Crea y devuelve un nodo de comentarios HTML <!-- text -->| Nodo de tipo Comentario |
+| [.createTextNode("text")](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode)	|Crea y devuelve un nodo HTML con el texto text| Nodo de tipo Texto|
+| [.cloneNode("deep")](https://developer.mozilla.org/es/docs/Web/API/Node/cloneNode)	|Clona el nodo HTML y devuelve una copia. deep es false por defecto|Duplicado del nodo que lo llamó|
 | [.isConnected](https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected)|	Indica si el nodo HTML está insertado en el documento HTML|Boolean|
 
 Para empezar, nos centraremos principalmente en la primera, que es la que utilizamos para crear elementos HTML en el DOM.
@@ -193,6 +193,7 @@ const text = document.createTextNode("Hola");           // Nodo de texto: 'hola'
 
 El método ``createElement()`` tiene un parámetro opcional denominado "options". Si se indica, se espera un objeto con una propiedad is para definir un elemento personalizado en una modalidad menos utilizada. Se verá más adelante en el apartado de Web Components.
 
+> [!NOTE]
 > Ten presente que en los ejemplos que hemos visto estamos creando los elementos en una constante, pero de momento no los hemos añadido al documento HTML, por lo que no aparecerían visualmente. Más adelante veremos como añadirlos.
 
 ### El método .cloneNode()
@@ -261,3 +262,69 @@ document.body.appendChild(fragment);
 Como se puede ver, utilizamos el fragmento fragment generado como ubicación temporal donde hacer todos los cambios del DOM que necesitemos, sin que afecten al reflow del documento de forma independiente. Una vez terminemos nuestra lógica y tengamos el DOM definitivo, lo insertamos como hacemos siempre, por ejemplo, con un appendChild (ver más adelante).
 
 Es entonces cuando se traslada todo el DOM del fragmento al lugar donde hemos indicado en el appendChild (*en nuestro ejemplo, a la etiqueta <body>), dejando nuevamente el fragmento vacío.
+
+## 📖 [Gestionar atributos del DOM](https://lenguajejs.com/javascript/dom/atributos-del-dom/)
+### ¿Qué es un atributo HTML?
+Las etiquetas HTML tienen ciertos atributos que definen el comportamiento de la etiqueta. Existen atributos comunes a todas las etiquetas HTML, y atributos que sólo existen para determinadas etiquetas HTML. El orden de los atributos en HTML no es importante, da igual que este primero o segundo, no influye en nada.
+
+Además, un atributo puede tener un valor o ser un atributo booleano, es decir, simplemente estar presente y no tener ningún valor indicado (si un atributo booleano no tiene ningún valor pero está presente, es como ponerlo en true ya que lo que importa a la hora de gestionar si es true o false, no es el valor, si no que esté presente o no)
+
+``` 
+<div class="container" data-attr="value">
+  <button disabled>Avisar</button>
+</div>
+```
+Observa que "class" y "data-attr" son ejemplos de atributos, y "container" y "value" son sus correspondientes valores. Por otro lado, "disabled" es un atributo booleano (no tiene valor, pero al estar presente, ese atributo es true).
+
+### Acceder a atributos HTML
+En general, una vez tenemos un elemento sobre el que vamos a crear algunos atributos, lo más sencillo es asignarle valores como propiedades de objetos, pero también se pueden eliminar y jugar con eso.
+
+```
+const element = document.querySelector("div");   // <div class="container"></div>
+
+element.id = "page";           // <div id="page" class="container"></div>
+element.style = "color: red";  // <div id="page" class="container" style="color: red"></div>
+element.className = "data";    // <div id="page" class="data" style="color: red"></div>
+element.id = "";               // <div id="" class="data" style="color: red"></div> -> Eso es como quitarle el "id"
+```
+> [!NOTE]
+> Hay que tener en cuenta que algunos casos como el del último ejemplo, se indica className en lugar de class. Esto ocurre porque es una palabra reservada para las clases de Javascript, como también ocurre con for para los bucles, etc.
+
+> [!TIP]
+> Aunque es posible asignar a la propiedad className varias clases en un String separadas por espacio, recomendamos utilizar la propiedad classList para manipular clases CSS
+
+### Obtener atributos HTML
+Aunque la forma anterior es la más rápida, tenemos algunos métodos para obtener los atributos HTML de forma clara y literal, sin problemas como los de className:
+
+|Métodos |	Descripción| Devuelve |
+|-----------------------|------------------|------------------|
+| [hasAttributes()](https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributes) |	Indica si el elemento tiene atributos HTML| Boolean |
+| [hasAttribute("attr")](https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttribute) |	Indica si el elemento tiene el atributo HTML "attr"| Boolean|
+| [getAttributeNames()](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNames) |	Devuelve un Array con los atributos del elemento|Array|
+| [getAttribute(attr)](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute) |	Devuelve el valor del atributo attr del elemento o null si no existe|Valor del atributo o null|
+
+> [!CAUTION]
+> Es muy fácil equivocarse cuando están ``hasAttributes()`` y ``hasAttribute("attr")``, para diferenciarlos piensa que el plural es para saber si existen uno o varios atributos; mientras el que está en singular, se usa para ver si el atributo pasado como parámetro está o no en el elemento.
+
+En los dos primeros casos, podemos utilizar ``hasAttributes()`` o ``hasAttribute("attr")`` para saber que atributos HTML tiene definidos una etiqueta. Por otro lado, el método ``getAttributeNames()`` nos devuelve la lista de atributos que tiene una etiqueta, y el método ``getAttribute("attr·)`` nos da el valor que tiene un atributo HTML específico.
+
+Consideremos el siguiente HTML:
+
+```
+<div id="page" class="info data dark" data-number="5"></div>
+```
+
+Vamos a aplicar las siguientes lineas de Javascript, trabajando con ese elemento:
+
+```
+const element = document.querySelector("#page");
+
+element.hasAttributes();              // true (tiene 3 atributos)
+element.hasAttribute("data-number");  // true (data-number existe)
+element.hasAttribute("disabled");     // false (disabled no existe)
+
+element.getAttributeNames();          // ["id", "data-number", "class"]
+element.getAttribute("id");           // "page"
+```
+
+Como puedes ver, es muy sencillo de utilizar.
