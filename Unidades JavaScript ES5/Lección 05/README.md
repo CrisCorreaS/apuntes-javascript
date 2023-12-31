@@ -347,3 +347,59 @@ element.getAttribute("id");           // "page"
 ```
 
 Como puedes ver, es muy sencillo de utilizar.
+
+### Modificar o eliminar atributos HTML
+Por otro lado, tenemos algunos métodos para modificar atributos HTML existentes, o directamente, eliminarlos:
+
+|Métodos |	Descripción| Devuelve |
+|-----------------------|------------------|------------------|
+|[setAttribute("attr", "value")](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) |	Añade o cambia el atributo "attr" al valor value del elemento HTML|void, solo realiza la acción|
+|[toggleAttribute("attr", "force")](https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute) |	Añade atributo attr si no existe, si existe lo elimina|void, solo realiza la acción|
+|[removeAttribute("attr")](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute) |	Elimina el atributo attr del elemento HTML|void, solo realiza la acción|
+
+Estos métodos son bastante autoexplicativos y fáciles de entender, aún así, vamos a ver unos ejemplos de uso donde podemos ver como funcionan. Continuamos con el ejemplo HTML anterior:
+
+```
+<div id="page" class="info data dark" data-number="5"></div>
+```
+
+Ahora, vamos a modificar sus atributos HTML utilizando dichos métodos. Observa que ``setAttribute()`` puede servir tanto para añadir nuevos atributos que no existían como para modificar los que ya existen:
+
+```
+const element = document.querySelector("#page");
+
+element.setAttribute("data-number", "10");   // Cambiar "data-number" a 10
+element.removeAttribute("id");               // Elimina el atributo "id"
+element.setAttribute("id", "page");          // Vuelve a añadirlo
+element.toggleAttribute("disabled");         // Si realizamos una acción, el atributo "disabled" aparece o desaparece
+```
+
+> [!CAUTION]
+> Tenemos que tener cuidado con ``toggleAttribute()`` y diferenciarlo del método ``toggle()`` de ``classList``. ``toggleAttribute()`` es única y exclusivamente para poner o quitar atributos booleanos de un elementos, mientras que ``classList.toggle()`` lo veremos más adelante pero únicamente se utiliza para cambiar el valor del atributo "class"
+
+Sin embargo, hay un caso especial que es digno de mención.
+
+### Caso especial: Atributos booleanos
+Hay que hablar de un caso especial, que es el que comentamos en el que podemos establecer atributos HTML que son Boolean, es decir, que no tienen indicado ningún valor.
+
+Si esto lo hacemos con el método ``setAttribute()`` y le indicamos un booleano, no tendremos exactamente lo que buscamos. Recuerda que los atributos HTML son siempre de tipo String:
+
+```
+const button = document.querySelector("button");
+
+button.setAttribute("disabled", true);   // ❌ <button disabled="true">Clickme!</button>
+button.disabled = true;                  // ✅ <button disabled>Clickme!</button>
+button.setAttribute("disabled", "");     // ✅ <button disabled>Clickme!</button>
+```
+
+Por lo tanto, la forma correcta de establecerlos es indicar un String vacío. Automáticamente, el navegador sabrá que una cadena de texto vacía es un booleano y ocultará su valor. Por otro lado, si lo haces mediante una propiedad Javascript, si puedes usar un booleano, y añadirá el atributo HTML automáticamente.
+
+Normalmente, el método .toggleAttribute(attr, force) es más sencillo para estos casos. Añade el atributo que le pasas por parámetro si no existe, y lo elimina si ya existe:
+
+```
+button.toggleAttribute("disabled");         // Como ya existe "disabled", lo elimina
+button.toggleAttribute("hidden");           // Como no existe "hidden", lo añade
+```
+
+Si se le proporciona el Boolean force, si es verdadero: añade el atributo, si es falso: elimina el atributo.
+
