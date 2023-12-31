@@ -2,15 +2,15 @@
 
 > [!NOTE]
 > Enlaces con información y vídeos para apoyar y complementar los apuntes:
-> Links:
-> - [W3Schools JS HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
-> - [Diferencias entre getElementById vs querySelector (y otros métodos del DOM) de ManzDev](https://www.youtube.com/watch?v=EiKYr5vjs48)
-> - [HTMLCollection vs NodeList by freeCodeCamp](https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/)
-> - [WebComponents by ManzDev](https://lenguajejs.com/webcomponents/)
-> Vídeos:
-> - [Nodelist vs. HTMLCollection by Web Dev Simplified](https://www.youtube.com/watch?v=rhvec8cXLlo)
-> - [HTMLCollection vs. NodeList Explained by The Code Creative](https://www.youtube.com/watch?v=uwJyp4ZLVMA)
-> - [DOM Manipulation by Web Dev Simplified](https://www.youtube.com/watch?v=y17RuWkWdn8)
+> - Links:
+>   - [W3Schools JS HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
+>   - [Diferencias entre getElementById vs querySelector (y otros métodos del DOM) de ManzDev](https://www.youtube.com/watch?v=EiKYr5vjs48)
+>   - [HTMLCollection vs NodeList by freeCodeCamp](https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/)
+>   - [WebComponents de ManzDev](https://lenguajejs.com/webcomponents/)
+> - Vídeos:
+>   - [Nodelist vs. HTMLCollection by Web Dev Simplified](https://www.youtube.com/watch?v=rhvec8cXLlo)
+>   - [HTMLCollection vs. NodeList Explained by The Code Creative](https://www.youtube.com/watch?v=uwJyp4ZLVMA)
+>   - [DOM Manipulation by Web Dev Simplified](https://www.youtube.com/watch?v=y17RuWkWdn8)
 
 ## 📖 [Qué es el DOM](https://lenguajejs.com/javascript/dom/que-es/)
 
