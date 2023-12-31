@@ -130,8 +130,8 @@ Sin embargo, si controlamos un poco de CSS, esto puede ser más sencillo si hace
 const links = document.querySelectorAll("#menu a");
 ```
 
-### NodeList o HTMLCollection
-Ten en cuenta que aunque en esta documentación hemos hablado de Array (para simplificar), realmente los métodos de búsqueda generalmente devuelven un tipo de dato HTMLCollection o NodeList, que aunque son muy similares, no son exactamente Arrays.
+### [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) o [HTMLCollection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection)
+Ten en cuenta que aunque en esta documentación hemos hablado de Array (para simplificar), realmente los métodos de búsqueda generalmente devuelven un tipo de dato [HTMLCollection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection) o [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList), que aunque son muy similares, no son exactamente Arrays.
 
 ```
 const elements = document.querySelectorAll("div");
