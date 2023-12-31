@@ -1,10 +1,13 @@
 # 📚 Apuntes sobre el DOM:
 
 > [!NOTE]
-> Links con información y vídeos para apoyar y complementar los apuntes:
+> Enlaces con información y vídeos para apoyar y complementar los apuntes:
+> Links:
 > - [W3Schools JS HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
 > - [Diferencias entre getElementById vs querySelector (y otros métodos del DOM) de ManzDev](https://www.youtube.com/watch?v=EiKYr5vjs48)
 > - [HTMLCollection vs NodeList by freeCodeCamp](https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/)
+> - [WebComponents by ManzDev](https://lenguajejs.com/webcomponents/)
+> Vídeos:
 > - [Nodelist vs. HTMLCollection by Web Dev Simplified](https://www.youtube.com/watch?v=rhvec8cXLlo)
 > - [HTMLCollection vs. NodeList Explained by The Code Creative](https://www.youtube.com/watch?v=uwJyp4ZLVMA)
 > - [DOM Manipulation by Web Dev Simplified](https://www.youtube.com/watch?v=y17RuWkWdn8)
@@ -152,3 +155,109 @@ elements.map // ƒ map() { [native code] }
 
 En el segundo caso hemos hecho una desestructuración de arrays, es decir, hemos sacado todos los elementos de la estructura y la hemos metido en un nuevo Array. Por esta razón en el primer caso no podemos usar ``.map()`` y en el segundo caso, sí.
 
+## 📖 [Crear elementos en el DOM](https://lenguajejs.com/javascript/dom/crear-elementos-dom/)
+Si te encuentras en fase de aprendizaje, lo normal suele ser crear código HTML desde un fichero HTML. Sin embargo, y sobre todo con el auge de las páginas SPA (Single Page Application) y los frameworks o librerías Javascript, esto ha cambiado bastante y es muy frecuente crear código HTML desde Javascript de forma dinámica.
+
+Esto tiene sus ventajas y sus desventajas. Un fichero .html siempre será más sencillo, más «estático» y más directo, ya que lo primero que analiza un navegador web es un fichero de marcado HTML. Por otro lado, un fichero .js es más complejo y menos directo, pero mucho más potente, «dinámico» y flexible, con menos limitaciones a la hora de desarrollar.
+
+Existe una serie de métodos para crear de forma eficiente diferentes elementos HTML o nodos. Dichos métodos nos ofrecen una forma muy sencilla de crear estructuras dinámicas, mediante bucles o estructuras definidas:
+
+
+|Métodos|	Descripción| Devuelve |
+|-----------------------|------------------|------------------|
+| [.createElement(tag, options)](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) |	Crea y devuelve el elemento HTML definido por el String tag.| Elemento |
+| [.createComment(text)](https://developer.mozilla.org/en-US/docs/Web/API/Document/createComment)	|Crea y devuelve un nodo de comentarios HTML <!-- text -->| Nodo de tipo Comentario |
+| [.createTextNode(text)](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode)	|Crea y devuelve un nodo HTML con el texto text| Nodo de tipo Texto|
+| [.cloneNode(deep)](https://developer.mozilla.org/es/docs/Web/API/Node/cloneNode)	|Clona el nodo HTML y devuelve una copia. deep es false por defecto|Duplicado del nodo que lo llamó|
+| [.isConnected](https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected)|	Indica si el nodo HTML está insertado en el documento HTML|Boolean|
+
+Para empezar, nos centraremos principalmente en la primera, que es la que utilizamos para crear elementos HTML en el DOM.
+
+### Creando elementos con createElement()
+Mediante el método ``.createElement()`` podemos crear un Elemento HTML en memoria (¡no estará insertado aún en nuestro documento HTML!). Con dicho elemento almacenado en una variable o constante, podremos modificar sus características o contenido, para posteriormente insertarlo en una posición determinada del DOM o documento HTML.
+
+Vamos a centrarnos en el proceso de creación del elemento, y más adelante veremos diferentes formas de insertarlo en el DOM. El funcionamiento de ``.createElement()`` es muy sencillo: se trata de pasarle el nombre de la etiqueta tag a utilizar:
+
+```
+const div = document.createElement("div");      // Creamos un <div></div>
+const span = document.createElement("span");    // Creamos un <span></span>
+const img = document.createElement("img");      // Creamos un <img>
+```
+
+Aunque menos frecuente, de la misma forma, podríamos crear comentarios HTML con ``.createComment()`` o fragmentos de texto sin etiqueta HTML con ``.createTextNode()``, pasándole a ambos un String con el texto en cuestión. En ambos, se devuelve un Node que podremos utilizar luego para insertar en el documento HTML:
+
+```
+const comment = document.createComment("Comentario");   // <!--Comentario-->
+const text = document.createTextNode("Hola");           // Nodo de texto: 'hola'
+```
+
+El método ``createElement()`` tiene un parámetro opcional denominado "options". Si se indica, se espera un objeto con una propiedad is para definir un elemento personalizado en una modalidad menos utilizada. Se verá más adelante en el apartado de Web Components.
+
+> Ten presente que en los ejemplos que hemos visto estamos creando los elementos en una constante, pero de momento no los hemos añadido al documento HTML, por lo que no aparecerían visualmente. Más adelante veremos como añadirlos.
+
+### El método .cloneNode()
+Hay que tener mucho cuidado al crear e intentar duplicar elementos HTML. Un error muy común es asignar un elemento que tenemos en otra variable, pensando que estamos creando una copia (cuando no es así). Esto es un clásico error común cuando se está aprendiendo a programar:
+
+```
+const div1 = document.createElement("div");
+div.textContent = "Elemento 1";
+
+const div2 = div1;   // NO se está haciendo una copia
+div2.textContent = "Elemento 2";
+
+div1.textContent;  // 'Elemento 2'
+div2.textContent;  // 'Elemento 2'
+```
+
+Con esto, quizás pueda parecer que estamos duplicando un elemento para crearlo a imagen y semejanza del original. Sin embargo, lo que se hace es una referencia al elemento original, de modo que si se modifica el div2, también se modifica el elemento original. Esto se hace de esta forma por razones de rendimiento y eficiencia. Básicamente, creas un elemento div1 que apunta a una referencia de memoria X, y cuando haces "div2 = div1", lo que estás haciendo es asignarle al elemento div2 la misma referencia de memoria X que tiene el div1; por lo que la memoria X tendrá apuntando tanto al elemento div1 como al div2; así que cuando un elemento se modifica, cambian las propiedades de la memoria X y, por ende, cambian los dos elementos porque solo hay una referencia de memoria implicada.
+
+Para evitar que se cree una referencia, y duplicar el elemento, que es lo que realmente queremos, deberíamos usar el método .cloneNode():
+
+```
+const div1 = document.createElement("div");
+div1.textContent = "Elemento 1";
+
+const div2 = div1.cloneNode();   // Ahora SÍ estamos duplicando
+div2.textContent = "Elemento 2";
+
+div1.textContent;  // 'Elemento 1'
+div2.textContent;  // 'Elemento 2'
+```
+
+El método ``cloneNode(deep)`` acepta un parámetro Boolean opcional (deep), a false por defecto, para indicar el tipo de clonación que se realizará:
+- Si es **true**, clonará también elementos hijos. Se conoce como clonación profunda (Deep Clone).
+- Si es **false**, no clonará elementos hijos. Se conoce como clonación superficial (Shallow Clone).
+
+### La propiedad .isConnected
+La propiedad ``isConnected`` nos indica si el elemento en cuestión está conectado al DOM, es decir, si está insertado en el documento HTML:
+- Si devuelve **true**, significa que el elemento está conectado al DOM.
+- Si devuelve **false**, significa que el elemento no está conectado al DOM.
+- 
+Hasta ahora, hemos creado elementos que no lo están (permanecen sólo en memoria). En el capítulo Insertar elementos en el DOM veremos como insertarlos en el documento HTML para que aparezca visualmente en la página.
+
+## Usando fragmentos
+En algunas ocasiones, nos puede resultar muy interesante utilizar fragmentos. Los fragmentos son una especie de documento paralelo, aislado de la página con la que estamos trabajando, que tiene varias características:
+- No tiene elemento padre. Está aislado de la página o documento.
+- Es mucho más simple y ligero (mejor rendimiento).
+- Si necesitamos hacer cambios consecutivos, no afecta al reflow (repintado de un documento).
+
+De esta forma, es una estrategia muy útil para usarlo de documento temporal y no realizar cambios consecutivos, con su impacto de rendimiento. Para crearlos, necesitaremos utilizar la siguiente función:
+- **[document.createDocumentFragment()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment)**	-> Crea un fragmento aislado (sin padre).
+
+Así pues, el Object que devuelve el método ``document.createDocumentFragment()`` es un fragmento que podremos utilizar para almacenar en su interior un pequeño DOM temporal, que luego añadiremos en nuestro DOM principal.
+
+```
+const fragment = document.createDocumentFragment();
+
+for (let i = 0; i < 5000; i++) {
+  const div = document.createElement("div");
+  div.textContent = `Item número ${i}`;
+  fragment.appendChild(div);
+}
+
+document.body.appendChild(fragment);
+```
+
+Como se puede ver, utilizamos el fragmento fragment generado como ubicación temporal donde hacer todos los cambios del DOM que necesitemos, sin que afecten al reflow del documento de forma independiente. Una vez terminemos nuestra lógica y tengamos el DOM definitivo, lo insertamos como hacemos siempre, por ejemplo, con un appendChild (ver más adelante).
+
+Es entonces cuando se traslada todo el DOM del fragmento al lugar donde hemos indicado en el appendChild (*en nuestro ejemplo, a la etiqueta <body>), dejando nuevamente el fragmento vacío.
