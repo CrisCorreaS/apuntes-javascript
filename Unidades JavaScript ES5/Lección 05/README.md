@@ -1,6 +1,25 @@
 # 📚 Apuntes sobre el DOM:
-
 > [!NOTE]
+> ### Índice:
+> - **[Qué es el DOM](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#-qu%C3%A9-es-el-dom)**
+>   - [El objeto document](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#el-objeto-document)
+>   - [API nativa de Javascript](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#api-nativa-de-javascript)
+> - **[ Seleccionar elementos del DOM](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#-seleccionar-elementos-del-dom)**
+>   - [Métodos tradicionales](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#m%C3%A9todos-tradicionales)
+>   - [Métodos modernos](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#m%C3%A9todos-modernos)
+>   - [Búsquedas acotadas](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#b%C3%BAsquedas-acotadas)
+>   - [NodeList o HTMLCollection](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#nodelist-o-htmlcollection)
+> - **[Crear elementos en el DOM](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#-crear-elementos-en-el-dom)**
+>   - [Usando fragmentos](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#usando-fragmentos)
+> - **[Gestionar atributos del DOM](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#-gestionar-atributos-del-dom)**
+>   - [¿Qué es un atributo HTML?](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#qu%C3%A9-es-un-atributo-html)
+>   - [Acceder a atributos HTML](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#acceder-a-atributos-html)
+>   - [Obtener atributos HTML](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#obtener-atributos-html)
+> - []()
+>   - []()
+
+
+> [!TIP]
 > Enlaces con información y vídeos para apoyar y complementar los apuntes:
 > - Links:
 >   - [W3Schools JS HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
