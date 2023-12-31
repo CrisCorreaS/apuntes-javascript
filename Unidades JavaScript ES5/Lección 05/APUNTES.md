@@ -1,5 +1,14 @@
 # 📚 Apuntes sobre el DOM:
 
+> [!NOTE]
+> Links con información y vídeos para apoyar y complementar los apuntes:
+> - [W3Schools JS HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
+> - [Diferencias entre getElementById vs querySelector (y otros métodos del DOM) de ManzDev](https://www.youtube.com/watch?v=EiKYr5vjs48)
+> - [HTMLCollection vs NodeList by freeCodeCamp](https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/)
+> - [Nodelist vs. HTMLCollection by Web Dev Simplified](https://www.youtube.com/watch?v=rhvec8cXLlo)
+> - [HTMLCollection vs. NodeList Explained by The Code Creative](https://www.youtube.com/watch?v=uwJyp4ZLVMA)
+> - [DOM Manipulation by Web Dev Simplified](https://www.youtube.com/watch?v=y17RuWkWdn8)
+
 ## 📖 [Qué es el DOM](https://lenguajejs.com/javascript/dom/que-es/)
 
 Las siglas DOM significan Document Object Model, o lo que es lo mismo, la estructura del documento HTML. Una página HTML está formada por múltiples etiquetas HTML, anidadas una dentro de otra, formando un árbol de etiquetas relacionadas entre sí, que se denomina árbol DOM (o simplemente DOM).
@@ -142,3 +151,4 @@ elements.map // ƒ map() { [native code] }
 ```
 
 En el segundo caso hemos hecho una desestructuración de arrays, es decir, hemos sacado todos los elementos de la estructura y la hemos metido en un nuevo Array. Por esta razón en el primer caso no podemos usar ``.map()`` y en el segundo caso, sí.
+
