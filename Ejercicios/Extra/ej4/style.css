@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1, img {
+  cursor: pointer;
+}
+
+div {
+  text-align: center;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  display: inline-block;
+  margin: 10px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tragaperras</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 
+      - Al hacer click en cada imagen del dólar se mostrará una imagen de una fruta de
+        forma aleatoria entre las 3 posibles (cereza, plátano o piña).
+      - Si las tres imágenes son iguales se sumará una victoria al contador de victorias que
+        se muestra en la página y se guardará su valor en LocalStorage, también se
+        almacenarán en una variable las ganancias para poder mostrarlas al pulsar en el
+        botón ganancias.
+      - El botón Ganancias mostrará el total de ganancias (3 cerezas suman 5 euros, 3
+        plátanos 10 euros y 3 piñas 20 euros) y lo guardará en LocalStorage. (0,5 punto)
+      - Al entrar de nuevo en la página mostrará las victorias y las ganancias que se
+        hayan guardado en LocalStorage.(0,5 punto)
+      - Para iniciar una nueva partida se pulsará sobre la palabra Tragaperras,
+      que pondrá de nuevo las imágenes del dólar
+     -->
+    <div>
+      <h1>Tragaperras</h1>
+      <img id="1" src="img/dolar.webp" />
+      <img id="2" src="img/dolar.webp" />
+      <img id="3" src="img/dolar.webp" />
+      <p id="score">
+        Victorias: <span id="winCount">0 </span>
+        Ganancias: <span id="ganancias"></span>
+      </p>
+      <button id="calcula">Ganancias</button>
+    </div>
+  </body>
+</html>
