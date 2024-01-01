@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tarea Unidad 6</title>
+    <link type="text/css" rel="stylesheet" href="estilos.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>TABLERO DE DIBUJO EN JAVASCRIPT</p>
+    <table
+      width="500"
+      border="1"
+      id="paleta"
+      summary="Tabla de selección de colores"
+    >
+      <caption>
+        Haga click en un color para comenzar a pintar
+      </caption>
+      <tr>
+        <td class="color1 seleccionado"></td>
+        <td class="color2"></td>
+        <td class="color3"></td>
+        <td class="color4"></td>
+        <td class="color5"></td>
+        <td class="color6"></td>
+      </tr>
+      <tr>
+        <td colspan="6" id="pincel">Estado del pincel</td>
+      </tr>
+    </table>
+    <p>Haga CLICK en cualquier celda para activar/desactivar el Pincel</p>
+    <div id="zonadibujo"></div>
+  </body>
+</html>
