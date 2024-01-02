@@ -17,6 +17,15 @@
 >   - [Obtener atributos HTML](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#obtener-atributos-html)
 >   - [Modificar o eliminar atributos HTML](https://github.com/CrisCorreaS/practica-js/blob/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005/README.md#modificar-o-eliminar-atributos-html)
 >   - [Caso especial: Atributos booleanos](https://github.com/CrisCorreaS/practica-js/blob/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005/README.md#caso-especial-atributos-booleanos)
+> - **[La API classList de Javascript](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#-la-api-classlist-de-javascript)**
+>   - [La propiedad .className](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#la-propiedad-classname)
+>   - [La propiedad .classList](https://github.com/CrisCorreaS/practica-js/tree/main/Unidades%20JavaScript%20ES5/Lecci%C3%B3n%2005#la-propiedad-classlist)
+> - **[Contenido en el DOM]()**
+>   - []()
+> - []()
+>   - []()
+> - []()
+>   - []()
 > - []()
 >   - []()
 
@@ -25,10 +34,11 @@
 > Enlaces con información y vídeos para apoyar y complementar los apuntes:
 > - Links:
 >   - [W3Schools JS HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
->   - [Diferencias entre getElementById vs querySelector (y otros métodos del DOM) de ManzDev](https://www.youtube.com/watch?v=EiKYr5vjs48)
 >   - [HTMLCollection vs NodeList by freeCodeCamp](https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/)
 >   - [WebComponents de ManzDev](https://lenguajejs.com/webcomponents/)
+>   - [W3Schools HTML DOM Element classList](https://www.w3schools.com/jsref/prop_element_classlist.asp)
 > - Vídeos:
+>   - [Diferencias entre getElementById vs querySelector (y otros métodos del DOM) de ManzDev](https://www.youtube.com/watch?v=EiKYr5vjs48)
 >   - [Nodelist vs. HTMLCollection by Web Dev Simplified](https://www.youtube.com/watch?v=rhvec8cXLlo)
 >   - [HTMLCollection vs. NodeList Explained by The Code Creative](https://www.youtube.com/watch?v=uwJyp4ZLVMA)
 >   - [DOM Manipulation by Web Dev Simplified](https://www.youtube.com/watch?v=y17RuWkWdn8)
@@ -405,3 +415,206 @@ button.toggleAttribute("hidden");           // Como no existe "hidden", lo añad
 
 Si se le proporciona el Boolean force, si es verdadero: añade el atributo, si es falso: elimina el atributo.
 
+ ## 📖 [La API classList de Javascript](https://lenguajejs.com/javascript/dom/manipular-clases-css/)
+En CSS es muy común utilizar múltiples clases CSS para asignar estilos relacionados dependiendo de lo que queramos. Para ello, basta hacer cosas como la que veremos a continuación:
+
+Observa que tenemos un elemento <div> que tiene las siguientes clases:
+
+```
+<div class="element shine dark-theme"></div>
+```
+
+- La clase element sería la clase general que representa el elemento, y que tiene estilos fijos.
+- La clase shine podría tener una animación CSS para aplicar un efecto de brillo.
+- La clase dark-theme podría tener los estilos de un elemento en un tema oscuro.
+
+Todo esto se utiliza sin problema de forma estática, pero cuando comenzamos a programar en Javascript, buscamos una forma dinámica, práctica y cómoda de hacerlo desde Javascript.
+
+### La propiedad .className
+Javascript tiene a nuestra disposición una propiedad ``.className`` en todos los elementos HTML. Dicha propiedad contiene el valor del atributo HTML class como un String, y puede tanto leerse como reemplazarse:
+
+|Propiedad |	Descripción| Devuelve un Valor |
+|-----------------------|------------------|------------------|
+| [.className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) |	Acceso directo al valor del atributo HTML class. También se puede asignar | String |
+| [.classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) |	Objeto especial para manejar clases CSS. Contiene métodos y propiedades de ayuda | [DOMTokenList](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList) (muy parecido a un array) |
+
+La propiedad ``.className`` viene a ser la modalidad directa y rápida de utilizar el getter ``.getAttribute("class")`` y el setter ``.setAttribute("class", value)``.
+
+Veamos un ejemplo utilizando estas propiedades y métodos y su equivalencia:
+
+```
+const div = document.querySelector(".element");
+
+// Obtener clases CSS
+div.className;              // "element shine dark-theme"
+div.getAttribute("class");  // "element shine dark-theme"
+
+// Modificar clases CSS
+div.className = "element shine light-theme";
+div.setAttribute("class", "element shine light-theme");
+```
+
+Trabajar con ``.className`` tiene una limitación cuando trabajamos con múltiples clases CSS, y es que no puedes realizar una manipulación sólo en una clase CSS concreta, dejando las demás intactas. Es por eso que, modificar clases CSS mediante una asignación ``.className``, se vuelve poco práctico.
+
+Probablemente, la forma más interesante de manipular clases CSS desde Javascript es mediante la propiedad ``.classList``, que es la que veremos a continuación.
+
+### La propiedad .classList
+Para trabajar más cómodamente, existe un sistema muy interesante para trabajar con clases: la propiedad u objeto ``.classList``. Se trata de un objeto especial que contiene una serie de ayudantes que permiten trabajar con las clases de forma más intuitiva y lógica.
+
+Si accedemos a ``.classList``, nos devolverá un Array (no es exactamente un array, sino un [DOMTokenList](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList)) de clases CSS de dicho elemento. Pero además, incorpora una serie de métodos ayudantes que nos harán muy sencillo trabajar con clases CSS:
+
+<table>
+      <tr>
+        <th>Método</th>
+        <th>Descripción</th>
+        <th>Devuelve</th>
+      </tr>
+      <tr>
+        <td colspan="3"><b>Obtener información</b></td>
+      </tr>
+      <tr>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">.classList</a></td>
+        <td>Devuelve la lista de clases del elemento HTML</td>
+        <td>DOMTokenList (como un array)</td>
+      </tr>
+      <tr>
+        <td>.classList.length</td>
+        <td>Devuelve el número de clases del elemento HTML</td>
+        <td>Número entero</td>
+      </tr>
+      <tr>
+        <td>.classList.item("n")</td>
+        <td>Devuelve la clase número "n" del elemento HTML. null si no existe</td>
+        <td>String del nombre de la clase o null</td>
+      </tr>
+      <tr>
+        <td>.classList.contains(clase)</td>
+        <td>Indica si la clase existe en el elemento HTML</td>
+        <td>Boolean, true si existe y false si no</td>
+      </tr>
+      <tr>
+        <td colspan="3"><b>Acciones sobre clases</b></td>
+      </tr>
+      <tr>
+        <td>.classList.add(c1, c2, ...)</td>
+        <td>Añade las clases c1, c2... al elemento HTML.</td>
+        <td>Void</td>
+      </tr>
+      <tr>
+        <td>.classList.remove(c1, c2, ...)</td>
+        <td>Elimina las clases c1, c2... del elemento HTML.</td>
+        <td>Void</td>
+      </tr>
+      <tr>
+        <td>.classList.toggle(clase)</td>
+        <td>Si la clase no existe, la añade. Si no, la elimina.</td>
+        <td>Void</td>
+      </tr>
+      <tr>
+        <td>.classList.toggle(clase, expr)</td>
+        <td>Si expr es true, añade la clase. Si es false, la elimina</td>
+        <td>Void</td>
+      </tr>
+      <tr>
+        <td>.classList.replace(old, new)</td>
+        <td>Reemplaza la clase old por la clase new</td>
+        <td>Void</td>
+      </tr>
+    </table>
+ 
+Veamos un ejemplo de uso de cada método de ayuda. Supongamos que tenemos el siguiente elemento HTML en nuestro documento. Vamos a acceder a el y a utilizar el objeto .classList con dicho elemento:
+
+```
+<div id="page" class="info data dark" data-number="5"></div>
+```
+
+Observa que dicho elemento HTML tiene:
+- Un atributo "id"
+- Tres clases CSS: "info", "data" y "dark"
+- Un metadato HTML "data-number" (también es un atributo)
+
+#### Acceder a clases CSS
+Al margen de acceder a la lista de clases mediante ``.classList`` y al número de clases del elemento con ``.classList.length``, es posible acceder a la propiedad ``.classList.values`` para obtener un String como lo haría ``.className``:
+
+```
+const element = document.querySelector("#page");
+
+// ¿Qué clases tiene?
+element.classList;              // ["info", "data", "dark"] (DOMTokenList)
+element.classList.value;        // "info data dark" (String)
+element.classList.length;       // 3
+
+// Convertirlas a array
+Array.from(element.classList)   // ["info", "data", "dark"] (Array)
+[...element.classList];         // ["info", "data", "dark"] (Array)
+
+// Consultarlas
+element.classList.item(0);      // "info"
+element.classList.item(1);      // "data"
+element.classList.item(3);      // null
+```
+
+El objeto ``.classList`` aunque parece que devuelve un Array no es un array, sino un DOMTokenList que actúa de forma similar a un array, por lo que puede carecer de algunos métodos o propiedades concretos. Si quieres convertirlo a un array real, utiliza ``Array.from()`` o desestructuración con [...div.classList].
+
+Observa que disponemos del método ``.classList.item()`` que nos devuelve un String con la clase específica en esa posición. Si no existe una clase en esa posición, nos devolverá null.
+
+#### Añadir y eliminar clases CSS
+Los métodos ``.classList.add()`` y ``.classList.remove()`` permiten indicar una o múltiples clases CSS a añadir o eliminar. Observa el siguiente código donde se ilustra un ejemplo:
+
+```
+const element = document.querySelector("#page");
+
+element.classList.add("uno", "dos");
+element.classList;  // ["info", "data", "dark", "uno", "dos"]
+
+element.classList.remove("uno", "dos");
+element.classList;  // ["info", "data", "dark"]
+```
+
+Al utilizar los métodos ``.add()`` o ``.remove()``, en el caso de que se añada una clase CSS que ya existía previamente, o que se elimine una clase CSS que no existía, simplemente no ocurrirá nada.
+
+#### Comprobar si existen clases CSS
+Con el método ``.classList.contains()`` podemos comprobar si existe una clase en un elemento HTML, ya que nos devuelve un Boolean indicandonos si está presente o no:
+
+```
+const element = document.querySelector("#page");
+
+element.classList;                      // ["info", "data", "dark"]
+element.classList.contains("info");     // Devuelve `true` (existe esa clase)
+element.classList.contains("warning");  // Devuelve `false` (no existe esa clase)
+```
+
+Esto puede resultar interesante en algunas situaciones, donde queremos averiguar mediante Javascript si existe una clase.
+
+#### Conmutar o alternar clases CSS
+Otro ayudante muy interesante es el del método ``.classList.toggle()``, que lo que hace es añadir o eliminar la clase CSS dependiendo de si ya existía previamente. Es decir, añade la clase si no existía previamente o elimina la clase si existía previamente:
+
+```
+const element = document.querySelector("#page");
+
+element.classList; // ["info", "data", "dark"]
+
+element.classList.toggle("info"); // Como "info" existe, lo elimina. Devuelve "false"
+element.classList; // ["data", "dark"]
+
+element.classList.toggle("info"); // Como "info" no existe, lo añade. Devuelve "true"
+element.classList; // ["info", "data", "dark"]
+```
+
+Observa que ``.toggle()`` devuelve un Boolean que será true o false dependiendo de si, tras la operación, la clase sigue existiendo o no. Ten en cuenta que en ``.toggle()``, al contrario que ``.add()`` o ``.remove()``, sólo se puede indicar una clase CSS por parámetro.
+
+#### Reemplazar una clase CSS
+Por último, tenemos un método ``.classList.replace()`` que nos permite reemplazar la primera clase indicada por parámetro, por la segunda. Veamos este método en acción:
+
+```
+const element = document.querySelector("#page");
+
+element.classList; // ["info", "data", "dark"]
+
+element.classList.replace("dark", "light");       // Devuelve `true` (se hizo el cambio)
+element.classList.replace("warning", "error");    // Devuelve `false` (no existe warning)
+```
+
+Con todos estos métodos de ayuda, nos resultará mucho más sencillo manipular clases CSS desde Javascript en nuestro código.
+
+## [Contenido en el DOM](https://lenguajejs.com/javascript/dom/contenido-elemento-dom/)
