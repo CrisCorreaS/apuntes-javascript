@@ -99,17 +99,19 @@ function textoTodosParrafos(parrafos) {
 textoTodosParrafos(PARRAFOS);
 
 document.getElementById("fileInput").addEventListener("change", function (e) {
+  // El evento change es para cuando cambiamos el valor de un input, select o textarea -> https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
   let file = e.target.files[0]; // Conseguimos el archivo que hemos seleccionado con el <input type="file" id="fileInput" />
   let fileReader = new FileReader(); // Creamos un objeto FileReader que permite que las aplicaciones web lean ficheros
 
   fileReader.onload = function (e) {
+    // Esta es una función de callback que se ejecutará cuando la lectura del archivo haya terminado. El objeto de evento e contiene información sobre el evento, incluyendo los datos del archivo leído.
     // Una vez que leemos el archivo, actualizamos el contenido en el iframe
     let frame = document.getElementById("frame");
-    frame.srcdoc = e.target.result;
+    frame.srcdoc = e.target.result; // srcdoc especifica el contenido de la página HTML que se va a enseñar en el iframe -> https://www.w3schools.com/tags/att_iframe_srcdoc.asp
 
     frame.onload = () => {
-      // Acceemos al documento dentro del iframe
-      let documento = frame.contentDocument || frame.contentWindow.document;
+      // Esta es otra función de callback que se ejecutará cuando el iframe haya terminado de cargar. Dentro de esta función, se accede al documento dentro del iframe y se obtienen todos los elementos de párrafo y enlace.
+      let documento = frame.contentDocument; // Obtenemos una referencia al documento dentro del iframe -> La propiedad "contentDocument" devuelve el objeto Document generado por el iframe (este objeto representa el documento HTML cargado en el iframe). Si el documento se ha cargado correctamente, se puede usar contentDocument para interactuar con él. Hay que tener en cuenta que antes "contentDocument" no era compatible con todos los navegadores (Internet Explorer) por lo que se usaba "contentWindow.document" también, por lo que anteriormente se haría: let documento = frame.contentDocument || frame.contentWindow.document;
 
       let parrafosDocumento = documento.getElementsByTagName("p");
       let enlacesDocumento = documento.getElementsByTagName("a");
@@ -129,13 +131,14 @@ document.getElementById("fileInput").addEventListener("change", function (e) {
         "<br><strong>El número de enlaces que apuntan a /wiki/Municipio: </strong> " +
         numEnlacesApuntandoMunicipio(enlacesDocumento) +
         "<br><strong>El número de enlaces del primer párrafo: </strong>" +
-        numEnlacesPrimerParrafo(parrafosDocumento); +"</p>";
-      
+        numEnlacesPrimerParrafo(parrafosDocumento);
+      +"</p>";
+
       FILE_RESULTS.innerHTML = texto;
-      
+
       textoTodosParrafos(parrafosDocumento);
     };
   };
-  // Inicia la lectura del archivo como texto
+  // Inicia la lectura del archivo como texto -> Esto es lo que realmente comienza la operación de lectura del archivo
   fileReader.readAsText(file);
 });
