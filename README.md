@@ -1,4 +1,4 @@
-# Práctica JavaScript
+# 👩‍💻 Práctica JavaScript
 
 ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 <img align="right" alt="License MIT" src="https://img.shields.io/badge/LICENSE-MIT-green" /> <br/>
