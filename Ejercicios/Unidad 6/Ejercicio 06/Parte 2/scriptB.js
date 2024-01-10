@@ -1,5 +1,4 @@
 const SPANS = document.querySelectorAll("#spanContainer span");
-const SPANS_DOC = document.querySelectorAll("#fileSpanContainer span");
 const PARRAFOS = document.getElementsByTagName("p");
 const ENLACES = document.getElementsByTagName("a");
 const FILE_RESULTS = document.getElementById("fileResults");
@@ -89,7 +88,7 @@ SPANS.forEach((span) => {
 
 function textoTodosParrafos(parrafos) {
   let textoTotal = "";
-  for (j = 0; j < parrafos.length; j++) {
+  for (let j = 0; j < parrafos.length; j++) {
     textoTotal += parrafos[j].textContent;
   }
 

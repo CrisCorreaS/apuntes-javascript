@@ -90,7 +90,7 @@ SPANS.forEach((span) => {
 
 function textoTodosParrafos() {
   let textoTotal = "";
-  for (j = 0; j < parrafos.length; j++) {
+  for (let j = 0; j < parrafos.length; j++) {
     textoTotal += parrafos[j].textContent;
   }
 
