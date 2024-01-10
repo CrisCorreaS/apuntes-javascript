@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 7</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>
+        Vamos a hacer unas modificaciones a partir de la tarea de la unidad 4:
+	
+        Crea un Formulario que permita crear un edificio pidiendo sus datos principales y las plantas y las puertas, haciendo las validaciones que consideres oportunas. Cuando los datos sean correctos se añadirá a un array de edificios.
+        En otro formulario se mostrará la lista de edificios que tenemos en el array, con su dirección y un radio button. 
+
+        Después de la lista habrá 3 campos de texto (planta, puerta y propietario) para modificar el propietario de un piso del edificio seleccionado.
+
+        Crea otro formulario que permita mostrar un edificio, seleccionandolo a partir de su dirección mostrada en un elemento "select" y un botón mostrar edificio que muestre un edificio en forma de tabla con sus propietarios. La salida será similar a lo siguiente, utilizando los métodos de creación de elementos vistos en la unidad:
+
+        Al hacer click sobre un propietario nos mostrará una etiqueta que ponga propietario y una caja de texto con el propietario, podremos modificarlo y al pulsar enter, quedará ese propietario modificado en el array.
+    </p>
+    <h2>Formulario de creación de un edificio</h2>
+    <form action="#">
+      <label>Calle del Edificio:
+        <input type="text" name="calle" id="calle" required>
+      </label>
+      <label>Número del Edificio:
+        <input type="number" name="numero" id="numero" required>
+      </label>
+      <label>Código Postal del Edificio:
+        <input type="number" name="cp" id="cp" min="01000" required>
+      </label>
+    this.codigoPostal = codigoPostal;
+    this.plantas = [];
+    </form>
+  </body>
+</html>
