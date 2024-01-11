@@ -1,0 +1,8 @@
+.error {
+  border: solid 2px red;
+}
+
+.errorMensaje {
+  color: red;
+  font-weight: bold;
+}

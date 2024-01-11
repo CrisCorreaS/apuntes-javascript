@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 7</title>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
   </head>
   <body>
     <p>
@@ -20,18 +21,29 @@
         Al hacer click sobre un propietario nos mostrará una etiqueta que ponga propietario y una caja de texto con el propietario, podremos modificarlo y al pulsar enter, quedará ese propietario modificado en el array.
     </p>
     <h2>Formulario de creación de un edificio</h2>
-    <form action="#">
+    <form action="#" id="primerform">
       <label>Calle del Edificio:
-        <input type="text" name="calle" id="calle" required>
+        <input type="text" name="calle" id="calle" pattern="[A-Za-z0-9]{4,80}" required>
       </label>
+      <br><br>
       <label>Número del Edificio:
-        <input type="number" name="numero" id="numero" required>
+        <input type="number" name="numero" id="numero" min="1" max="300" required>
       </label>
+      <br><br>
       <label>Código Postal del Edificio:
-        <input type="number" name="cp" id="cp" min="01000" required>
+        <input type="number" name="cp" id="cp" min="1000" max="52999" required>
       </label>
-    this.codigoPostal = codigoPostal;
-    this.plantas = [];
+      <br><br>
+      <label>Plantas del Edificio:
+        <input type="number" name="plantas" id="plantas" min="1" max="50" required>
+      </label>
+      <br><br>
+      <label>Puertas del Edificio:
+        <input type="number" name="puertas" id="puertas" min="4" max="300" required>
+      </label>
+      <br><br>
+      <button type="submit" id="enviar">Enviar</button>
     </form>
+    <p id="msgPrimerForm"></p>
   </body>
 </html>
