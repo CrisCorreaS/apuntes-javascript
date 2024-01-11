@@ -26,6 +26,7 @@ function showTarea() {
   // Creamos los elementos y los nodos
   let checkbox = document.createElement("input");
   let li = document.createElement("li");
+  
   let tareaTexto = tareas[i].texto;
   let texto = document.createTextNode(tareaTexto);
 
