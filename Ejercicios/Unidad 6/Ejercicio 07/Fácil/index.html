@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 7</title>
+    <script src="script.js" type="module" defer></script>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid;
+        background-color: lightCyan;
+      }
+      td:first-child {
+        background-color: lightblue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Agregar un nuevo edificio</h1>
+    <form id="formEdificio">
+      <label for="calle">Calle:</label>
+      <input type="text" id="calle" required />
+      <label for="numero">Número:</label>
+      <input type="number" id="numero" required />
+      <label for="codigoPostal">Código Postal:</label>
+      <input type="number" id="codigoPostal" required />
+      <label for="plantas">Número de Plantas:</label>
+      <input type="number" id="plantas" required />
+      <label for="puertas">Número de Puertas:</label>
+      <input type="number" id="puertas" required />
+      <input type="submit" value="Agregar Edificio" />
+    </form>
+    <h1>Lista de edificios</h1>
+    <div id="listaEdificios"></div>
+    <h1>Modificar propietario de un piso</h1>
+    <form id="formPropietario">
+      <label for="planta">Planta:</label>
+      <input type="number" id="planta" required />
+      <label for="puerta">Puerta:</label>
+      <input type="number" id="puerta" required />
+      <label for="propietario">Propietario:</label>
+      <input type="text" id="propietario" required />
+      <input type="submit" value="Modificar Propietario" />
+    </form>
+    <h1>Mostrar un edificio</h1>
+    <select id="listaDirecciones"></select>
+    <button id="mostrarEdificio">Mostrar Edificio</button>
+    <table id="tablaEdificio"></table>
+  </body>
+</html>
