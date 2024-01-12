@@ -16,9 +16,13 @@ const PROPIETARIO_NOMBRE = document.querySelector("#propietarioEdificio");
 const PROPIETARIO_ENVIAR = document.querySelector("#enviar2");
 const ERROR_SEGUNDO_FORM = document.querySelector("#msSegundoForm");
 
+const SELECT_OPCIONES = document.querySelector("select");
+const MOSTRAR_PROPIETARIO_ENVIAR = document.querySelector("enviar3");
+
 let edificios = [];
-let i = 0;
+let contadorRadioButton = 0;
 let edificioSeleccionado;
+let contadorEdificios = 0;
 
 function validarCalle() {
   if (!EDIFICIO_CALLE.checkValidity()) {
@@ -173,14 +177,18 @@ function error(elemento, mensaje) {
 }
 
 function borrarError() {
-  let formulario = document.forms[0];
+  for (let j = 0; j < 3; j++) {
+    let formulario = document.forms[j];
+
+    for (let k = 0; k < formulario.elements.length; k++) {
+      formulario.elements[k].className = "";
+    }
+  }
 
   ERROR_PRIMER_FORM.innerHTML = " ";
+  ERROR_SEGUNDO_FORM.innerHTML = " ";
   ERROR_PRIMER_FORM.className = "";
-
-  for (let i = 0; i < formulario.elements.length; i++) {
-    formulario.elements[i].className = "";
-  }
+  ERROR_SEGUNDO_FORM.className = "";
 }
 
 function validar(e) {
@@ -215,7 +223,7 @@ function validar(e) {
 function showEdificios() {
   let br = document.createElement("br");
   let inputRadioButton = document.createElement("input");
-  let textoLi = document.createTextNode(edificios[i].calle);
+  let textoLi = document.createTextNode(edificios[contadorRadioButton].calle);
   /*
     In JavaScript, properties and methods are accessed differently. When you have getters and setters defined in a class, like in your Edificio class, they act as properties that are accessed using the dot notation without parentheses.
       - The edificio.calle and edificio._calle work as property access because the getter get calle() allows you to access _calle as if it were a public property. The underscore convention (_calle) is used to denote that it is a private property, but JavaScript does not enforce this privacy; it's just by convention.
@@ -229,13 +237,13 @@ function showEdificios() {
 
   inputRadioButton.type = "radio";
   inputRadioButton.name = "opcionEdificio"; // Tienen que tener el mismo "name", pero deben tener diferente "id" y "value"
-  inputRadioButton.id = i;
-  inputRadioButton.value = i;
+  inputRadioButton.id = contadorRadioButton;
+  inputRadioButton.value = contadorRadioButton;
 
   LISTA_EDIFICIOS.appendChild(inputRadioButton);
   LISTA_EDIFICIOS.appendChild(textoLi);
   LISTA_EDIFICIOS.appendChild(br);
-  i++;
+  contadorRadioButton++;
 }
 
 EDIFICIO_ENVIAR.addEventListener("click", validar, false);
@@ -289,6 +297,20 @@ function validarExistenciaPlantaPuerta() {
   return false;
 }
 
+function crearOptions() {
+  let opcion = document.createElement("option");
+  let textoOpcion = document.createTextNode(
+    edificios[edificioSeleccionado].calle
+  );
+
+  opcion.value = contadorEdificios;
+  opcion.appendChild(textoOpcion);
+
+  SELECT_OPCIONES.appendChild(opcion);
+
+  contadorEdificios++;
+}
+
 function validarPropietarios(e) {
   e.preventDefault();
   borrarError();
@@ -305,7 +327,7 @@ function validarPropietarios(e) {
       PROPIETARIO_NOMBRE
     );
 
-    let datosEdificioPropietario = edificios[edificioSeleccionado]._datos[0];
+    crearOptions();
 
     alert(
       `Se ha registrado a ${PROPIETARIO_NOMBRE.value} en el piso ${PROPIETARIO_PLANTA.value}º${datosEdificioPropietario.numeroPiso} del edificio ${edificios[edificioSeleccionado].calle}`
@@ -315,4 +337,9 @@ function validarPropietarios(e) {
 
 PROPIETARIO_ENVIAR.addEventListener("click", validarPropietarios, false);
 
-//<option value="sss">ssss</option>
+
+function showTable(){
+  
+}
+
+MOSTRAR_PROPIETARIO_ENVIAR.addEventListener("click", showTable, false);
