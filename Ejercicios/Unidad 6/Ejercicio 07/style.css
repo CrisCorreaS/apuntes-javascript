@@ -10,3 +10,9 @@
 ul {
   list-style: none;
 }
+
+.oculto {
+  display: none;
+}
+
+

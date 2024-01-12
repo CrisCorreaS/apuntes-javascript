@@ -5,6 +5,7 @@ export default class Edificio {
     this._codigoPostal = codigoPostal;
     this._plantas = plantas;
     this._puertas = puertas;
+    this._datos = [];
 
     console.log(
       `Construido nuevo edificio en calle: ${this.calle}, nº: ${this.numero}, CP: ${this.codigoPostal}. Con ${this.plantas} plantas y ${puertas} puertas`
@@ -49,6 +50,51 @@ export default class Edificio {
 
   set puertas(puertas) {
     this._puertas = puertas;
+  }
+
+  letraEdificio(puerta) {
+    let letras = ["A", "B", "C", "D", "E", "F"];
+    let numero;
+
+    if (
+      parseInt(this.puertas) % 4 == 0 &&
+      parseInt(this.puertas) % parseInt(this.plantas == 0)
+    ) {
+      if (puerta > 4) {
+        numero = puerta / 4;
+      } else {
+        numero = puerta;
+      }
+      return letras[numero - 1];
+    } else if (
+      parseInt(this.puertas) % 6 == 0 &&
+      parseInt(this.puertas) % parseInt(this.plantas) == 0
+    ) {
+      if (puerta > 6) {
+        numero = puerta / 6;
+      } else {
+        numero = puerta;
+      }
+      return letras[numero - 1];
+    }
+
+    return -1;
+  }
+
+  addDatos(planta, puerta, nombre) {
+    let letraPuerta = this.letraEdificio(puerta);
+
+    this._datos = [
+      {
+        propietario: nombre,
+        piso: planta,
+        numeroPiso: letraPuerta,
+      },
+    ];
+  }
+
+  showDatos() {
+    return this._datos;
   }
 }
 

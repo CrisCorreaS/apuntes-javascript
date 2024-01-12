@@ -42,24 +42,36 @@
         <input type="number" name="puertas" id="puertas" min="4" max="300" required>
       </label>
       <br><br>
-      <button type="submit" id="enviar">Enviar</button>
+      <button type="submit" id="enviar1">Enviar</button>
     </form>
     <p id="msgPrimerForm"></p>
     <hr>
     <h2>Lista de Edificios:</h2>
     <div id="listaEdificios"></div>
     <hr>
-    <h2>Modificar Propietarios</h2>
-    <form action="#">
-      <label>Planta: 
-        <input type="number" name="plantasEdificio" id="plantasEdificio" min="1" max="50" required>
-      </label>
-      <label>Puerta:
-        <input type="number" name="puertasEdificio" id="puertasEdificio" min="4" max="300" required>
-      </label>
-      <label>Propietario:
-        <input type="text" name="propietarioEdificio" id="propietarioEdificio" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,33}" required>
-      </label>
-    </form>
+    <div id="modificarPropietarios" class="oculto">
+      <h2>Modificar Propietarios</h2>
+      <form action="#">
+        <label>Planta: 
+          <input type="number" name="plantasEdificio" id="plantasEdificio" min="1" max="50" required>
+        </label>
+        <br><br>
+        <label>Puerta:
+          <input type="number" name="puertasEdificio" id="puertasEdificio" min="1" max="300" required>
+        </label>
+        <br><br>
+        <label>Propietario:
+          <input type="text" name="propietarioEdificio" id="propietarioEdificio" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,33}" required>
+        </label>
+        <br><br>
+        <input type="submit" id="enviar2" value="Enviar">
+      </form>
+      <p id="msSegundoForm"></p>
+      <hr>
+    </div>
+    <h2>Mostrar un Edificio</h2>
+    <select name="edificioSeleccion" id="edificioSeleccion">
+      
+    </select>
   </body>
 </html>

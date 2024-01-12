@@ -5,13 +5,20 @@ const EDIFICIO_NUMERO = document.querySelector("#numero");
 const EDIFICIO_CODIGO_POSTAL = document.querySelector("#cp");
 const EDIFICIO_PLANTAS = document.querySelector("#plantas");
 const EDIFICIO_PUERTAS = document.querySelector("#puertas");
-const PRIMER_FORM_ENVIAR = document.querySelector("#enviar");
+const EDIFICIO_ENVIAR = document.querySelector("#enviar1");
 const ERROR_PRIMER_FORM = document.querySelector("#msgPrimerForm");
 
 const LISTA_EDIFICIOS = document.querySelector("#listaEdificios");
 
+const PROPIETARIO_PLANTA = document.querySelector("#plantasEdificio");
+const PROPIETARIO_PUERTA = document.querySelector("#puertasEdificio");
+const PROPIETARIO_NOMBRE = document.querySelector("#propietarioEdificio");
+const PROPIETARIO_ENVIAR = document.querySelector("#enviar2");
+const ERROR_SEGUNDO_FORM = document.querySelector("#msSegundoForm");
+
 let edificios = [];
 let i = 0;
+let edificioSeleccionado;
 
 function validarCalle() {
   if (!EDIFICIO_CALLE.checkValidity()) {
@@ -80,21 +87,21 @@ function validarCodigoPostal() {
   return true;
 }
 
-function validarPlantas() {
-  if (!EDIFICIO_PLANTAS.checkValidity()) {
-    if (EDIFICIO_PLANTAS.validity.valueMissing) {
-      error(EDIFICIO_PLANTAS, "Tienes que introducir las plantas del edificio");
+function validarPlantas(elemento) {
+  if (!elemento.checkValidity()) {
+    if (elemento.validity.valueMissing) {
+      error(elemento, "Tienes que introducir las plantas del edificio");
     }
 
-    if (EDIFICIO_PLANTAS.validity.rangeOverflow) {
+    if (elemento.validity.rangeOverflow) {
       error(
-        EDIFICIO_PLANTAS,
+        elemento,
         "El número de plantas del edificio debe de ser menor de 50"
       );
     }
 
-    if (EDIFICIO_PLANTAS.validity.rangeUnderflow) {
-      error(EDIFICIO_PLANTAS, "El edificio al menos debe de tener una planta");
+    if (elemento.validity.rangeUnderflow) {
+      error(elemento, "El edificio al menos debe de tener una planta");
     }
 
     return false;
@@ -103,47 +110,64 @@ function validarPlantas() {
   return true;
 }
 
-function validarPuertas() {
-  if (!EDIFICIO_PUERTAS.checkValidity()) {
-    if (EDIFICIO_PUERTAS.validity.valueMissing) {
-      error(EDIFICIO_PUERTAS, "Tienes que introducir las puertas del edificio");
+function validarPuertas(elemento, plantas) {
+  if (!elemento.checkValidity()) {
+    if (elemento.validity.valueMissing) {
+      error(elemento, "Tienes que introducir las puertas del edificio");
     }
 
-    if (EDIFICIO_PUERTAS.validity.rangeOverflow) {
+    if (elemento.validity.rangeOverflow) {
       error(
-        EDIFICIO_PUERTAS,
+        elemento,
         "El número de puertas del edificio debe de ser menor de 300"
       );
     }
 
-    if (EDIFICIO_PUERTAS.validity.rangeUnderflow) {
-      error(
-        EDIFICIO_PUERTAS,
-        "El edificio al menos debe de tener cuatro puertas"
-      );
+    if (elemento.validity.rangeUnderflow) {
+      error(elemento, "El edificio al menos debe de tener cuatro puertas");
     }
 
     return false;
   }
 
-  if (
-    EDIFICIO_PUERTAS.value % EDIFICIO_PLANTAS.value == 0 &&
-    (EDIFICIO_PUERTAS.value / EDIFICIO_PLANTAS.value == 4 ||
-      EDIFICIO_PUERTAS.value / EDIFICIO_PLANTAS.value == 6)
-  ) {
-    return true;
+  if (elemento.id === "puertas") {
+    if (
+      elemento.value % plantas.value == 0 &&
+      (elemento.value / plantas.value == 4 ||
+        elemento.value / plantas.value == 6)
+    ) {
+      return true;
+    } else {
+      error(elemento, "El edificio debe de tener 4 o 6 puertas por planta");
+      return false;
+    }
   } else {
-    error(
-      EDIFICIO_PUERTAS,
-      "El edificio debe de tener 4 o 6 puertas por planta"
-    );
-    return false;
+    if (elemento.value > 6) {
+      error(elemento, "El edificio no tiene más de 6 puertas por planta");
+      return false;
+    }
+    return true;
   }
 }
 
 function error(elemento, mensaje) {
-  ERROR_PRIMER_FORM.innerHTML = mensaje;
-  ERROR_PRIMER_FORM.className = "errorMensaje";
+  switch (elemento.id) {
+    case "calle":
+    case "numero":
+    case "cp":
+    case "plantas":
+    case "puertas":
+      ERROR_PRIMER_FORM.innerHTML = mensaje;
+      ERROR_PRIMER_FORM.className = "errorMensaje";
+      break;
+    case "plantasEdificio":
+    case "puertasEdificio":
+    case "propietarioEdificio":
+      ERROR_SEGUNDO_FORM.innerHTML = mensaje;
+      ERROR_SEGUNDO_FORM.className = "errorMensaje";
+      break;
+  }
+
   elemento.className = "error";
   elemento.focus();
 }
@@ -167,8 +191,8 @@ function validar(e) {
     validarCalle() &&
     validarNumero() &&
     validarCodigoPostal() &&
-    validarPlantas() &&
-    validarPuertas()
+    validarPlantas(EDIFICIO_PLANTAS) &&
+    validarPuertas(EDIFICIO_PUERTAS, EDIFICIO_PLANTAS)
   ) {
     edificios.push(
       new Edificio(
@@ -214,4 +238,81 @@ function showEdificios() {
   i++;
 }
 
-PRIMER_FORM_ENVIAR.addEventListener("click", validar, false);
+EDIFICIO_ENVIAR.addEventListener("click", validar, false);
+
+function manejarCambioRadioButton(event) {
+  // Con `event.target` obtenemos el radio button que fue seleccionado
+  const radioSeleccionado = event.target;
+  edificioSeleccionado = radioSeleccionado.id;
+}
+
+LISTA_EDIFICIOS.addEventListener("change", function (event) {
+  // Comprobamos que el evento proviene de un input tipo radio
+  if (event.target.type === "radio") {
+    manejarCambioRadioButton(event);
+    document.querySelector("#modificarPropietarios").classList.remove("oculto");
+  }
+});
+
+function validarNombre() {
+  if (!PROPIETARIO_NOMBRE.checkValidity()) {
+    if (PROPIETARIO_NOMBRE.validity.valueMissing) {
+      error(
+        PROPIETARIO_NOMBRE,
+        "Tienes que introducir el nombre del propietario"
+      );
+    }
+
+    if (PROPIETARIO_NOMBRE.validity.patternMismatch) {
+      error(
+        PROPIETARIO_NOMBRE,
+        "El nombre del propietario tiene que tener entre 4 y 30 caracteres"
+      );
+    }
+
+    return false;
+  }
+
+  return true;
+}
+
+function validarExistenciaPlantaPuerta() {
+  if (
+    parseInt(PROPIETARIO_PLANTA.value) <=
+      parseInt(edificios[edificioSeleccionado].plantas) &&
+    parseInt(PROPIETARIO_PUERTA.value) <=
+      parseInt(edificios[edificioSeleccionado].puertas)
+  ) {
+    return true;
+  }
+  error(PROPIETARIO_PUERTA, "");
+  return false;
+}
+
+function validarPropietarios(e) {
+  e.preventDefault();
+  borrarError();
+
+  if (
+    validarPlantas(PROPIETARIO_PLANTA) &&
+    validarPuertas(PROPIETARIO_PUERTA, PROPIETARIO_PLANTA) &&
+    validarNombre() &&
+    validarExistenciaPlantaPuerta()
+  ) {
+    edificios[edificioSeleccionado].addDatos(
+      PROPIETARIO_PLANTA,
+      PROPIETARIO_PUERTA.value,
+      PROPIETARIO_NOMBRE
+    );
+
+    let datosEdificioPropietario = edificios[edificioSeleccionado]._datos[0];
+
+    alert(
+      `Se ha registrado a ${PROPIETARIO_NOMBRE.value} en el piso ${PROPIETARIO_PLANTA.value}º${datosEdificioPropietario.numeroPiso} del edificio ${edificios[edificioSeleccionado].calle}`
+    );
+  }
+}
+
+PROPIETARIO_ENVIAR.addEventListener("click", validarPropietarios, false);
+
+//<option value="sss">ssss</option>
