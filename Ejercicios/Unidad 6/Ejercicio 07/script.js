@@ -121,20 +121,22 @@ function validarPuertas() {
       );
     }
 
-    if (
-      EDIFICIO_PUERTAS.value % EDIFICIO_PLANTAS.value != 0 ||
-      EDIFICIO_PUERTAS.value / EDIFICIO_PLANTAS.value != 4 ||
-      EDIFICIO_PUERTAS.value / EDIFICIO_PLANTAS.value != 6
-    ) {
-      error(
-        EDIFICIO_PUERTAS,
-        "El edificio debe de tener 4 o 6 puertas por planta"
-      );
-    }
     return false;
   }
 
-  return true;
+  if (
+    EDIFICIO_PUERTAS.value % EDIFICIO_PLANTAS.value == 0 &&
+    (EDIFICIO_PUERTAS.value / EDIFICIO_PLANTAS.value == 4 ||
+      EDIFICIO_PUERTAS.value / EDIFICIO_PLANTAS.value == 6)
+  ) {
+    return true;
+  } else {
+    error(
+      EDIFICIO_PUERTAS,
+      "El edificio debe de tener 4 o 6 puertas por planta"
+    );
+    return false;
+  }
 }
 
 function error(elemento, mensaje) {
@@ -142,24 +144,6 @@ function error(elemento, mensaje) {
   ERROR_PRIMER_FORM.className = "errorMensaje";
   elemento.className = "error";
   elemento.focus();
-
-  switch (elemento.id) {
-    case "calle":
-      document.getElementById("calle").className = "errorMensaje";
-      break;
-    case "numero":
-      document.getElementById("numero").className = "errorMensaje";
-      break;
-    case "cp":
-      document.getElementById("cp").className = "errorMensaje";
-      break;
-    case "plantas":
-      document.getElementById("plantas").className = "errorMensaje";
-      break;
-    case "puertas":
-      document.getElementById("puertas").className = "errorMensaje";
-      break;
-  }
 }
 
 function borrarError() {
@@ -184,7 +168,9 @@ function validar(e) {
     validarPlantas() &&
     validarPuertas()
   ) {
-    alert("Te has registrado");
+    alert(
+      `Se ha registrado el nuevo edificio con dirección: ${EDIFICIO_CALLE.value} nº${EDIFICIO_NUMERO.value}. CP:${EDIFICIO_CODIGO_POSTAL}`
+    );
   }
 }
 
