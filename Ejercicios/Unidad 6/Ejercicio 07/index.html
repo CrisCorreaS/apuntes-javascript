@@ -23,7 +23,7 @@
     <h2>Formulario de creación de un edificio</h2>
     <form action="#" id="primerform">
       <label>Calle del Edificio:
-        <input type="text" name="calle" id="calle" pattern="[A-Za-z0-9]{4,80}" required>
+        <input type="text" name="calle" id="calle" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,80}" required>
       </label>
       <br><br>
       <label>Número del Edificio:
@@ -45,5 +45,21 @@
       <button type="submit" id="enviar">Enviar</button>
     </form>
     <p id="msgPrimerForm"></p>
+    <hr>
+    <h2>Lista de Edificios:</h2>
+    <div id="listaEdificios"></div>
+    <hr>
+    <h2>Modificar Propietarios</h2>
+    <form action="#">
+      <label>Planta: 
+        <input type="number" name="plantasEdificio" id="plantasEdificio" min="1" max="50" required>
+      </label>
+      <label>Puerta:
+        <input type="number" name="puertasEdificio" id="puertasEdificio" min="4" max="300" required>
+      </label>
+      <label>Propietario:
+        <input type="text" name="propietarioEdificio" id="propietarioEdificio" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,33}" required>
+      </label>
+    </form>
   </body>
 </html>

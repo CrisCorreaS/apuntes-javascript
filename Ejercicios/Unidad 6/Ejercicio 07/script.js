@@ -1,6 +1,5 @@
 import Edificio from "./edificio.js";
 
-const PRIMER_FORM = document.querySelector("#primerform");
 const EDIFICIO_CALLE = document.querySelector("#calle");
 const EDIFICIO_NUMERO = document.querySelector("#numero");
 const EDIFICIO_CODIGO_POSTAL = document.querySelector("#cp");
@@ -9,7 +8,10 @@ const EDIFICIO_PUERTAS = document.querySelector("#puertas");
 const PRIMER_FORM_ENVIAR = document.querySelector("#enviar");
 const ERROR_PRIMER_FORM = document.querySelector("#msgPrimerForm");
 
+const LISTA_EDIFICIOS = document.querySelector("#listaEdificios");
+
 let edificios = [];
+let i = 0;
 
 function validarCalle() {
   if (!EDIFICIO_CALLE.checkValidity()) {
@@ -168,10 +170,48 @@ function validar(e) {
     validarPlantas() &&
     validarPuertas()
   ) {
-    alert(
-      `Se ha registrado el nuevo edificio con dirección: ${EDIFICIO_CALLE.value} nº${EDIFICIO_NUMERO.value}. CP:${EDIFICIO_CODIGO_POSTAL}`
+    edificios.push(
+      new Edificio(
+        EDIFICIO_CALLE.value,
+        EDIFICIO_NUMERO.value,
+        EDIFICIO_CODIGO_POSTAL.value,
+        EDIFICIO_PLANTAS.value,
+        EDIFICIO_PUERTAS.value
+      )
     );
+
+    alert(
+      `Se ha registrado el nuevo edificio con dirección: ${EDIFICIO_CALLE.value} nº${EDIFICIO_NUMERO.value}. CP:${EDIFICIO_CODIGO_POSTAL.value}`
+    );
+
+    showEdificios();
   }
+}
+
+function showEdificios() {
+  let br = document.createElement("br");
+  let inputRadioButton = document.createElement("input");
+  let textoLi = document.createTextNode(edificios[i].calle);
+  /*
+    In JavaScript, properties and methods are accessed differently. When you have getters and setters defined in a class, like in your Edificio class, they act as properties that are accessed using the dot notation without parentheses.
+      - The edificio.calle and edificio._calle work as property access because the getter get calle() allows you to access _calle as if it were a public property. The underscore convention (_calle) is used to denote that it is a private property, but JavaScript does not enforce this privacy; it's just by convention.
+      - The edificio.calle() syntax does not work because calle is not a method; it's an accessor property. In JavaScript, accessor properties are defined with get and set keywords and are accessed without parentheses.
+
+    -> The get syntax binds an object property to a function that will be called when that property is looked up. So when you access edificio.calle, internally it calls the getter function you defined and returns the value of _calle. This is a way to expose private variables with controlled access, potentially allowing for validation or other logic to run when getting or setting the value.
+      - edificio.calle: Correct, accesses the getter method for the _calle property.
+      - edificio._calle: Technically works because JavaScript does not enforce private properties, but it goes against the encapsulation principle.
+      - edificio.calle(): Incorrect, because calle is not a method, it's an accessor property and should not be called with parentheses.
+    */
+
+  inputRadioButton.type = "radio";
+  inputRadioButton.name = "opcionEdificio"; // Tienen que tener el mismo "name", pero deben tener diferente "id" y "value"
+  inputRadioButton.id = i;
+  inputRadioButton.value = i;
+
+  LISTA_EDIFICIOS.appendChild(inputRadioButton);
+  LISTA_EDIFICIOS.appendChild(textoLi);
+  LISTA_EDIFICIOS.appendChild(br);
+  i++;
 }
 
 PRIMER_FORM_ENVIAR.addEventListener("click", validar, false);
