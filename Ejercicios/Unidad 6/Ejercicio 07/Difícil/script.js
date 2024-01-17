@@ -476,6 +476,9 @@ function showTable(e) {
         tdPlantas = document.createElement("td");
         let propietarioPiso;
 
+        tdPlantas.setAttribute("data-planta", j);
+        tdPlantas.setAttribute("data-puerta", k);
+
         if (edificios[edificioSeleccionado].showPropietario(j, k) == null) {
           propietarioPiso = " ";
         } else {
@@ -488,12 +491,44 @@ function showTable(e) {
         txtPlantas = document.createTextNode(propietarioPiso);
       }
 
+      tdPlantas.addEventListener("click", editarPropietario, false);
+
       tdPlantas.appendChild(txtPlantas);
       tr.appendChild(tdPlantas);
     }
     TABLA.appendChild(tr);
     e.preventDefault;
   }
+}
+
+function editarPropietario(e) {
+  e.stopPropagation();
+
+  let registro = e.currentTarget;
+  let planta = registro.getAttribute("data-planta");
+  let puerta = registro.getAttribute("data-puerta");
+  let propietarioActual = registro.textContent;
+
+  registro.innerHTML = "";
+  let input = document.createElement("input");
+
+  input.type = "text";
+  input.value = propietarioActual;
+  registro.appendChild(input);
+  input.focus();
+
+  input.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      edificios[edificioSeleccionado].modificarDatos(
+        planta,
+        puerta,
+        input.value
+      );
+      registro.innerHTML = input.value;
+      registro.removeChild(input);
+      e.preventDefault();
+    }
+  });
 }
 
 MOSTRAR_PROPIETARIO_ENVIAR.addEventListener("click", showTable, false);
