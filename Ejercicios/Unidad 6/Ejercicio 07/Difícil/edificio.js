@@ -16,7 +16,8 @@ export default class Edificio {
       `Construido nuevo edificio en calle: ${this.calle}, nº: ${this.numero}, CP: ${this.codigoPostal}. Con ${this.plantas} plantas y ${puertas} puertas`
     );
   }
-
+  
+  // Getters y Setters
   get calle() {
     return this._calle;
   }
@@ -61,6 +62,7 @@ export default class Edificio {
     return parseInt(this.puertas) / parseInt(this.plantas);
   }
 
+  // Funciones
   letraEdificio(puerta) {
     let letras = ["A", "B", "C", "D", "E", "F", "H", "I"];
     let numero;

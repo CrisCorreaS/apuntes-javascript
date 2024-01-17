@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 7</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js" defer></script>
   </head>
   <body>
@@ -22,60 +22,121 @@
     </p>
     <h2>Formulario de creación de un edificio</h2>
     <form action="#" id="primerform">
-      <label>Calle del Edificio:
-        <input type="text" name="calle" id="calle" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,80}" required>
+      <label
+        >Calle del Edificio:
+        <input
+          type="text"
+          name="calle"
+          id="calle"
+          pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,80}"
+          required
+        />
       </label>
-      <br><br>
-      <label>Número del Edificio:
-        <input type="number" name="numero" id="numero" min="1" max="300" required>
+      <br /><br />
+      <label
+        >Número del Edificio:
+        <input
+          type="number"
+          name="numero"
+          id="numero"
+          min="1"
+          max="300"
+          required
+        />
       </label>
-      <br><br>
-      <label>Código Postal del Edificio:
-        <input type="number" name="cp" id="cp" min="1000" max="52999" required>
+      <br /><br />
+      <label
+        >Código Postal del Edificio:
+        <input
+          type="number"
+          name="cp"
+          id="cp"
+          min="1000"
+          max="52999"
+          required
+        />
       </label>
-      <br><br>
-      <label>Plantas del Edificio:
-        <input type="number" name="plantas" id="plantas" min="1" max="50" required>
+      <br /><br />
+      <label
+        >Plantas del Edificio:
+        <input
+          type="number"
+          name="plantas"
+          id="plantas"
+          min="1"
+          max="50"
+          required
+        />
       </label>
-      <br><br>
-      <label>Puertas del Edificio:
-        <input type="number" name="puertas" id="puertas" min="1" max="400" required>
+      <br /><br />
+      <label
+        >Puertas del Edificio:
+        <input
+          type="number"
+          name="puertas"
+          id="puertas"
+          min="1"
+          max="400"
+          required
+        />
       </label>
-      <br><br>
+      <br /><br />
       <button type="submit" id="enviar1">Enviar</button>
     </form>
     <p id="msgPrimerForm"></p>
-    <hr>
+    <hr />
     <h2>Lista de Edificios:</h2>
     <div id="listaEdificios"></div>
-    <hr>
+    <hr />
     <div id="modificarPropietarios" class="oculto">
       <h2>Modificar Propietarios</h2>
       <form action="#">
-        <label>Planta: 
-          <input type="number" name="plantasEdificio" id="plantasEdificio" min="1" max="50" required>
+        <label
+          >Planta:
+          <input
+            type="number"
+            name="plantasEdificio"
+            id="plantasEdificio"
+            min="1"
+            max="50"
+            required
+          />
         </label>
-        <br><br>
-        <label>Puerta:
-          <input type="number" name="puertasEdificio" id="puertasEdificio" min="1" max="300" required>
+        <br /><br />
+        <label
+          >Puerta:
+          <input
+            type="number"
+            name="puertasEdificio"
+            id="puertasEdificio"
+            min="1"
+            max="300"
+            required
+          />
         </label>
-        <br><br>
-        <label>Propietario:
-          <input type="text" name="propietarioEdificio" id="propietarioEdificio" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,33}" required>
+        <br /><br />
+        <label
+          >Propietario:
+          <input
+            type="text"
+            name="propietarioEdificio"
+            id="propietarioEdificio"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ,.;!?]{4,33}"
+            required
+          />
         </label>
-        <br><br>
-        <input type="submit" id="enviar2" value="Enviar">
+        <br /><br />
+        <input type="submit" id="enviar2" value="Enviar" />
       </form>
       <p id="msSegundoForm"></p>
-      <hr>
+      <hr />
     </div>
     <h2>Mostrar un Edificio</h2>
     <form action="#">
       <select name="edificioSeleccion" id="edificioSeleccion"></select>
-      <input type="submit" id="enviar3" value="Mostrar Edificio">
+      <input type="button" id="enviar3" value="Mostrar Edificio" /><!-- Hay que tener cuidado por poner <input type="submit"/> en vez de <input type="button" /> -->
     </form>
-    <br>
-    <table id="tablaEdificios">
-    </table>
+    <br />
+    <table id="tablaEdificios"></table>
   </body>
 </html>

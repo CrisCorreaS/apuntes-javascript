@@ -397,18 +397,30 @@ PROPIETARIO_ENVIAR.addEventListener("click", validarPropietarios, false);
 // TODO
 // CREACIÓN DE LAS TABLAS
 function showTable(e) {
+  // <tr><th colspan="puertasPorPlantas+1">Edificio X</th></tr>
   TABLA.innerHTML = `<tr>
-        <th colspan='${edificios[edificioSeleccionado].plantas + 1}'>
+        <th colspan='${edificios[edificioSeleccionado].puertasPorPlantas + 1}'>
           Edificio: ${edificios[edificioSeleccionado].calle} nº ${
     edificios[edificioSeleccionado].numero
   }
         </th>
       </tr>`;
 
-  let trPuerta = document.createElement("tr");
+  /*
+    <tr>
+      <!-- th -> pisosPorPlantas + 1 -->
+      <th></th>
+      <th>Piso A</th>
+      <th>Piso B</th>
+      <th>Piso C</th>
+      <th>Piso D</th>
+      ...
+    </tr>
+  */
+  let trPuertas = document.createElement("tr");
   let contadorPlantas = 1;
 
-  for (let l = 0; l < edificios[edificioSeleccionado].puertas; l++) {
+  for (let l = 0; l <= edificios[edificioSeleccionado].puertasPorPlantas; l++) {
     let thPuerta = document.createElement("th");
     let txtTh;
     if (l == 0) {
@@ -418,15 +430,40 @@ function showTable(e) {
     }
     thPuerta.appendChild(txtTh);
 
-    trPuerta.appendChild(thPuerta);
+    trPuertas.appendChild(thPuerta);
   }
 
-  TABLA.appendChild(trPuerta);
+  TABLA.appendChild(trPuertas);
 
-  for (let j = 0; j < edificios[edificioSeleccionado].puertasPorPlantas; j++) {
+  /*
+      <!-- tr -> plantas -->
+      <tr>
+        <!-- th + td -> pisosPorPlantas -->
+        <th>Planta 1</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        ...
+      </tr>
+      <tr>
+        <th>Planta 2</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        ...
+      </tr>
+      ...
+  */
+  for (let j = 1; j <= parseInt(edificios[edificioSeleccionado].plantas); j++) {
     let tr = document.createElement("tr");
 
-    for (let k = 0; k < edificios[edificioSeleccionado].plantas; k++) {
+    for (
+      let k = 0;
+      k < edificios[edificioSeleccionado].puertasPorPlantas + 1;
+      k++
+    ) {
       let tdPlantas;
       let txtPlantas;
 
@@ -448,15 +485,15 @@ function showTable(e) {
           );
         }
 
-        txtPlantas = document.createTextNode();
+        txtPlantas = document.createTextNode(propietarioPiso);
       }
 
       tdPlantas.appendChild(txtPlantas);
       tr.appendChild(tdPlantas);
     }
     TABLA.appendChild(tr);
+    e.preventDefault;
   }
-  e.preventDefault;
 }
 
 MOSTRAR_PROPIETARIO_ENVIAR.addEventListener("click", showTable, false);
