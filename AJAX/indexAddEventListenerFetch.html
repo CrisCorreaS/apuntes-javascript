@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="texto">
+      <h1>AJAX</h1>
+    </div>
+    <button id="cambiaContenido">Cambia el contenido</button>
+    <script>
+      document
+        .getElementById("cambiaContenido")
+        .addEventListener("click", cambiaContenido);
+
+      function cambiaContenido() {
+        // CON XHR:
+        // var xhr = new XMLHttpRequest();
+        // xhr.addEventListener("readystatechange", function () {
+        //   if (this.readyState == 4 && this.status == 200) {
+        //     document.getElementById("texto").innerHTML = this.responseText;
+        //   }
+        // });
+        //  .open: especifica la solicitud
+        //      - GET/POST.
+        //      - Archivo: txt, php, xml, json, etc.
+        //      - true/false: asincrono ó sincrono.
+        // xhr.open("GET", "holamundo.txt", true);
+        // /* .send: envía la solicitud al servidor.
+        //         Si utilizamos POST debemos pasar los datos por parámetro */
+        // xhr.send();
+
+        // CON FETCH:
+        fetch("holamundo.txt")
+          .then((x) => x.text()) //Devuelve una promesa con el texto plano de la respuesta que procesamos en el siguiente .then. Podemos utilizar también         x.json() que es lo mismo pero devuelve una promesa con los datos en JSON, lo que equivale a hacer JSON.parse()
+          .then((y) => (document.getElementById("texto").innerHTML = y)); //muestra por consola el objeto
+      }
+    </script>
+  </body>
+</html>

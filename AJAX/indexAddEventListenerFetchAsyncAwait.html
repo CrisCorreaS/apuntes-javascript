@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="texto">
+      <h1>AJAX</h1>
+    </div>
+    <button id="cambiaContenido">Cambia el contenido</button>
+    <script>
+      document
+        .getElementById("cambiaContenido")
+        .addEventListener("click", cambiaContenido);
+
+      async function cambiaContenido() {
+        // CON FETCH:
+        // fetch("holamundo.txt")
+        //   .then((x) => x.text()) //Devuelve una promesa con el texto plano de la respuesta que procesamos en el siguiente .then. Podemos utilizar también         x.json() que es lo mismo pero devuelve una promesa con los datos en JSON, lo que equivale a hacer JSON.parse()
+        //   .then((y) => (document.getElementById("texto").innerHTML = y)); //muestra por consola el objeto
+
+        // CON ASYNC AWAIT
+        let x = await fetch("holamundo.txt");
+        let y = await x.text();
+
+        document.getElementById("texto").innerHTML = y
+      }      
+    </script>
+  </body>
+</html>
