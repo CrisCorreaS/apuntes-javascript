@@ -1,0 +1,37 @@
+[
+    {
+        "nombre": "Laura",
+        "localidad": "Santander",
+        "cuota": 50
+    },
+    {
+        "nombre": "Álvaro",
+        "localidad": "Castro",
+        "cuota": 50
+    },
+    {
+        "nombre": "Igor",
+        "localidad": "Castro",
+        "cuota": 60
+    },
+    {
+        "nombre": "Ivan",
+        "localidad": "Santander",
+        "cuota": 40
+    },
+    {
+        "nombre": "Mónica",
+        "localidad": "Zamora",
+        "cuota": 30
+    },
+    {
+        "nombre": "Javi",
+        "localidad": "Bilbao",
+        "cuota": 30
+    },
+    {
+        "nombre": "David",
+        "localidad": "Bilbao",
+        "cuota": 50
+    }
+]
