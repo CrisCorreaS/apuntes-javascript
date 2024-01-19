@@ -3,7 +3,7 @@
     <disco>
         <nombre>Highway to Hell</nombre>
         <grupo>AC/DC</grupo>
-        <ano>1979</ano>
+        <year>1979</year>
         <tipo>rock</tipo>
         <localizacion>1A</localizacion>
         <prestado>false</prestado>
@@ -12,7 +12,7 @@
     <disco>
         <nombre>The Dark Side of the Moon</nombre>
         <grupo>Pink Floyd</grupo>
-        <ano>1973</ano>
+        <year>1973</year>
         <tipo>rock</tipo>
         <localizacion>2B</localizacion>
         <prestado>false</prestado>
@@ -21,7 +21,7 @@
     <disco>
         <nombre>Back in Black</nombre>
         <grupo>AC/DC</grupo>
-        <ano>1980</ano>
+        <year>1980</year>
         <tipo>rock</tipo>
         <localizacion>1B</localizacion>
         <prestado>false</prestado>
@@ -30,7 +30,7 @@
     <disco>
         <nombre>Hotel California</nombre>
         <grupo>Eagles</grupo>
-        <ano>1976</ano>
+        <year>1976</year>
         <tipo>rock</tipo>
         <localizacion>3A</localizacion>
         <prestado>false</prestado>
@@ -39,7 +39,7 @@
     <disco>
         <nombre>Nevermind</nombre>
         <grupo>Nirvana</grupo>
-        <ano>1991</ano>
+        <year>1991</year>
         <tipo>rock</tipo>
         <localizacion>2A</localizacion>
         <prestado>false</prestado>

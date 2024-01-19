@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 02</title>
-    <script src="script.js" defer></script>
-</head>
-<body>
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body>
     <p>
         Realiza el ejercicio 4.4 cargando el array de discos de un XML.
 
@@ -35,5 +35,29 @@
             Borrar un disco (y le preguntará si quiere borrar al principio o al final).
             Consultar un disco (y le preguntará si quiere consultar por posición o por nombre).
     </p>
-</body>
+    <h1>Administrador de Discos</h1>
+    <form id="formDisco">
+      <input type="text" id="name" placeholder="Nombre del disco" /><br />
+      <input type="text" id="group" placeholder="Grupo o cantante" /><br />
+      <input type="number" id="ano" placeholder="Año de publicación" /><br />
+      <select id="type">
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="punk">Punk</option>
+        <option value="indie">Indie</option></select
+      ><br />
+      <input type="number" id="localization" placeholder="Localización" /><br />
+      <input type="text" id="cover" placeholder="Carátula" /><br />
+      <button type="submit">Añadir Disco</button>
+    </form>
+    <br /><br />
+    <div id="discos"></div>
+    <button id="mostrarNumero">Mostrar número de discos</button><br />
+    <button id="mostrarTabla">Mostrar tabla de discos</button><br />
+    <button id="mostrarIntervalo">
+      Mostrar intervalo de discos por año de publicación</button
+    ><br />
+    <button id="borrarDisco">Borrar un disco</button><br />
+    <button id="consultarDisco">Consultar un disco</button><br />
+  </body>
 </html>
