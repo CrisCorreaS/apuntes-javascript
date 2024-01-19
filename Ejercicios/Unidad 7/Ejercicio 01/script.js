@@ -10,7 +10,7 @@ function obtenerDatosJSON(callback) {
   xhr.responseType = "json";
   xhr.open("GET", "file/cliente.json", true);
   xhr.onload = function () {
-    if (xhr.status >= 200 && xhr.status < 300) {
+    if (xhr.status >= 200 && xhr.status < 300 && xhr.readyState == 4) {
       let clientesJSON = xhr.response;
       clientes = [...clientesJSON];
       callback(); 
