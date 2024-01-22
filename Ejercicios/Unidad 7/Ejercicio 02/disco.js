@@ -17,6 +17,10 @@ export default class Disco {
     this.prestado = nuevoPrestado;
   }
 
+  cambiarCaratula(nuevaCaratula) {
+    this.caratula = nuevaCaratula;
+  }
+
   mostrarInfo() {
     let localizacionMostrar = this.localizacion || 0; //Si pongo el OR (||), cuando hay valores en localización que son null, undefined, NaN, 0, una cadena vacía (""), o false, me pone el valor por defecto.
     let prestadoMostrar = this.prestado || false;

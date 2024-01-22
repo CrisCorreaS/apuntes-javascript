@@ -1,6 +1,15 @@
 <?xml version="1.1" encoding="utf-8"?>
 <catalogo>
     <disco>
+        <nombre>1989</nombre>
+        <grupo>Taylor Swift</grupo>
+        <year>2014</year>
+        <tipo>pop</tipo>
+        <localizacion>1C</localizacion>
+        <prestado>true</prestado>
+        <caratula>1989.png</caratula>
+    </disco>
+    <disco>
         <nombre>Highway to Hell</nombre>
         <grupo>AC/DC</grupo>
         <year>1979</year>
@@ -8,6 +17,42 @@
         <localizacion>1A</localizacion>
         <prestado>false</prestado>
         <caratula>highway_to_hell.png</caratula>
+    </disco>
+    <disco>
+        <nombre>Salad Days</nombre>
+        <grupo>Mac DeMarco</grupo>
+        <year>2014</year>
+        <tipo>indie</tipo>
+        <localizacion>2E</localizacion>
+        <prestado>false</prestado>
+        <caratula>saladdays.png</caratula>
+    </disco>
+    <disco>
+        <nombre>Future Nostalgia</nombre>
+        <grupo>Dua Lipa</grupo>
+        <year>2020</year>
+        <tipo>pop</tipo>
+        <localizacion>5F</localizacion>
+        <prestado>false</prestado>
+        <caratula>futurenostalgia.png</caratula>
+    </disco>
+    <disco>
+        <nombre>OK Computer</nombre>
+        <grupo>Radiohead</grupo>
+        <year>1997</year>
+        <tipo>indie</tipo>
+        <localizacion>3B</localizacion>
+        <prestado>false</prestado>
+        <caratula>ok_computer.png</caratula>
+    </disco>
+    <disco>
+        <nombre>London Calling</nombre>
+        <grupo>The Clash</grupo>
+        <year>1979</year>
+        <tipo>punk</tipo>
+        <localizacion>4D</localizacion>
+        <prestado>false</prestado>
+        <caratula>london_calling.png</caratula>
     </disco>
     <disco>
         <nombre>The Dark Side of the Moon</nombre>
@@ -19,13 +64,40 @@
         <caratula>dark_side_of_the_moon.png</caratula>
     </disco>
     <disco>
+        <nombre>25</nombre>
+        <grupo>Adele</grupo>
+        <year>2015</year>
+        <tipo>pop</tipo>
+        <localizacion>3A</localizacion>
+        <prestado>false</prestado>
+        <caratula>25.png</caratula>
+    </disco>
+    <disco>
         <nombre>Back in Black</nombre>
         <grupo>AC/DC</grupo>
         <year>1980</year>
         <tipo>rock</tipo>
         <localizacion>1B</localizacion>
-        <prestado>false</prestado>
+        <prestado>true</prestado>
         <caratula>back_in_black.png</caratula>
+    </disco>
+    <disco>
+        <nombre>Antics</nombre>
+        <grupo>Interpol</grupo>
+        <year>2004</year>
+        <tipo>indie</tipo>
+        <localizacion>3B</localizacion>
+        <prestado>false</prestado>
+        <caratula>antics.png</caratula>
+    </disco>
+    <disco>
+        <nombre>Red</nombre>
+        <grupo>Taylor Swift</grupo>
+        <year>2012</year>
+        <tipo>pop</tipo>
+        <localizacion>1C</localizacion>
+        <prestado>false</prestado>
+        <caratula>red.png</caratula>
     </disco>
     <disco>
         <nombre>Hotel California</nombre>
@@ -44,5 +116,14 @@
         <localizacion>2A</localizacion>
         <prestado>false</prestado>
         <caratula>nevermind.png</caratula>
+    </disco>
+    <disco>
+        <nombre>Is This It</nombre>
+        <grupo>The Strokes</grupo>
+        <year>2001</year>
+        <tipo>indie</tipo>
+        <localizacion>3B</localizacion>
+        <prestado>false</prestado>
+        <caratula>isthisit.png</caratula>
     </disco>
 </catalogo>

@@ -46,7 +46,12 @@
         <option value="punk">Punk</option>
         <option value="indie">Indie</option></select
       ><br />
-      <input type="number" id="localization" placeholder="Localización" /><br />
+      <input
+        type="text"
+        id="localization"
+        placeholder="Localización"
+        pattern="[0-9]{1}+[A-Z]{1}"
+      /><br />
       <input type="text" id="cover" placeholder="Carátula" /><br />
       <button type="submit">Añadir Disco</button>
     </form>

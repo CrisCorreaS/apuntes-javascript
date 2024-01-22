@@ -12,18 +12,24 @@ xhr.onreadystatechange = function () {
 xhr.open("GET", "file/catalogo.xml", true);
 xhr.send();
 
-function cargarXMLenArray(xml) {
+function cargarXML(xml) {
   let docXML = xml.responseXML;
-  let tabla = "<tr><th>Artista</th><th>Titulo</th></tr>";
-  let discos = docXML.getElementsByTagName("CD");
-  for (let i = 0; i < discos.length; i++) {
-    tabla += "<tr><td>";
-    tabla += discos[i].getElementsByTagName("ARTIST")[0].textContent;
-    tabla += "</td><td>";
-    tabla += discos[i].getElementsByTagName("TITLE")[0].textContent;
-    tabla += "</td></tr>";
+  let discosXML = docXML.getElementsByTagName("disco");
+
+  for (let i = 0; i < discosXML.length; i++) {
+    let disco = new Disco(
+      discosXML[i].getElementsByTagName("nombre")[0].textContent,
+      discosXML[i].getElementsByTagName("grupo")[0].textContent,
+      discosXML[i].getElementsByTagName("year")[0].textContent,
+      discosXML[i].getElementsByTagName("tipo")[0].textContent
+    );
+
+    disco.cambiarLocalizacion(discosXML[i].getElementsByTagName("localizacion")[0].textContent);
+    disco.cambiarPrestado(discosXML[i].getElementsByTagName("prestado")[0].textContent);
+    disco.cambiarCaratula(discosXML[i].getElementsByTagName("caratula")[0].textContent);
+
+    discos.push(disco);
   }
-  document.getElementById("demo").innerHTML = tabla;
 }
 
 document
@@ -43,10 +49,10 @@ document
       grupo,
       year,
       tipo,
-      localizacion,
-      false,
-      caratula
     );
+    disco.cambiarLocalizacion(localizacion);
+    disco.cambiarCaratula(caratula);
+
     discos.push(disco);
   });
 
