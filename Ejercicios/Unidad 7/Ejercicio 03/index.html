@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+        Realiza el ejercicio 5.6 obteniendo las 6 imágenes desde la API REST en formato XML 
+        https://randomuser.me/api/?results=6&format=XML
+
+        Al colocarse encima de la foto volteada ha de mostrar la dirección de correo de la persona, donde consideres oportuno.
+
+        Vas a crear un juego que consiste en encontrar parejas en 12 cartas con 6 parejas de imágenes. El juego consistirá en lo siguiente:
+          - La aplicación deberá tener una tabla con 3 filas y cuatro columnas de un color (puede ser también una imagen con un color) . Además se mostrará un cuadro de texto de aciertos con el valor inicial 0.
+          - Cuando el usuario haga clic sobre una celda, se mostrará una imagen.
+          - Cuando el usuario haga clic sobre otra celda, se mostrará otra imagen.
+          - Si las dos imágenes son iguales, se quedarán a la vista y se añadirá 1 al cuadro de texto de aciertos.
+          - Si las dos imágenes son diferentes, se ocultarán mostrando nuevamente el color inicial.
+
+        Además al entrar en la página al usuario se le pedirá un nombre la primera vez que entre, ese nombre será almacenado en una cookie además de un contador de visitas a la página. 
+        Si vuelve a entrar en la página se le mostrará un mensaje en la misma página diciendo Hola “nombre” y el número de veces que visitó la página.
+        Puede ser de utilidad el atributo src del elemento img. Podremos acceder desde event.target.src o this.src
+    </p>
+    <h1>Juego de las cartas</h1>
+    <section class="memory-game">
+      <div class="memory-card" >
+        <img class="front-face" data-value="0" alt="Persona1" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" >
+        <img class="front-face" data-value="0" alt="Persona1" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" >
+        <img class="front-face" data-value="1" alt="Persona2" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" >
+        <img class="front-face" data-value="1" alt="Persona2" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" >
+        <img class="front-face" data-value="2" alt="Persona3" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" >
+        <img class="front-face" data-value="2" alt="Persona3" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" >
+        <img class="front-face" data-value="3" alt="Persona4" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" >
+        <img class="front-face" data-value="3" alt="Persona4" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" >
+        <img class="front-face" data-value="4" alt="Persona5" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" >
+        <img class="front-face" data-value="4" alt="Persona5" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+
+      <div class="memory-card" >
+        <img class="front-face" data-value="5" alt="Persona6" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+      <div class="memory-card" >
+        <img class="front-face" data-value="5" alt="Persona6" />
+        <img class="back-face" src="img/js.png" alt="JS Badge" />
+      </div>
+    </section>
+    <p id="aciertos">Número de aciertos: 0</p>
+</body>
+</html>
