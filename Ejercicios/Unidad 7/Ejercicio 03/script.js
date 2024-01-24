@@ -67,18 +67,18 @@ let cont = 0;
 
 function flipCard(e) {
   if (lockBoard) return;
-  if (e.target === firstCard) return;
+  if (e.target.parentNode.firstElementChild === firstCard) return;
 
   this.classList.add("flip");
 
   if (!hasFlippedCard) {
     hasFlippedCard = true;
-    firstCard = e.target;
+    firstCard = e.target.parentNode.firstElementChild;
 
     return;
   }
 
-  secondCard = e.target;
+  secondCard = e.target.parentNode.firstElementChild;
   checkForMatch();
 }
 
@@ -96,8 +96,8 @@ function checkForMatch() {
 }
 
 function disableCARTAS() {
-  firstCard.removeEventListener("click", flipCard);
-  secondCard.removeEventListener("click", flipCard);
+  firstCard.parentNode.removeEventListener("click", flipCard);
+  secondCard.parentNode.removeEventListener("click", flipCard);
 
   resetBoard();
 }
@@ -106,8 +106,8 @@ function unflipCARTAS() {
   lockBoard = true;
 
   setTimeout(() => {
-    firstCard.classList.remove("flip");
-    secondCard.classList.remove("flip");
+    firstCard.parentNode.classList.remove("flip");
+    secondCard.parentNode.classList.remove("flip");
 
     resetBoard();
   }, 1500);
