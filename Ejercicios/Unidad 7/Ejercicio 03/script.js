@@ -1,7 +1,9 @@
 const CARTAS = document.querySelectorAll(".memory-card");
 const CARTA_IMG = document.querySelectorAll(".front-face");
+const SPAN = document.querySelectorAll(".mail");
 
 let personas = [];
+let contador = 0;
 
 // Acceso y Gestión de los datos de la API
 function cargarXML(xml) {
@@ -56,6 +58,9 @@ function gestionImagenes() {
         imagen.src = personas[Number.parseInt(tipoimagen)].imagen;
         break;
     }
+    SPAN[contador].innerHTML = personas[Number.parseInt(tipoimagen)].mail;
+
+    contador++;
   });
 }
 

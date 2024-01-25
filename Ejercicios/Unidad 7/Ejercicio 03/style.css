@@ -87,3 +87,18 @@ h1 {
   margin-top: 50px;
   font-size: x-large;
 }
+
+span {
+  font-size: 10px;
+  padding: 5px;
+  color: black;
+  background-color: #f0b801;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+
+.memory-card.flip span:hover {
+  opacity: 1;
+  transform: rotateY(180deg);
+}
