@@ -7,7 +7,7 @@ let numCheckbox = 1;
 let i;
 
 function pintarPrimerasTareas() {
-  for (let j = 0; j < tareas.length; j++){
+  for (let j = 0; j < tareas.length; j++) {
     let checkbox = document.createElement("input");
     let li = document.createElement("li");
 
@@ -49,7 +49,7 @@ function obtenerDatosJSON() {
     } else {
       console.log("Ha habido un error al cargar el archivo: " + xhr.status);
     }
-  }
+  };
   xhr.send();
 }
 
