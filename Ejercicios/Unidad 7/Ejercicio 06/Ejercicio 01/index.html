@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>
+      Realiza el ejercicio 4.3 leyendo la lista de un JSON. 
+
+      Ejericicio 4.3:
+      Crea una clase Cliente y define un array de clientes con los siguientes datos:
+
+        Nombre;Localidad;Cuota
+        Laura;Santander;50
+        Álvaro;Castro;50
+        Igor;Castro;60
+        Ivan;Santander;40
+        Mónica;Zamora;30
+        Javi;Bilbao;30
+        David;Bilbao;50
+        
+      A partir del mismo, el usuario podrá elegir del menú:
+      Todos los clientes: se mostrará una tabla con los valores que están en la variable anterior.
+      Usuarios de una localidad: y a partir de la localidad introducida por el usuario se mostrarán en una tabla los nombres y cuotas de las personas que viven en esa provincia.
+      Usuarios que tengan una cuota mayor que un valor: y se mostrarán en una tabla los nombres de usuario, provincias y cuotas de aquellos que tienen una cuota superior al valor introducido por el usuario (valora cuál es el mejor modo de hacerlo).
+    </p>
+    <div>
+      <p>1- Mostrar Todos</p>
+      <p>2- Mostrar por Localidad</p>
+      <p>3- Mostrar por Cuota</p>
+    </div>
+    <input type="text" id="opcion" />
+    <button id="enviar">Enviar</button><br /><br />
+    <table border="1" id="tablaClientes"></table>
+  </body>
+</html>
