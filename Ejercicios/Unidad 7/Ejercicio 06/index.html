@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p>
+      Cambia el ejercicio 6.1 para que las tareas iniciales se carguen desde un
+      JSON. 
+      
+      Crea un aplicación en javascript que permita realizar una lista de
+      tareas, inicialmente la lista se cargará desde un array de objetos tarea
+      con dos campos: texto(string) y realizada(boolean) que se irá modificando
+      a la vez que el listado en pantalla. El usuario podrá introducir una nueva
+      tarea desde un input al hacer click en un botón, se ha de utilizar los
+      métodos de creación de elementos vistos en la unidad. Amplía la
+      funcionalidad de la lista de tareas permitiendo marcar una tarea como
+      completada. Cada tarea en la lista debe tener un checkbox que, al hacer
+      clic, cambie su estilo para indicar visualmente que ha sido completada.
+    </p>
+    <main>
+      <form id="formulario">
+        <input type="text" id="tarea" />
+        <input type="submit" value="Crear" id="submit" />
+      </form>
+      <hr />
+      <ul id="texto"></ul>
+    </main>
+  </body>
+</html>

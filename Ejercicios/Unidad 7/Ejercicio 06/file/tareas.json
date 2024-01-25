@@ -1,0 +1,22 @@
+[
+  {
+    "texto": "Lavar y planchar ropa",
+    "realizada": false
+  },
+  {
+    "texto": "Hacer la cama",
+    "realizada": false
+  },
+  {
+    "texto": "Recoger la encimera de la cocina",
+    "realizada": false
+  },
+  {
+    "texto": "Fregar los platos",
+    "realizada": false
+  },
+  {
+    "texto": "Hacer los ejercicios de cliente",
+    "realizada": false
+  }
+]

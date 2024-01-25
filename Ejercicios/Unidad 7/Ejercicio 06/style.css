@@ -1,0 +1,9 @@
+.incorrecto {
+  text-decoration: line-through;
+  color: red;
+}
+
+ul,
+li {
+  list-style: none;
+}
