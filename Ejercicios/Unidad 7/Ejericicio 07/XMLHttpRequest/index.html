@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejericicio 7 Unidad 6</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p>
+      Diseña una aplicación web que lea y muestre información de pilotos de Fórmula 1 desde un archivo JSON como el del
+      ejemplo.
+    
+      Implementa las siguientes funcionalidades interactivas decidiendo tu el diseño que quieras utilizar:
+      - Ordenar por Nombre o Equipo: Permite al usuario ordenar la lista de pilotos por nombre o equipo, ya sea de forma
+      ascendente o descendente.
+      - Filtrar por Nacionalidad: Agrega un filtro para que el usuario pueda ver solo los pilotos de una nacionalidad
+      específica.
+      - Destacar Piloto: Permite al usuario hacer clic en un piloto para destacarlo, cambiando su estilo visual.
+      - Implementar paginación para la lista de pilotos, se mostrarán 3 pilotos por página e incluirá la opción ver todos.
+    </p>
+    <div>
+      <p>1- Ordenar por Nombre o Equipo</p>
+      <p>2- Filtrar por Nacionalidad</p>
+    </div>
+    <input type="text" id="opcion" />
+    <button id="enviar">Enviar</button><br /><br />
+    <p id="errorMsg" class="error"></p>
+    <h3 id="datos"></h3>
+    <table border="1" id="tablaPilotos"></table>
+    <br/>
+    <button id="show">Mostrar Todos</button>
+    <br>
+    <h3>Paginación de Pilotos:</h3>
+    <div id="paginacion" class="pilotosPaginados"></div>
+    <button id="btn_prev">Anterior</button>&nbsp;
+    <button id="btn_next">Siguiente</button><br>
+    Página: <span id="page"></span>
+  </body>
+</html>
