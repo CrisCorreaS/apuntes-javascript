@@ -1,0 +1,19 @@
+.error {
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+}
+
+.destacar {
+  background-color: violet;
+  color: whitesmoke;
+}
+
+.pilotosPaginados {
+  color: darkolivegreen;
+  background-color: beige;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+}

@@ -1,0 +1,60 @@
+{
+  "pilotos": [
+    {
+      "nombre": "Lewis Hamilton",
+      "equipo": "Mercedes",
+      "numero": 44,
+      "nacionalidad": "Reino Unido",
+      "seleccionado": false
+    },
+    {
+      "nombre": "Max Verstappen",
+      "equipo": "Red Bull Racing",
+      "numero": 33,
+      "nacionalidad": "Países Bajos",
+      "seleccionado": false
+    },
+    {
+      "nombre": "Charles Leclerc",
+      "equipo": "Ferrari",
+      "numero": 16,
+      "nacionalidad": "Mónaco",
+      "seleccionado": false
+    },
+    {
+      "nombre": "Fernando Alonso",
+      "equipo": "Aston Martin",
+      "numero": 14,
+      "nacionalidad": "España",
+      "seleccionado": false
+    },
+    {
+      "nombre": "Sergio Perez",
+      "equipo": "Red Bull Racing",
+      "numero": 11,
+      "nacionalidad": "México",
+      "seleccionado": false
+    },
+    {
+      "nombre": "Valtteri Bottas",
+      "equipo": "Mercedes",
+      "numero": 77,
+      "nacionalidad": "Finlandia",
+      "seleccionado": false
+    },
+    {
+      "nombre": "Daniel Ricciardo",
+      "equipo": "McLaren",
+      "numero": 3,
+      "nacionalidad": "Australia",
+      "seleccionado": false
+    },
+    {
+      "nombre": "Pierre Gasly",
+      "equipo": "AlphaTauri",
+      "numero": 10,
+      "nacionalidad": "Francia",
+      "seleccionado": false
+    }
+  ]
+}
