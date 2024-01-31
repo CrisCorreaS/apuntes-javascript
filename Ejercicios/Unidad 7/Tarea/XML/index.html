@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor de divisas</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link a Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a572cee94c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main>
@@ -15,7 +20,7 @@
           <div id="texto">
             <label for="importe">Importe</label>
             <label for="from">De:</label>
-            <label for="to">a</label>
+            <label for="to">A:</label>
           </div>
           <div id="valores">
             <input
@@ -24,12 +29,17 @@
               id="importe"
               min="0"
               max="1000000"
+              placeholder="10.0"
+              required
             />
             <select name="from" id="from"></select>
+            <i class="fa-solid fa-right-left"></i>
             <select name="to" id="to"></select>
           </div>
-          <button type="submit">Convertir</button>
+          <p id="errorMsg"></p>
+          <input type="submit" id="submit" value="Convertir" />
           <p id="resultado"></p>
+          <p id="info"></p>
         </form>
       </div>
     </main>

@@ -62,11 +62,11 @@ select {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 200px;
+  width: 250px;
   margin: 20px;
 }
 
-button {
+#submit {
   padding: 10px;
   background-color: #4caf50;
   color: #fff;
@@ -75,11 +75,30 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+#submit:hover {
   background-color: #45a049;
 }
 
 #resultado {
   margin-top: 10px;
   font-weight: bold;
+}
+
+#resultado b{
+  color: #333;
+  font-size: larger;
+}
+
+#info{
+  font-size: smaller;
+}
+
+.error {
+  border: solid 2px red;
+}
+
+.errorMensaje {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
 }
