@@ -1,0 +1,62 @@
+[
+  {
+    "nombre": "Real Madrid",
+    "pj": 10,
+    "pg": 9,
+    "pe": 1
+  },
+  {
+    "nombre": "Liverpool",
+    "pj": 10,
+    "pg": 8,
+    "pe": 1
+  },
+  {
+    "nombre": "Bayern Múnich",
+    "pj": 10,
+    "pg": 7,
+    "pe": 0
+  },
+  {
+    "nombre": "Manchester City",
+    "pj": 10,
+    "pg": 6,
+    "pe": 1
+  },
+  {
+    "nombre": "AC Milán",
+    "pj": 10,
+    "pg": 5,
+    "pe": 2
+  },
+  {
+    "nombre": "Ajax",
+    "pj": 10,
+    "pg": 4,
+    "pe": 3
+  },
+  {
+    "nombre": "Chelsea",
+    "pj": 10,
+    "pg": 3,
+    "pe": 2
+  },
+  {
+    "nombre": "Napoli",
+    "pj": 10,
+    "pg": 2,
+    "pe": 0
+  },
+  {
+    "nombre": "Atlético de Madrid",
+    "pj": 10,
+    "pg": 0,
+    "pe": 1
+  },
+  {
+    "nombre": "Inter Milán",
+    "pj": 10,
+    "pg": 1,
+    "pe": 2
+  }
+]
