@@ -1,0 +1,10 @@
+.incorrecto {
+  text-decoration: line-through;
+  color: red;
+  font-weight: bold;
+}
+
+ul,
+li {
+  list-style: none;
+}
