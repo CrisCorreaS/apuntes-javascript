@@ -1,7 +1,11 @@
 # Recursos importantes
 # Webs generales
+- [MDN - Api Fetch](https://developer.mozilla.org/en/docs/Web/API/Fetch_API/Using_Fetch)
+- [Mastering the Fetch API](https://dev.to/kelvinguchu/mastering-the-fetch-api-a-comprehensive-guide-to-modern-web-data-retrieval-3efo)
+- [FreeCodeCamp - Tutorial de Fetch API](https://www.freecodecamp.org/espanol/news/tutorial-de-fetch-api-en-javascript-con-ejemplos-de-js-fetch-post-y-header/)
 
 # Cursos
+- [API Fetch con Manz.dev](https://lenguajejs.com/javascript/peticiones-http/fetch/)
 
 # Apuntes
 - [Apuntes de AJAX de JonMircha](https://jonmircha.com/ajax) -> Explora AJAX a través de herramientas como el objeto XMLHttpRequest, API Fetch, Async y Await, Axios, así como otros recursos relevantes.
