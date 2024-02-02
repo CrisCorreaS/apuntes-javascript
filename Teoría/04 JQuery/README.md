@@ -15,3 +15,6 @@
 - [Selectores - W3Schools](https://www.w3schools.com/jquery/jquery_selectors.asp)
 - [jQuery Selector Tester](https://www.w3schools.com/jquery/trysel.asp)
 
+# Eventos de jQuery
+- [Eventos - Documentación jQuery](https://api.jquery.com/category/events/)
+- [Eventos - W3Schools](https://www.w3schools.com/jquery/jquery_events.asp)
