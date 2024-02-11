@@ -1,8 +1,7 @@
 let enlace = document.querySelector("a");
 let imagen = document.querySelector("img");
 let parrafo = document.querySelector("p");
-let adelante = document.querySelector(".fa-arrow-right");
-let atras = document.querySelector(".fa-arrow-left");
+let siguiente = document.querySelector("i");
 
 let gatitos = [];
 let numero = 1;
@@ -30,44 +29,7 @@ async function showGatito(num) {
 
   // Y finalmente actualizamos el contenido del párrafo
   parrafo.innerHTML = "Este es el gatito número " + num;
-}
-
-function paginar(numero) {
-  if (numero < 1) {
-    numero = 1;
-  }
-  
-  if (numero > gatitos.length + 1) {
-    numero = gatitos.length + 1;
-  }
-
-  if (numero == 1) {
-    atras.classList.add("desaparecer");
-    atras.classList.remove("aparecer");
-  } else {
-    atras.classList.remove("desaparecer");
-    atras.classList.add("aparecer");
-  }
-
-  if (numero == gatitos.length + 1) {
-    adelante.classList.add("desaparecer");
-    adelante.classList.remove("aparecer");
-  } else {
-    adelante.classList.remove("desaparecer");
-    adelante.classList.add("aparecer");
-  }
-
-  showGatito(numero);
-}
-
-function moverAdelante() {
   numero++;
-  addGatito();
-}
-
-function moverAtras() {
-  numero--;
-  paginar(numero);
 }
 
 function addGatito() {
@@ -81,12 +43,10 @@ function addGatito() {
 
       gatitos.push(gatito);
 
-      paginar(numero);
+      showGatito(numero);
     },
   });
 }
 
 document.addEventListener("DOMContentLoaded", addGatito, false);
-
-adelante.addEventListener("click", moverAdelante, false);
-atras.addEventListener("click", moverAtras, false);
+document.addEventListener("click", addGatito, false);

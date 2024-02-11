@@ -29,17 +29,6 @@ img {
 }
 
 i {
-  margin: 50px 50px 0px 50px;
+  margin: 50px;
   cursor: pointer;
-}
-
-.aparecer {
-  color: black;
-  display: block;
-}
-
-.desaparecer {
-  color: white;
-  display: none;
-  cursor: unset;
 }
