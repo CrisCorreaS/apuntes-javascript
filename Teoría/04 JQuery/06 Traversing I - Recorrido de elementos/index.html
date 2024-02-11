@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      .ancestors * {
+        display: block;
+        border: 2px solid lightgrey;
+        padding: 5px;
+        margin: 15px;
+        color: tomato;
+      }
+    </style>
+  </head>
+  <body class="ancestors">body (tatarabuelo)
+    <div style="width: 500px">div (bisabuelo)
+      <ul>ul 1 (abuelo)
+        <li>li (padre)
+          <span>span</span>
+          <i class="cur">cursiva</i>
+          <b>negrita</b>
+          <u>subrayado</u>
+          <pre>párrafo preformateado
+            <u>subrayado dentro del párrafo</u>
+          </pre>
+        </li>
+        <li>li (tio)
+          <p>1 Lorem ipsum dolor sit amet.</p>
+          <p id="parrafo">2 Lorem ipsum dolor sit amet.</p>
+          <p>3 Lorem ipsum dolor sit amet.</p>
+        </li>
+        <li>li (tio)
+          <pre>Lorem ipsum dolor sit amet.</pre>
+          <pre id="segundo">Segundo -> Lorem ipsum dolor sit amet.</pre>
+          <pre>Lorem ipsum dolor sit, amet.</pre>
+        </li>
+        <li>li (tio)
+          <ol>
+            <li>Párrafo número 1</li>
+            <li>Párrafo número 2</li>
+            <li id="tercero">Párrafo número 3</li>
+            <li>Párrafo número 4</li>
+            <li>Párrafo número 5</li>
+          </ol>
+        </li>
+        <li>li (tio)
+          <p id="prueba">Prueba -> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <pre>Lorem ipsum, dolor sit amet consectetur adipisicing.</pre>
+          <pre>Lorem ipsum, dolor sit amet consectetur adipisicing.</pre>
+          <pre>Lorem ipsum, dolor sit amet consectetur adipisicing.</pre>
+          <pre>Lorem ipsum, dolor sit amet consectetur adipisicing.</pre>
+          <div><p>Lorem ipsum dolor sit, <i>amet consectetur adipisicing elit.</i> Commodi <i>unde,</i> <i>reiciendis ab fuga harum a blanditiis</i> numquam dolore officia saepe, ratione quasi explicabo, nemo <b>impedit veniam! Fugiat, aliquam</b> unde alias qui, a quisquam minima nostrum hic repellat odit, iusto odio.</p></div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
