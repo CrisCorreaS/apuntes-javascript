@@ -1,0 +1,28 @@
+{
+  "pilotos": [
+    {
+      "nombre": "Lewis Hamilton",
+      "equipo": "Mercedes",
+      "numero": 44,
+      "nacionalidad": "Reino Unido"
+    },
+    {
+      "nombre": "Max Verstappen",
+      "equipo": "Red Bull Racing",
+      "numero": 33,
+      "nacionalidad": "Países Bajos"
+    },
+    {
+      "nombre": "Charles Leclerc",
+      "equipo": "Ferrari",
+      "numero": 16,
+      "nacionalidad": "Mónaco"
+    },
+    {
+      "nombre": "Fernando Alonso",
+      "equipo": "Aston Martin",
+      "numero": 14,
+      "nacionalidad": "España"
+    }
+  ]
+}
