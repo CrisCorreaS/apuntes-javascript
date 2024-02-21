@@ -41,6 +41,7 @@ function showTarea() {
     "click",
     () => {
       li.classList.toggle("incorrecto");
+      checkbox.setAttribute("checked", true);
     },
     false
   );
