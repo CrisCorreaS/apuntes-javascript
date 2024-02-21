@@ -1,4 +1,4 @@
-let respuesta = propt("Escribe tu edad");
+let respuesta = prompt("Escribe tu edad");
 
 switch(true){
     case((respuesta >= 0) && (respuesta <= 12)): alert("Niño"); break;
