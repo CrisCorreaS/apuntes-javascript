@@ -8,7 +8,7 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("./assets/tareas.json");
+        const response = await fetch("./src/assets/tareas.json");
         const data = await response.json();
 
         // Ponemos las tareas del JSON como las primeras tareas del to-do list
