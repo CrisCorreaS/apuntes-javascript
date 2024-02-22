@@ -1,1 +1,65 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 
+body {
+  margin-left: 20%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #617d3c;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table{
+  margin: 2rem;
+}
+
+th{
+  padding: 0.5rem;
+}
+
+td {
+  padding: 3rem 4rem;
+}
+
+thead {
+  background-color: #abc32e;
+}
+
+.pilotoDestacado {
+  background-color: #b5e650;
+}
+
+button {
+  justify-content: center;
+}
+
+#paginacion button {
+  margin-right: 4%;
+  background-color: #abc32e;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}

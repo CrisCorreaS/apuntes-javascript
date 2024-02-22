@@ -1,20 +1,28 @@
-import Button from "./Button";
+import BotonPaginacion from "./BotonPaginacion";
 
-const Paginacion = ({ paginaActual = "1", prevPage, nextPage }) => {
+const Paginacion = ({
+  pilotos,
+  paginaActual,
+  setPaginaActual,
+  elementosPorPagina,
+}) => {
+  const startIndex = (paginaActual - 1) * elementosPorPagina;
+  const endIndex = startIndex + elementosPorPagina;
+  const pilotosPaginados = pilotos.slice(startIndex, endIndex);
+
+  const numPaginas = Math.ceil(pilotos.length / elementosPorPagina);
+
   return (
-    <>
-      <h3>Paginación de Pilotos:</h3>
-      <div id="paginacion" className="pilotosPaginados"></div>
-      <Button id="btn_prev" onClick={prevPage}>
-        Anterior
-      </Button>
-      &nbsp;
-      <Button id="btn_next" onClick={nextPage}>
-        Siguiente
-      </Button>
-      <br />
-      Página: <span id="page">{paginaActual}</span>
-    </>
+    <div id="paginacion">
+      {Array.from({ length: numPaginas }, (_, i) => i + 1).map((pagina) => (
+        <BotonPaginacion
+          key={pagina}
+          numeroPagina={pagina}
+          paginaActual={paginaActual}
+          setPaginaActual={setPaginaActual}
+        />
+      ))}
+    </div>
   );
 };
 
